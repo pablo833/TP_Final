@@ -34,7 +34,7 @@ public class Login extends JPanel {
 
 	}
 
-	private void initUI() {// TODO Auto-generated method stub
+	private void initUI() {
 
 		final int columnSize = 30;
 		final int verticalStructureSize = 20;

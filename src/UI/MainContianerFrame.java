@@ -22,14 +22,12 @@ public class MainContianerFrame extends JFrame {
 	}
 
 	private void initUI() {
-
 		showLogin();
 		addMenubar();
 		setSize(800, 600);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		menuBar.setVisible(false);
-
 	}
 
 	public void setMenuBarVisible() {

@@ -13,7 +13,7 @@ import exceptions.RadioException;
 public class Handler {
 	private MainContianerFrame containerFrame;
 	private UsuarioBO usuarioBO;
-	private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usurio o contrasia invalidos";
+	private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usuario o contrasia invalidos";
 
 	public Handler() {
 		this.usuarioBO = new UsuarioBO();
