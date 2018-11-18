@@ -19,7 +19,7 @@ public class UsuarioBO {
 
 	}
 
-	public void create(Usuario user) throws RadioException, SQLException {
+	public void create(Usuario user) throws RadioException {
 
 		if (esUsuarioInValido(user)) {
 			throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
