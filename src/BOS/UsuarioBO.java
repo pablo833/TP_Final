@@ -33,7 +33,7 @@ public class UsuarioBO {
 
 	}
 
-	private boolean doesExistsUserName(Usuario user) throws RadioException, SQLException {
+	private boolean doesExistsUserName(Usuario user) throws RadioException {
 
 		if (getByUserName(user) == null) {
 			return false;
@@ -41,7 +41,7 @@ public class UsuarioBO {
 		return true;
 	}
 
-	public void update(Usuario user) throws RadioException, SQLException {
+	public void update(Usuario user) throws RadioException {
 
 		if (esUsuarioInValido(user)) {
 			throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
@@ -55,7 +55,7 @@ public class UsuarioBO {
 		usuarioDAO.delete(user.getUserName());
 	}
 
-	public Usuario getByUserName(Usuario user) throws RadioException, SQLException {
+	public Usuario getByUserName(Usuario user) throws RadioException {
 
 		return usuarioDAO.getByUserName(user.getUserName());
 	}

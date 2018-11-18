@@ -13,6 +13,7 @@ public class MainContianerFrame extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private Handler handler;
+	private JMenuBar menuBar;
 
 	public MainContianerFrame(String titulo, Handler handler) {
 		super(titulo);
@@ -21,10 +22,25 @@ public class MainContianerFrame extends JFrame {
 	}
 
 	private void initUI() {
+
+		showLogin();
 		addMenubar();
 		setSize(800, 600);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		menuBar.setVisible(false);
+
+	}
+
+	public void setMenuBarVisible() {
+		menuBar.setVisible(true);
+
+	}
+
+	private void showLogin() {
+		// handler.showLogin();
+		Login li = new Login(handler);
+		changePanel(li);
 	}
 
 	private void addMenubar() {
@@ -42,7 +58,7 @@ public class MainContianerFrame extends JFrame {
 			}
 		});
 
-		JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+		JMenuItem menuItemModificacion = new JMenuItem("Modificaciï¿½n");
 		menuItemModificacion.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -71,7 +87,7 @@ public class MainContianerFrame extends JFrame {
 		menuUsuario.add(menuItemBaja);
 		menuUsuario.add(menuItemListar);
 
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		menuBar.add(menuUsuario);
 		return menuBar;
 	}
@@ -79,6 +95,11 @@ public class MainContianerFrame extends JFrame {
 	protected void changePanel(JPanel panel) {
 		getContentPane().removeAll();
 		getContentPane().add(panel);
+		getContentPane().validate();
+	}
+
+	public void removePanel() {
+		getContentPane().removeAll();
 		getContentPane().validate();
 	}
 }

@@ -10,17 +10,16 @@ import DAOS.impl.UsuarioDaoImpl;
 import entidades.Usuario;
 import exceptions.RadioException;
 
-//8/15/22
-
 public class Handler {
 	private MainContianerFrame containerFrame;
 	private UsuarioBO usuarioBO;
+	private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usurio o contrasia invalidos";
 
 	public Handler() {
 		this.usuarioBO = new UsuarioBO();
 		this.usuarioBO.setDao(new UsuarioDaoImpl());
 	}
-	
+
 	public void initApp() {
 		containerFrame = new MainContianerFrame("Radio App", this);
 		containerFrame.setVisible(true);
@@ -30,7 +29,7 @@ public class Handler {
 
 		try {
 			usuarioBO.create(user);
-			CustomOptionPane.showInformationMessage("Operación exitosa");
+			CustomOptionPane.showInformationMessage("Operaciï¿½n exitosa");
 		} catch (RadioException e) {
 			CustomOptionPane.showErrorMessage(e.getMessage());
 		} catch (Exception e1) {
@@ -42,7 +41,7 @@ public class Handler {
 
 		try {
 			usuarioBO.update(user);
-			CustomOptionPane.showInformationMessage("Operación exitosa");
+			CustomOptionPane.showInformationMessage("Operaciï¿½n exitosa");
 
 		} catch (RadioException e) {
 			CustomOptionPane.showErrorMessage(e.getMessage());
@@ -55,7 +54,7 @@ public class Handler {
 
 		try {
 			usuarioBO.delete(user);
-			CustomOptionPane.showInformationMessage("Operación exitosa");
+			CustomOptionPane.showInformationMessage("Operaciï¿½n exitosa");
 		} catch (RadioException e) {
 			CustomOptionPane.showErrorMessage(e.getMessage());
 		} catch (Exception e1) {
@@ -63,13 +62,19 @@ public class Handler {
 		}
 	}
 
-	public Usuario getUser(String userName) throws RadioException, SQLException {
+	public Usuario getUser(String userName) throws RadioException {
 		Usuario user = new Usuario(userName, null, null, null);
-		return usuarioBO.getByUserName(user);
+		try {
+			user = usuarioBO.getByUserName(user);
+		} catch (RadioException e) {
+			CustomOptionPane.showErrorMessage(e.getMessage());
+		}
+		return user;
 	}
 
-	public Usuario getUser(Usuario usuario) throws SQLException {
+	public Usuario getUser(Usuario usuario) throws RadioException {
 		Usuario userFound = null;
+
 		try {
 			userFound = usuarioBO.getByUserName(usuario);
 		} catch (RadioException e) {
@@ -77,10 +82,15 @@ public class Handler {
 		}
 
 		return userFound;
+
 	}
 
 	public List<Usuario> GetUsuarios() throws RadioException {
 		return usuarioBO.getAll();
+	}
+
+	public void showLogin() {
+		containerFrame.changePanel(new Login(this));
 	}
 
 	public void addCreateUserPane() {
@@ -99,4 +109,21 @@ public class Handler {
 		containerFrame.changePanel(new ListUserPanel(this));
 
 	}
+
+	public void login(Usuario user) throws RadioException {
+		Usuario userFound = null;
+
+		try {
+			userFound = usuarioBO.getByUserName(user);
+			if (userFound == null) {
+				CustomOptionPane.showErrorMessage(USUARIO_CONTRASENIA_INEXISTENTE);
+			} else {
+				containerFrame.removePanel();
+				containerFrame.setMenuBarVisible();
+			}
+		} catch (RadioException e) {
+			CustomOptionPane.showErrorMessage(e.getMessage());
+		}
+	}
+
 }
