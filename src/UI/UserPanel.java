@@ -78,7 +78,7 @@ public abstract class UserPanel extends JPanel {
 		Box boxLastName = crearCombo(horizontalStructureSize, "Apellido", txtLastName);
 
 		txtPassword = new JPasswordField(columnSize);
-		Box boxPassword = crearCombo(horizontalStructureSize, "Contraseña", txtPassword);
+		Box boxPassword = crearCombo(horizontalStructureSize, "Contraseï¿½a", txtPassword);
 
 		Box botonera = generateBotonera();
 
@@ -127,8 +127,6 @@ public abstract class UserPanel extends JPanel {
 
 				} catch (RadioException e) {
 					CustomOptionPane.showErrorMessage(e.getMessage());
-				} catch (SQLException e1) {
-					CustomOptionPane.showErrorMessage(e1.getMessage());
 				}
 
 				if (user != null) {
