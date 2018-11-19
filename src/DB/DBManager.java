@@ -1,5 +1,7 @@
 package DB;
 
+import sun.security.pkcs11.wrapper.CK_SSL3_RANDOM_DATA;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -17,6 +19,13 @@ public class DBManager {
     private static String ddlUsuarioTable = "CREATE TABLE users (id INTEGER IDENTITY PRIMARY KEY, userName VARCHAR(256), password VARCHAR(100), firstName VARCHAR(256), lastName VARCHAR(256))";
 
     private static String ddlAuspicianteTable = "CREATE TABLE auspiciantes (id INTEGER IDENTITY PRIMARY KEY, razonSocial VARCHAR(256))";
+
+    private static String ddlConductorTable = "CREATE TABLE conductores (id INTEGER IDENTITY PRIMARY KEY, dniPersona INTEGER, sueldo double)";
+
+    private static String ddlProductorTable = "CREATE TABLE productores (id INTEGER IDENTITY PRIMARY KEY, dniPersona INTEGER, sueldo double)";
+
+    private static String ddlPersonaTable = "CREATE TABLE personas (dni INTEGER PRIMARY KEY, nombre VARCHAR(256), apellido VARCHAR(256))";
+
 
     public static Connection connect() {
         try {
@@ -52,14 +61,17 @@ public class DBManager {
 
     public static void createDB() {
 
-       // createUsuarioTable();
-        createAuspicianteTable();
+        // createTable(ddlUsuarioTable);
+        // createTable(ddlAuspicianteTable);
+        //createTable(ddlConductorTable);
+        //createTable(ddlPersonaTable);
+        createTable(ddlProductorTable);
     }
 
-    private static void createUsuarioTable() {
+    private static void createTable(String query) {
         Connection connection = DBManager.connect();
 
-        String sql = ddlUsuarioTable;
+        String sql = query;
         try {
             Statement s = connection.createStatement();
             s.execute(sql);
@@ -79,31 +91,6 @@ public class DBManager {
             }
         }
     }
-
-    private static void createAuspicianteTable() {
-        Connection connection = DBManager.connect();
-
-        String sql = ddlAuspicianteTable;
-        try {
-            Statement s = connection.createStatement();
-            s.execute(sql);
-        } catch (SQLException e) {
-            try {
-                connection.rollback();
-                e.printStackTrace();
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-        }
-    }
-
 
     public static void borrarTabla() {
         Connection connection = DBManager.connect();

@@ -1,6 +1,6 @@
 package BOS;
 
-import DAOS.AuspicianteDAO;
+import DAOS.DAO;
 import DAOS.impl.AuspicianteDaoImpl;
 import ENTIDADES.Auspiciante;
 
@@ -13,11 +13,11 @@ public class AuspicianteBO {
     private final String AUSPICIANTE_EXISTENTE_ERROR = "Ya hay un AUSPICIANTE con ese nombre ";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del AUSPICIANTE";
 
-    private AuspicianteDAO auspicianteDAO;
+    private DAO auspicianteDAO;
 
     public Auspiciante getByRazonSocial(Auspiciante auspiciante) throws RadioException {
 
-        return auspicianteDAO.getByRazonSocial(auspiciante.getRazonSocial());
+        return (Auspiciante) auspicianteDAO.getByInternalID(auspiciante);
     }
 
     public void setDao(AuspicianteDaoImpl auspicianteDaoImp) {
@@ -38,10 +38,7 @@ public class AuspicianteBO {
     }
 
     private boolean doesExistsAuspiciante(Auspiciante auspiciante) throws RadioException {
-        if (getByRazonSocial(auspiciante) == null) {
-            return false;
-        }
-        return true;
+        return getByRazonSocial(auspiciante) != null;
     }
 
     private boolean esAuspicianteInValido(Auspiciante auspiciante) {

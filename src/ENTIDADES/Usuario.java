@@ -8,7 +8,11 @@ public class Usuario {
 	private String lastName;
 	private String password;
 
-	public String getUserName() {
+    public Usuario() {
+
+    }
+
+    public String getUserName() {
 		return userName;
 	}
 

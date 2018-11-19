@@ -8,21 +8,16 @@ import UI.*;
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
 
-public abstract class UserPanel extends JPanel {
+public abstract class UserPanel extends Panel {
 
     protected Handler handler;
 
-    protected final int horizontalStructureSize = 10;
     protected JTextField txtUsername = null;
     protected JTextField txtFirstName = null;
     protected JTextField txtLastName = null;
     protected JPasswordField txtPassword = null;
     protected JButton btnOk;
     protected Usuario user = null;
-
-    public static enum PanelMode {
-        CREATE, UPDATE, DELETE;
-    }
 
     protected UserPanel() {
 
@@ -38,13 +33,13 @@ public abstract class UserPanel extends JPanel {
         UserPanel userPanel = null;
         switch (action) {
             case CREATE:
-                userPanel = new UserPanelCreate(handler, PanelMode.CREATE.toString());
+                userPanel = new UserPanelCreate(handler, action.toString());
                 break;
             case UPDATE:
-                userPanel = new UserPanelUpdate(handler, PanelMode.UPDATE.toString());
+                userPanel = new UserPanelUpdate(handler, action.toString());
                 break;
             case DELETE:
-                userPanel = new UserPanelDelete(handler, PanelMode.DELETE.toString());
+                userPanel = new UserPanelDelete(handler, action.toString());
                 break;
             default:
                 break;
@@ -54,8 +49,6 @@ public abstract class UserPanel extends JPanel {
     }
 
     private void initUI(String title) {
-        final int columnSize = 30;
-        final int verticalStructureSize = 20;
 
         Box boxTitle = Box.createHorizontalBox();
         JLabel lblTitle = new JLabel(title);
@@ -90,7 +83,10 @@ public abstract class UserPanel extends JPanel {
         add(panel);
     }
 
-    protected abstract Box generateBotonera();
+    @Override
+    protected Box generateBotonera() {
+        return null;
+    }
 
     protected JButton generateFindButton() {
 
@@ -128,15 +124,6 @@ public abstract class UserPanel extends JPanel {
         txtPassword.setText(null);
         txtFirstName.setText(null);
         txtLastName.setText(null);
-    }
-
-    private Box crearCombo(final int horizontalStructureSize, String labelText, JComponent component) {
-        Box boxUsername = Box.createHorizontalBox();
-        JLabel lblUserName = new JLabel(labelText);
-        boxUsername.add(lblUserName);
-        boxUsername.add(Box.createHorizontalStrut(horizontalStructureSize));
-        boxUsername.add(component);
-        return boxUsername;
     }
 
     protected Usuario createUser() {

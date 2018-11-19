@@ -44,11 +44,14 @@ public class MainContianerFrame extends JFrame {
 
         JMenu userMenu = generateUserMenu();
         JMenu auspicianteMenu = generateAuspicianteMenu();
-        // setJMenuBar(generateProgramMenu());
+        JMenu conductorMenu = generateConductorMenu();
+        JMenu productorMenu = generateProductorMenu();
 
         menuBar = new JMenuBar();
         menuBar.add(userMenu);
         menuBar.add(auspicianteMenu);
+        menuBar.add(conductorMenu);
+        menuBar.add(productorMenu);
 
         setJMenuBar(menuBar);
     }
@@ -65,7 +68,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemModificacion = new JMenuItem("Modificaci�n");
+        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
         menuItemModificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -139,6 +142,92 @@ public class MainContianerFrame extends JFrame {
         menuUsuario.add(menuItemListar);
 
         return menuUsuario;
+    }
+
+    private JMenu generateConductorMenu() {
+        JMenu menuConductores = new JMenu("Conductores");
+        JMenuItem menuItemAlta = new JMenuItem("Alta");
+
+        menuItemAlta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addCreateConductorPane();
+            }
+        });
+
+        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+        menuItemModificacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addUpdateConductorPane();
+            }
+        });
+
+        JMenuItem menuItemBaja = new JMenuItem("Baja");
+        menuItemBaja.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addDeleteConductorPane();
+            }
+        });
+
+        JMenuItem menuItemListar = new JMenuItem("Listar");
+        menuItemListar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addListConductoresPane();
+            }
+        });
+
+        menuConductores.add(menuItemAlta);
+        menuConductores.add(menuItemModificacion);
+        menuConductores.add(menuItemBaja);
+        menuConductores.add(menuItemListar);
+
+        return menuConductores;
+    }
+
+    private JMenu generateProductorMenu() {
+        JMenu menuProductores = new JMenu("Productores");
+        JMenuItem menuItemAlta = new JMenuItem("Alta");
+
+        menuItemAlta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addCreateProductorPane();
+            }
+        });
+
+        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+        menuItemModificacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addUpdateProductorPane();
+            }
+        });
+
+        JMenuItem menuItemBaja = new JMenuItem("Baja");
+        menuItemBaja.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addDeleteProductorPane();
+            }
+        });
+
+        JMenuItem menuItemListar = new JMenuItem("Listar");
+        menuItemListar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addListProductoresPane();
+            }
+        });
+
+        menuProductores.add(menuItemAlta);
+        menuProductores.add(menuItemModificacion);
+        menuProductores.add(menuItemBaja);
+        menuProductores.add(menuItemListar);
+
+        return menuProductores;
     }
 
     protected void changePanel(JPanel panel) {

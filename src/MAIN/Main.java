@@ -1,5 +1,6 @@
 package MAIN;
 
+import DB.DBManager;
 import UI.Handler;
 
 public class Main {
@@ -8,7 +9,7 @@ public class Main {
 
 
         //DBManager.createDB();
-        // DBManager.borrarTabla();
+
 
         new Handler().initApp();
     }

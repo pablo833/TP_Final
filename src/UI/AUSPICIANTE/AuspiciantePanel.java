@@ -8,7 +8,7 @@ import UI.*;
 import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
 
-public abstract class AuspiciantePanel extends JPanel {
+public class AuspiciantePanel extends Panel {
 
     protected Handler handler;
 
@@ -17,10 +17,6 @@ public abstract class AuspiciantePanel extends JPanel {
     protected JTextField txtCodigoRazonSocial;
     protected JButton btnOk;
     protected Auspiciante auspiciante = null;
-
-    public static enum PanelMode {
-        CREATE, UPDATE, DELETE;
-    }
 
     protected AuspiciantePanel() {
 
@@ -31,7 +27,7 @@ public abstract class AuspiciantePanel extends JPanel {
         initUI(title);
     }
 
-    public static AuspiciantePanel create(Handler handler, AuspiciantePanel.PanelMode action) {
+    public static AuspiciantePanel create(Handler handler, Panel.PanelMode action) {
 
         AuspiciantePanel auspiciantePanel = null;
         switch (action) {
@@ -77,20 +73,14 @@ public abstract class AuspiciantePanel extends JPanel {
         add(panel);
     }
 
-    protected abstract Box generateBotonera();
+    @Override
+    protected Box generateBotonera() {
+        return null;
+    }
 
     protected void cleanJText() {
         txtRazonSocial.setText(null);
         txtCodigoRazonSocial.setText(null);
-    }
-
-    private Box crearCombo(final int horizontalStructureSize, String labelText, JComponent component) {
-        Box boxUsername = Box.createHorizontalBox();
-        JLabel lblUserName = new JLabel(labelText);
-        boxUsername.add(lblUserName);
-        boxUsername.add(Box.createHorizontalStrut(horizontalStructureSize));
-        boxUsername.add(component);
-        return boxUsername;
     }
 
     protected JButton generateFindButton() {

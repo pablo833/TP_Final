@@ -8,16 +8,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import DAOS.AuspicianteDAO;
+import DAOS.DAO;
 import DB.DBManager;
 import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
 
-public class AuspicianteDaoImpl implements AuspicianteDAO {
+public class AuspicianteDaoImpl extends AbstractImpl implements DAO<Auspiciante> {
+    private final String AUSPICIANTE_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de AUSPICIANTES";
 
     @Override
     public void insert(Auspiciante auspiciante) throws RadioException {
-
         String query = "INSERT INTO auspiciantes (razonSocial) VALUES (?)";
 
         Connection connection = DBManager.connect();
@@ -34,7 +34,6 @@ public class AuspicianteDaoImpl implements AuspicianteDAO {
 
     @Override
     public void update(Auspiciante auspiciante) throws RadioException {
-
         String query = "UPDATE auspiciantes set razonSocial = ? WHERE id = ?";
 
         Connection connection = DBManager.connect();
@@ -46,7 +45,7 @@ public class AuspicianteDaoImpl implements AuspicianteDAO {
             dml.setInt(2, auspiciante.getCode());
             executeQuery(connection, dml);
         } catch (SQLException e) {
-            throw new RadioException("Hubo un error en la actualizacion de auspiciantes", e);
+            throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e);
         }
     }
 
@@ -63,19 +62,15 @@ public class AuspicianteDaoImpl implements AuspicianteDAO {
 
             executeQuery(connection, dml);
         } catch (SQLException e) {
-            throw new RadioException("Hubo un error en la busqueda de auspiciantes", e);
+            throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e);
         }
 
         return null;
+
     }
 
     @Override
     public void delete(int codigo) throws RadioException {
-
-    }
-
-    @Override
-    public void delete(String razonSocial) throws RadioException {
 
     }
 
@@ -99,21 +94,21 @@ public class AuspicianteDaoImpl implements AuspicianteDAO {
             } catch (SQLException e1) {
                 // no hago nada
             }
-            throw new RadioException("Hubo un error en la busqueda de auspiciantes", e);
+            throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e);
         } finally {
             try {
                 c.close();
 
             } catch (SQLException e1) {
-                throw new RadioException("Hubo un error en la busqueda de auspiciantes", e1);
+                throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e1);
             }
         }
         return auspiciantes;
     }
 
     @Override
-    public Auspiciante getByRazonSocial(String razonSocial) throws RadioException {
-        Auspiciante auspiciante = null;
+    public Auspiciante getByInternalID(Auspiciante auspiciante) throws RadioException {
+        Auspiciante newAuspiciante = null;
 
         String query = "select * from auspiciantes where razonSocial = ? ";
 
@@ -122,51 +117,29 @@ public class AuspicianteDaoImpl implements AuspicianteDAO {
         try {
             PreparedStatement dml = connection.prepareStatement(query);
 
-            dml.setString(1, razonSocial);
+            dml.setString(1, auspiciante.getRazonSocial());
 
             dml.executeQuery();
             ResultSet rs = dml.getResultSet();
 
             while (rs.next()) {
-                auspiciante = new Auspiciante(rs.getInt("id"), rs.getString("razonSocial"));
+                newAuspiciante = new Auspiciante(rs.getInt("id"), rs.getString("razonSocial"));
 
             }
         } catch (SQLException e) {
             try {
                 connection.rollback();
             } catch (SQLException e1) {
-                throw new RadioException("Hubo un error en la busqueda de auspiciantes", e1);
+                throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e1);
             }
-            throw new RadioException("Hubo un error en la busqueda de auspiciantes", e);
+            throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e);
         } finally {
             try {
                 connection.close();
             } catch (SQLException e2) {
-                throw new RadioException("Hubo un error en la busqueda de auspiciantes", e2);
+                throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e2);
             }
         }
-        return auspiciante;
+        return newAuspiciante;
     }
-
-    private void executeQuery(Connection connection, PreparedStatement dml) throws RadioException {
-        try {
-            dml.executeUpdate();
-            connection.commit();
-        } catch (SQLException e) {
-            try {
-                connection.rollback();
-
-            } catch (SQLException e1) {
-                // e1.printStackTrace();
-            }
-            throw new RadioException("Hubo un error en la ejecucion a la BD", e);
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e1) {
-                throw new RadioException("Hubo un error en la ejecucion a la BD", e1);
-            }
-        }
-    }
-
 }

@@ -1,71 +1,66 @@
 package BOS;
 
-import java.sql.SQLException;
 import java.util.List;
 
-import DAOS.UsuarioDAO;
+import DAOS.DAO;
 import DAOS.impl.UsuarioDaoImpl;
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
 
 public class UsuarioBO {
 
-	private UsuarioDAO usuarioDAO;
-	private final String USUARIO_EXISTENTE_ERROR = "Ya hay un usuario con ese nombre de usuario";
-	private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del usuario";
+    private DAO usuarioDAO;
+    private final String USUARIO_EXISTENTE_ERROR = "Ya hay un usuario con ese nombre de usuario";
+    private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del usuario";
 
-	public void setDao(UsuarioDaoImpl usuarioDaoImpl) {
-		this.usuarioDAO = usuarioDaoImpl;
+    public void setDao(UsuarioDaoImpl usuarioDaoImpl) {
+        this.usuarioDAO = usuarioDaoImpl;
+    }
 
-	}
+    public void create(Usuario user) throws RadioException {
 
-	public void create(Usuario user) throws RadioException {
+        if (esUsuarioInValido(user)) {
+            throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
+        } else {
+            if (!doesExistsUserName(user)) {
+                usuarioDAO.insert(user);
+            } else {
+                throw new RadioException(USUARIO_EXISTENTE_ERROR);
+            }
+        }
 
-		if (esUsuarioInValido(user)) {
-			throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
-		} else {
-			if (!doesExistsUserName(user)) {
-				usuarioDAO.insert(user);
-			} else {
-				throw new RadioException(USUARIO_EXISTENTE_ERROR);
-			}
-		}
+    }
 
-	}
+    private boolean doesExistsUserName(Usuario user) throws RadioException {
 
-	private boolean doesExistsUserName(Usuario user) throws RadioException {
+        return getByUserName(user) != null;
+    }
 
-		if (getByUserName(user) == null) {
-			return false;
-		}
-		return true;
-	}
+    public void update(Usuario user) throws RadioException {
 
-	public void update(Usuario user) throws RadioException {
+        if (esUsuarioInValido(user)) {
+            throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
+        } else {
+            usuarioDAO.update(user);
+        }
+    }
 
-		if (esUsuarioInValido(user)) {
-			throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
-		} else {
-			usuarioDAO.update(user);
-		}
-	}
+    public void delete(Usuario user) throws RadioException {
 
-	public void delete(Usuario user) throws RadioException, SQLException {
+        usuarioDAO.delete(user.getCode());
+    }
 
-		usuarioDAO.delete(user.getUserName());
-	}
+    public Usuario getByUserName(Usuario user) throws RadioException {
 
-	public Usuario getByUserName(Usuario user) throws RadioException {
+        return (Usuario) usuarioDAO.getByInternalID(user);
+    }
 
-		return usuarioDAO.getByUserName(user.getUserName());
-	}
+    public List<Usuario> getAll() throws RadioException {
 
-	public List<Usuario> getAll() throws RadioException {
+        return usuarioDAO.getAll();
+    }
 
-		return usuarioDAO.getAll();
-	}
-
-	private Boolean esUsuarioInValido(Usuario user) {
-		return user.getPassword().isEmpty() || user.getFirstName().isEmpty() || user.getLastName().isEmpty();
-	}
+    private Boolean esUsuarioInValido(Usuario user) {
+        return user.getPassword().isEmpty() || user.getFirstName().isEmpty() || user.getLastName().isEmpty();
+    }
 }
