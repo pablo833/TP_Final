@@ -10,9 +10,9 @@ import UI.AUSPICIANTE.AuspiciantePanel;
 import UI.AUSPICIANTE.ListAuspiciantePane;
 import UI.USER.ListUserPanel;
 import UI.USER.UserPanel;
-import entidades.Auspiciante;
-import entidades.Usuario;
-import exceptions.RadioException;
+import ENTIDADES.Auspiciante;
+import ENTIDADES.Usuario;
+import EXCEPTIONS.RadioException;
 
 public class Handler {
     private MainContianerFrame containerFrame;
@@ -33,11 +33,50 @@ public class Handler {
         containerFrame.setVisible(true);
     }
 
+    public void login(Usuario user) throws RadioException {
+        Usuario userFound = null;
+
+        try {
+            userFound = usuarioBO.getByUserName(user);
+            if (userFound == null) {
+                CustomOptionPane.showErrorMessage(USUARIO_CONTRASENIA_INEXISTENTE);
+            } else {
+                containerFrame.removePanel();
+                containerFrame.setMenuBarVisible();
+            }
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        }
+    }
+
+    public void showLogin() {
+
+        containerFrame.changePanel(new Login(this));
+    }
+
+    public void addCreateUserPane() {
+
+        containerFrame.changePanel(UserPanel.create(this, UserPanel.PanelMode.CREATE));
+    }
+
+    public void addCreateUpdateUserPane() {
+        containerFrame.changePanel(UserPanel.create(this, UserPanel.PanelMode.UPDATE));
+    }
+
+    public void addCreateDeleteUserPane() {
+        containerFrame.changePanel(UserPanel.create(this, UserPanel.PanelMode.DELETE));
+    }
+
+    public void addListUsersPane() {
+        containerFrame.changePanel(new ListUserPanel(this));
+
+    }
+
     public void createUser(Usuario user) throws RadioException {
 
         try {
             usuarioBO.create(user);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA;
+            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
         } catch (Exception e1) {
@@ -97,56 +136,6 @@ public class Handler {
         return usuarioBO.getAll();
     }
 
-    public void showLogin() {
-        containerFrame.changePanel(new Login(this));
-    }
-
-    public void addCreateUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, UserPanel.PanelMode.CREATE));
-    }
-
-    public void addCreateUpdateUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, UserPanel.PanelMode.UPDATE));
-    }
-
-    public void addCreateDeleteUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, UserPanel.PanelMode.DELETE));
-    }
-
-    public void addListUsersPane() {
-        containerFrame.changePanel(new ListUserPanel(this));
-
-    }
-
-    public void login(Usuario user) throws RadioException {
-        Usuario userFound = null;
-
-        try {
-            userFound = usuarioBO.getByUserName(user);
-            if (userFound == null) {
-                CustomOptionPane.showErrorMessage(USUARIO_CONTRASENIA_INEXISTENTE);
-            } else {
-                containerFrame.removePanel();
-                containerFrame.setMenuBarVisible();
-            }
-        } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
-        }
-    }
-
-    public Auspiciante getAuspiciante(Auspiciante auspiciante) throws RadioException {
-        Auspiciante auspicianteFound = null;
-
-        try {
-            auspicianteFound = auspicianteBO.getByRazonSocial(auspiciante);
-        } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
-        }
-
-        return auspicianteFound;
-
-    }
-
     public void addCreateAuspiciantePane() {
         containerFrame.changePanel(AuspiciantePanel.create(this, AuspiciantePanel.PanelMode.CREATE));
     }
@@ -160,7 +149,21 @@ public class Handler {
     }
 
     public void addListAuspiciantePane() {
+
         containerFrame.changePanel(new ListAuspiciantePane(this));
+    }
+
+    public Auspiciante getAuspiciante(Auspiciante auspiciante) throws RadioException {
+        Auspiciante auspicianteFound = null;
+
+        try {
+            auspicianteFound = auspicianteBO.getByRazonSocial(auspiciante);
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        }
+
+        return auspicianteFound;
+
     }
 
     public void createAuspiciante(Auspiciante auspiciante) throws RadioException {

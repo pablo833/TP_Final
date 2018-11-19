@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import entidades.Usuario;
+import ENTIDADES.Usuario;
 
 public class UsersTable extends AbstractTableModel {
 

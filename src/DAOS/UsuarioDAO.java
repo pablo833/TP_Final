@@ -2,8 +2,8 @@ package DAOS;
 
 import java.util.List;
 
-import entidades.Usuario;
-import exceptions.RadioException;
+import ENTIDADES.Usuario;
+import EXCEPTIONS.RadioException;
 
 public interface UsuarioDAO {
 

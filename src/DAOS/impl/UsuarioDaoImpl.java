@@ -10,8 +10,8 @@ import java.util.List;
 
 import DAOS.UsuarioDAO;
 import DB.DBManager;
-import entidades.Usuario;
-import exceptions.RadioException;
+import ENTIDADES.Usuario;
+import EXCEPTIONS.RadioException;
 
 public class UsuarioDaoImpl implements UsuarioDAO {
 
@@ -177,12 +177,12 @@ public class UsuarioDaoImpl implements UsuarioDAO {
 			} catch (SQLException e1) {
 				// e1.printStackTrace();
 			}
-			throw new RadioException("Hubo un error en la ejecución a la BD", e);
+			throw new RadioException("Hubo un error en la ejecuciï¿½n a la BD", e);
 		} finally {
 			try {
 				connection.close();
 			} catch (SQLException e1) {
-				throw new RadioException("Hubo un error en la ejecución a la BD", e1);
+				throw new RadioException("Hubo un error en la ejecuciï¿½n a la BD", e1);
 			}
 		}
 	}

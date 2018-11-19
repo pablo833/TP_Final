@@ -8,15 +8,9 @@ import javax.swing.JButton;
 
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.USER.UserPanel;
-import exceptions.RadioException;
+import EXCEPTIONS.RadioException;
 
 public class UserPanelUpdate extends UserPanel {
-
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
 
     public UserPanelUpdate(Handler handler, String title) {
 

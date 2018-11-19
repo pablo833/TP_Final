@@ -1,4 +1,4 @@
-package exceptions;
+package EXCEPTIONS;
 
 public class RadioException extends Exception {
 

@@ -10,8 +10,8 @@ import java.util.List;
 
 import DAOS.AuspicianteDAO;
 import DB.DBManager;
-import entidades.Auspiciante;
-import exceptions.RadioException;
+import ENTIDADES.Auspiciante;
+import EXCEPTIONS.RadioException;
 
 public class AuspicianteDaoImpl implements AuspicianteDAO {
 

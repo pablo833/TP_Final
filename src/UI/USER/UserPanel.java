@@ -5,8 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import UI.*;
-import entidades.Usuario;
-import exceptions.RadioException;
+import ENTIDADES.Usuario;
+import EXCEPTIONS.RadioException;
 
 public abstract class UserPanel extends JPanel {
 
@@ -138,8 +138,6 @@ public abstract class UserPanel extends JPanel {
         boxUsername.add(component);
         return boxUsername;
     }
-
-
 
     protected Usuario createUser() {
         Usuario newUser = null;

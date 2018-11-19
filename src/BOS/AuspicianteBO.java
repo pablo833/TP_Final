@@ -2,9 +2,9 @@ package BOS;
 
 import DAOS.AuspicianteDAO;
 import DAOS.impl.AuspicianteDaoImpl;
-import entidades.Auspiciante;
+import ENTIDADES.Auspiciante;
 
-import exceptions.RadioException;
+import EXCEPTIONS.RadioException;
 
 import java.util.List;
 
@@ -12,7 +12,6 @@ public class AuspicianteBO {
 
     private final String AUSPICIANTE_EXISTENTE_ERROR = "Ya hay un AUSPICIANTE con ese nombre ";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del AUSPICIANTE";
-
 
     private AuspicianteDAO auspicianteDAO;
 
@@ -22,6 +21,7 @@ public class AuspicianteBO {
     }
 
     public void setDao(AuspicianteDaoImpl auspicianteDaoImp) {
+
         this.auspicianteDAO = auspicianteDaoImp;
     }
 

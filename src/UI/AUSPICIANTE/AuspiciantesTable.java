@@ -5,7 +5,7 @@ import java.util.List;
 
 import javax.swing.table.AbstractTableModel;
 
-import entidades.Auspiciante;
+import ENTIDADES.Auspiciante;
 
 public class AuspiciantesTable extends AbstractTableModel {
 

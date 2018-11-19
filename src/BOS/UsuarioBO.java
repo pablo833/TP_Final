@@ -5,8 +5,8 @@ import java.util.List;
 
 import DAOS.UsuarioDAO;
 import DAOS.impl.UsuarioDaoImpl;
-import entidades.Usuario;
-import exceptions.RadioException;
+import ENTIDADES.Usuario;
+import EXCEPTIONS.RadioException;
 
 public class UsuarioBO {
 

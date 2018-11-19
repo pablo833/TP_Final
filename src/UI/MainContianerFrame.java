@@ -11,7 +11,6 @@ import javax.swing.JPanel;
 
 public class MainContianerFrame extends JFrame {
 
-    private static final long serialVersionUID = 1L;
     private Handler handler;
     private JMenuBar menuBar;
 
@@ -141,7 +140,6 @@ public class MainContianerFrame extends JFrame {
 
         return menuUsuario;
     }
-
 
     protected void changePanel(JPanel panel) {
         getContentPane().removeAll();

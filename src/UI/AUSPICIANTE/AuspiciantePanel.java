@@ -5,8 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import UI.*;
-import entidades.Auspiciante;
-import exceptions.RadioException;
+import ENTIDADES.Auspiciante;
+import EXCEPTIONS.RadioException;
 
 public abstract class AuspiciantePanel extends JPanel {
 

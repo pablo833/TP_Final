@@ -2,8 +2,8 @@ package DAOS;
 
 import java.util.List;
 
-import entidades.Auspiciante;
-import exceptions.RadioException;
+import ENTIDADES.Auspiciante;
+import EXCEPTIONS.RadioException;
 
 public interface AuspicianteDAO {
 

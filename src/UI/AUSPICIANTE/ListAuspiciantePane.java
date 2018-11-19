@@ -2,8 +2,8 @@ package UI.AUSPICIANTE;
 
 import UI.CustomOptionPane;
 
-import entidades.Auspiciante;
-import exceptions.RadioException;
+import ENTIDADES.Auspiciante;
+import EXCEPTIONS.RadioException;
 
 import UI.Handler;
 

@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import UI.Handler;
-import exceptions.RadioException;
+import EXCEPTIONS.RadioException;
 
 public class UserPanelCreate extends UserPanel {
 

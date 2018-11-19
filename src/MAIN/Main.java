@@ -1,7 +1,6 @@
-package main;
+package MAIN;
 
 import UI.Handler;
-import DB.DBManager;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package entidades;
+package ENTIDADES;
 
 public class Radio {
 

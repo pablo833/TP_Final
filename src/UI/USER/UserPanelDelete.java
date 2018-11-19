@@ -8,15 +8,9 @@ import javax.swing.JButton;
 
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.USER.UserPanel;
-import exceptions.RadioException;
+import EXCEPTIONS.RadioException;
 
 public class UserPanelDelete extends UserPanel {
-
-    /**
-     *
-     */
-    private static final long serialVersionUID = 1L;
 
     public UserPanelDelete(Handler handler, String title) {
         super(handler, title);
