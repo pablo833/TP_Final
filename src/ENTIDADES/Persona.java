@@ -35,4 +35,8 @@ public class Persona {
 		this.apellido = apellido;
 		this.dni = dni;
 	}
+
+	public String toString() {
+		return getNombre() + " - " + getApellido();
+	}
 }

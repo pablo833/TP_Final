@@ -33,13 +33,12 @@ public class UserPanelDelete extends UserPanel {
                 }
             }
         });
+        btnOk.setEnabled(false);
         botonera.add(btnOk);
 
         JButton btnFind = generateFindButton();
 
-        txtFirstName.setEnabled(false);
-        txtLastName.setEnabled(false);
-        txtPassword.setEnabled(false);
+        enableEditControls(false);
 
         botonera.add(btnFind);
 

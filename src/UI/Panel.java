@@ -15,11 +15,11 @@ public abstract class Panel extends JPanel {
     protected abstract Box generateBotonera();
 
     protected Box crearCombo(final int horizontalStructureSize, String labelText, JComponent component) {
-        Box boxUsername = Box.createHorizontalBox();
+        Box box = Box.createHorizontalBox();
         JLabel lblUserName = new JLabel(labelText);
-        boxUsername.add(lblUserName);
-        boxUsername.add(Box.createHorizontalStrut(horizontalStructureSize));
-        boxUsername.add(component);
-        return boxUsername;
+        box.add(lblUserName);
+        box.add(Box.createHorizontalStrut(horizontalStructureSize));
+        box.add(component);
+        return box;
     }
 }

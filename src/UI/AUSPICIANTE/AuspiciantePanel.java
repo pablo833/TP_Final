@@ -48,8 +48,6 @@ public class AuspiciantePanel extends Panel {
     }
 
     private void initUI(String title) {
-        final int columnSize = 30;
-        final int verticalStructureSize = 20;
 
         Box boxTitle = Box.createHorizontalBox();
         JLabel lblTitle = new JLabel(title);

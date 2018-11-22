@@ -30,12 +30,12 @@ public class ProductorPanelDelete extends ProductorPanel {
                 }
             }
         });
+        btnOk.setEnabled(false);
         botonera.add(btnOk);
 
         JButton btnFind = generateFindButton();
 
-        txtApellido.setEnabled(false);
-        txtNombre.setEnabled(false);
+        enableEditControls(false);
 
         botonera.add(btnFind);
 

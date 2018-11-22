@@ -13,6 +13,11 @@ public class MainContianerFrame extends JFrame {
 
     private Handler handler;
     private JMenuBar menuBar;
+    private final String ALTA = "Alta";
+    private final String BAJA = "Baja";
+    private final String MODIFICACION = "Modificación";
+    private final String LISTAR = "Listar";
+
 
     public MainContianerFrame(String titulo, Handler handler) {
         super(titulo);
@@ -46,20 +51,66 @@ public class MainContianerFrame extends JFrame {
         JMenu auspicianteMenu = generateAuspicianteMenu();
         JMenu conductorMenu = generateConductorMenu();
         JMenu productorMenu = generateProductorMenu();
+        JMenu programaMenu = generateProgramaMenu();
 
         menuBar = new JMenuBar();
         menuBar.add(userMenu);
         menuBar.add(auspicianteMenu);
         menuBar.add(conductorMenu);
         menuBar.add(productorMenu);
+        menuBar.add(programaMenu);
 
         setJMenuBar(menuBar);
+    }
+
+    private JMenu generateProgramaMenu() {
+        JMenu menuPrograma = new JMenu("Programas");
+        JMenuItem menuItemAlta = new JMenuItem(ALTA);
+
+        menuItemAlta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addCreateProgramaPane();
+            }
+        });
+
+        JMenuItem menuItemModificacion = new JMenuItem(MODIFICACION);
+        menuItemModificacion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addCreateUpdateProgramaPane();
+            }
+        });
+
+        JMenuItem menuItemBaja = new JMenuItem(BAJA);
+        menuItemBaja.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                handler.addCreateDeleteProgramaPane();
+            }
+        });
+
+        JMenuItem menuItemListar = new JMenuItem(LISTAR);
+        menuItemListar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+
+                handler.addListProgrmasPane();
+            }
+        });
+        menuPrograma.add(menuItemAlta);
+
+        menuPrograma.add(menuItemModificacion);
+        menuPrograma.add(menuItemBaja);
+        menuPrograma.add(menuItemListar);
+
+        return menuPrograma;
     }
 
     private JMenu generateUserMenu() {
 
         JMenu menuUsuario = new JMenu("Usuarios");
-        JMenuItem menuItemAlta = new JMenuItem("Alta");
+        JMenuItem menuItemAlta = new JMenuItem(ALTA);
 
         menuItemAlta.addActionListener(new ActionListener() {
             @Override
@@ -68,7 +119,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+        JMenuItem menuItemModificacion = new JMenuItem(MODIFICACION);
         menuItemModificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -76,7 +127,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemBaja = new JMenuItem("Baja");
+        JMenuItem menuItemBaja = new JMenuItem(BAJA);
         menuItemBaja.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -84,7 +135,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemListar = new JMenuItem("Listar");
+        JMenuItem menuItemListar = new JMenuItem(LISTAR);
         menuItemListar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -103,7 +154,7 @@ public class MainContianerFrame extends JFrame {
 
     private JMenu generateAuspicianteMenu() {
         JMenu menuUsuario = new JMenu("Auspiciantes");
-        JMenuItem menuItemAlta = new JMenuItem("Alta");
+        JMenuItem menuItemAlta = new JMenuItem(ALTA);
 
         menuItemAlta.addActionListener(new ActionListener() {
             @Override
@@ -112,7 +163,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+        JMenuItem menuItemModificacion = new JMenuItem(MODIFICACION);
         menuItemModificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -120,7 +171,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemBaja = new JMenuItem("Baja");
+        JMenuItem menuItemBaja = new JMenuItem(BAJA);
         menuItemBaja.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -128,7 +179,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemListar = new JMenuItem("Listar");
+        JMenuItem menuItemListar = new JMenuItem(LISTAR);
         menuItemListar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -146,7 +197,7 @@ public class MainContianerFrame extends JFrame {
 
     private JMenu generateConductorMenu() {
         JMenu menuConductores = new JMenu("Conductores");
-        JMenuItem menuItemAlta = new JMenuItem("Alta");
+        JMenuItem menuItemAlta = new JMenuItem(ALTA);
 
         menuItemAlta.addActionListener(new ActionListener() {
             @Override
@@ -155,7 +206,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+        JMenuItem menuItemModificacion = new JMenuItem(MODIFICACION);
         menuItemModificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -163,7 +214,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemBaja = new JMenuItem("Baja");
+        JMenuItem menuItemBaja = new JMenuItem(BAJA);
         menuItemBaja.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -171,7 +222,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemListar = new JMenuItem("Listar");
+        JMenuItem menuItemListar = new JMenuItem(LISTAR);
         menuItemListar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -189,7 +240,7 @@ public class MainContianerFrame extends JFrame {
 
     private JMenu generateProductorMenu() {
         JMenu menuProductores = new JMenu("Productores");
-        JMenuItem menuItemAlta = new JMenuItem("Alta");
+        JMenuItem menuItemAlta = new JMenuItem(ALTA);
 
         menuItemAlta.addActionListener(new ActionListener() {
             @Override
@@ -198,7 +249,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemModificacion = new JMenuItem("Modificación");
+        JMenuItem menuItemModificacion = new JMenuItem(MODIFICACION);
         menuItemModificacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -206,7 +257,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemBaja = new JMenuItem("Baja");
+        JMenuItem menuItemBaja = new JMenuItem(BAJA);
         menuItemBaja.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -214,7 +265,7 @@ public class MainContianerFrame extends JFrame {
             }
         });
 
-        JMenuItem menuItemListar = new JMenuItem("Listar");
+        JMenuItem menuItemListar = new JMenuItem(LISTAR);
         menuItemListar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {

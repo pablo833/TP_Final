@@ -15,7 +15,7 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
 
     @Override
     public void insert(Productor productor) throws RadioException {
-        String queryConductor = "INSERT INTO productores (dniPersona) VALUES (?)";
+        String queryProductor = "INSERT INTO productores (dniPersona) VALUES (?)";
         String queryPersona = "INSERT INTO personas (dni, nombre, apellido) VALUES (?, ?, ?)";
 
         Connection connection = DBManager.connect();
@@ -23,7 +23,7 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
         PreparedStatement dmlProductor;
         PreparedStatement dmlPersona;
         try {
-            dmlProductor = connection.prepareStatement(queryConductor);
+            dmlProductor = connection.prepareStatement(queryProductor);
             dmlProductor.setInt(1, productor.getDni());
 
 
@@ -64,8 +64,8 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
         String query = "SELECT * " +
                 "FROM personas " +
                 "INNER JOIN productores ON " +
-                "personas.dni = productores.dni " +
-                "where conductores.id = ? ";
+                "personas.dni = productores.dniPersona " +
+                "where productores.id = ? ";
 
 
         return executeQuery(query, codigo);
@@ -91,7 +91,10 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
             ResultSet rs = s.executeQuery(sql);
 
             while (rs.next()) {
-                Productor productor = new Productor(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido"), rs.getInt("dni"));
+                Productor productor = new Productor(rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getInt("dni"));
                 productores.add(productor);
             }
         } catch (SQLException e) {
@@ -137,7 +140,10 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
             ResultSet rs = dml.getResultSet();
 
             while (rs.next()) {
-                productor = new Productor(rs.getInt("id"), rs.getString("nombre"), rs.getString("apellido"), rs.getInt("id"));
+                productor = new Productor(rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("apellido"),
+                        rs.getInt("id"));
             }
         } catch (SQLException e) {
             try {

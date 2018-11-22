@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 import ENTIDADES.Usuario;
 
-public class Login extends JPanel {
+public class Login extends Panel {
 
     private final int horizontalStructureSize = 10;
     JTextField txtUsername = null;
@@ -57,15 +57,6 @@ public class Login extends JPanel {
 
         add(panel);
 
-    }
-
-    private Box crearCombo(final int horizontalStructureSize, String labelText, JComponent component) {
-        Box boxUsername = Box.createHorizontalBox();
-        JLabel lblUserName = new JLabel(labelText);
-        boxUsername.add(lblUserName);
-        boxUsername.add(Box.createHorizontalStrut(horizontalStructureSize));
-        boxUsername.add(component);
-        return boxUsername;
     }
 
     public Box generateBotonera() {

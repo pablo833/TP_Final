@@ -3,7 +3,6 @@ package BOS;
 import DAOS.DAO;
 import DAOS.impl.AuspicianteDaoImpl;
 import ENTIDADES.Auspiciante;
-
 import EXCEPTIONS.RadioException;
 
 import java.util.List;

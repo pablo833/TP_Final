@@ -22,7 +22,7 @@ public class ProductorPanelUpdate extends ProductorPanel {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    handler.updateCProductor(createProductor());
+                    handler.updateProductor(createProductor());
                     btnOk.setEnabled(false);
                     cleanJText();
                 } catch (RadioException e) {

@@ -16,16 +16,33 @@ public class DBManager {
 
     private static Connection connection = null;
 
-    private static String ddlUsuarioTable = "CREATE TABLE users (id INTEGER IDENTITY PRIMARY KEY, userName VARCHAR(256), password VARCHAR(100), firstName VARCHAR(256), lastName VARCHAR(256))";
+    private static String ddlUsuarioTable = "CREATE TABLE users " +
+            "(id INTEGER IDENTITY PRIMARY KEY, " +
+            "userName VARCHAR(256), " +
+            "password VARCHAR(100), " +
+            "firstName VARCHAR(256), " +
+            "lastName VARCHAR(256))";
 
-    private static String ddlAuspicianteTable = "CREATE TABLE auspiciantes (id INTEGER IDENTITY PRIMARY KEY, razonSocial VARCHAR(256))";
+    private static String ddlAuspicianteTable = "CREATE TABLE auspiciantes " +
+            "(id INTEGER IDENTITY PRIMARY KEY, " +
+            "razonSocial VARCHAR(256))";
 
-    private static String ddlConductorTable = "CREATE TABLE conductores (id INTEGER IDENTITY PRIMARY KEY, dniPersona INTEGER, sueldo double)";
+    private static String ddlConductorTable = "CREATE TABLE conductores " +
+            "(id INTEGER IDENTITY PRIMARY KEY, " +
+            "dniPersona INTEGER, " +
+            "sueldo double)";
 
     private static String ddlProductorTable = "CREATE TABLE productores (id INTEGER IDENTITY PRIMARY KEY, dniPersona INTEGER, sueldo double)";
 
     private static String ddlPersonaTable = "CREATE TABLE personas (dni INTEGER PRIMARY KEY, nombre VARCHAR(256), apellido VARCHAR(256))";
 
+
+    private static String ddlProgramaTable = "CREATE TABLE programas (id INTEGER IDENTITY PRIMARY KEY," +
+            " nombre VARCHAR(256), " +
+            "horario VARCHAR(256), " +
+            "valorSegundoAlAire double, " +
+            "conductor INTEGER, " +
+            "productor INTEGER)";
 
     public static Connection connect() {
         try {
@@ -65,7 +82,8 @@ public class DBManager {
         // createTable(ddlAuspicianteTable);
         //createTable(ddlConductorTable);
         //createTable(ddlPersonaTable);
-        createTable(ddlProductorTable);
+       // createTable(ddlProductorTable);
+        createTable(ddlProgramaTable);
     }
 
     private static void createTable(String query) {

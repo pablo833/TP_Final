@@ -1,6 +1,7 @@
 package UI;
 
 import java.util.List;
+import java.util.Vector;
 
 import BOS.AuspicianteBO;
 import BOS.*;
@@ -12,6 +13,8 @@ import UI.CONDUCTOR.ConductorPanel;
 import UI.CONDUCTOR.ListConductoresPanel;
 import UI.PRODUCTOR.ListProductoresPanel;
 import UI.PRODUCTOR.ProductorPanel;
+import UI.PROGRAMA.ListProgramasPanel;
+import UI.PROGRAMA.ProgramaPanel;
 import UI.USER.ListUserPanel;
 import UI.USER.UserPanel;
 import EXCEPTIONS.RadioException;
@@ -22,6 +25,7 @@ public class Handler {
     private AuspicianteBO auspicianteBO;
     private ConductorBO conductorBO;
     private ProductorBO productorBO;
+    private  ProgramaBO programaBO;
     private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usuario o contrasia invalidos";
     private final String OPERACION_EXITOSA = "Operación exitos";
 
@@ -34,6 +38,8 @@ public class Handler {
         this.conductorBO.setDao(new ConductorDAOImpl());
         this.productorBO = new ProductorBO();
         this.productorBO.setDao(new ProductorDAOImpl());
+        this.programaBO = new ProgramaBO();
+        this.programaBO.setDao(new ProgramaDAOImpl());
     }
 
     public void initApp() {
@@ -146,6 +152,25 @@ public class Handler {
     public void addListProductoresPane() {
 
         containerFrame.changePanel(new ListProductoresPanel(this));
+    }
+
+    //
+    //PROGRAMAS
+    //
+    public void addCreateProgramaPane() {
+        containerFrame.changePanel(ProgramaPanel.create(this, Panel.PanelMode.CREATE));
+    }
+
+    public void addCreateUpdateProgramaPane() {
+        containerFrame.changePanel(ProgramaPanel.create(this, Panel.PanelMode.UPDATE));
+    }
+
+    public void addCreateDeleteProgramaPane() {
+        containerFrame.changePanel(ProgramaPanel.create(this, Panel.PanelMode.DELETE));
+    }
+
+    public void addListProgrmasPane() {
+        containerFrame.changePanel(new ListProgramasPanel(this));
     }
 
     //USUARIOS
@@ -305,6 +330,17 @@ public class Handler {
         return conductorBO.getAll();
     }
 
+    public Vector getConductoresVector() throws RadioException {
+        Vector model = new Vector();
+
+        List<Conductor> conductores = conductorBO.getAll();
+        for (Conductor c : conductores) {
+            model.addElement(c);
+        }
+
+        return model;
+    }
+
     //PRODUCTORES
     public Productor getProductor(Integer dni) throws RadioException {
         Productor productor = new Productor(null, null, dni);
@@ -339,7 +375,7 @@ public class Handler {
         }
     }
 
-    public void updateCProductor(Productor productor) throws RadioException {
+    public void updateProductor(Productor productor) throws RadioException {
         try {
             productorBO.update(productor);
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
@@ -353,6 +389,42 @@ public class Handler {
 
     public List<Productor> getProductores() throws RadioException {
         return productorBO.getAll();
+    }
+
+    public Vector getProductoresVector() throws RadioException {
+        Vector model = new Vector();
+
+        List<Productor> productores = productorBO.getAll();
+        for (Productor p : productores) {
+            model.addElement(p);
+        }
+
+        return model;
+    }
+
+    public void createPrograma(Programa programa) throws RadioException {
+        try {
+            programaBO.create(programa);
+            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        } catch (Exception e1) {
+            CustomOptionPane.showErrorMessage(e1.getMessage());
+        }
+    }
+
+    public void updatePrograma(Programa programa) throws RadioException {
+    }
+
+    public Programa getPrograma(String nombre) throws RadioException {
+        return null;
+    }
+
+    public void deletePrograma(Programa programa) throws RadioException {
+    }
+
+    public List<Programa> getProgramas() throws RadioException {
+        return programaBO.getAll();
     }
 
 }

@@ -70,7 +70,7 @@ public class ConductorDAOImpl extends AbstractImpl implements DAO<Conductor> {
         String query = "SELECT * " +
                 "FROM personas " +
                 "INNER JOIN conductores ON " +
-                "personas.dni = conductores.dni " +
+                "personas.dni = conductores.dniPersona " +
                 "where conductores.id = ? ";
 
         return executeQuery(query, codigo);

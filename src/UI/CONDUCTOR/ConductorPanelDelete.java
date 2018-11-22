@@ -30,6 +30,7 @@ public class ConductorPanelDelete extends ConductorPanel {
                 }
             }
         });
+        btnOk.setEnabled(false);
         botonera.add(btnOk);
 
         JButton btnFind = generateFindButton();
