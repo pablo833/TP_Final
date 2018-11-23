@@ -1,16 +1,14 @@
 package UI.PROGRAMA;
 
-import ENTIDADES.Productor;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.PRODUCTOR.ProductorTable;
 
 import javax.swing.*;
 import java.util.List;
 
-public class ListProgramasPanel extends JPanel{
+public class ListProgramasPanel extends JPanel {
     Handler handler;
 
     public ListProgramasPanel(Handler handler) {

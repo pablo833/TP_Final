@@ -1,12 +1,9 @@
 package UI;
 
-import java.util.List;
-import java.util.Vector;
-
-import BOS.AuspicianteBO;
 import BOS.*;
 import DAOS.impl.*;
 import ENTIDADES.*;
+import EXCEPTIONS.RadioException;
 import UI.AUSPICIANTE.AuspiciantePanel;
 import UI.AUSPICIANTE.ListAuspiciantePane;
 import UI.CONDUCTOR.ConductorPanel;
@@ -17,7 +14,9 @@ import UI.PROGRAMA.ListProgramasPanel;
 import UI.PROGRAMA.ProgramaPanel;
 import UI.USER.ListUserPanel;
 import UI.USER.UserPanel;
-import EXCEPTIONS.RadioException;
+
+import java.util.List;
+import java.util.Vector;
 
 public class Handler {
     private MainContianerFrame containerFrame;
@@ -25,9 +24,10 @@ public class Handler {
     private AuspicianteBO auspicianteBO;
     private ConductorBO conductorBO;
     private ProductorBO productorBO;
-    private  ProgramaBO programaBO;
-    private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usuario o contrasia invalidos";
-    private final String OPERACION_EXITOSA = "Operación exitos";
+    private ProgramaBO programaBO;
+    private ContratoBO contratoBO;
+    private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usuario o contrasenia invalidos";
+    private final String OPERACION_EXITOSA = "Operación exitosa";
 
     public Handler() {
         this.usuarioBO = new UsuarioBO();
@@ -40,6 +40,8 @@ public class Handler {
         this.productorBO.setDao(new ProductorDAOImpl());
         this.programaBO = new ProgramaBO();
         this.programaBO.setDao(new ProgramaDAOImpl());
+        this.contratoBO = new ContratoBO();
+        this.contratoBO.setDao(new ContratoDAOImpl());
     }
 
     public void initApp() {
@@ -414,10 +416,25 @@ public class Handler {
     }
 
     public void updatePrograma(Programa programa) throws RadioException {
+        try {
+            programaBO.update(programa);
+            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        } catch (Exception e1) {
+            CustomOptionPane.showErrorMessage(e1.getMessage());
+        }
     }
 
     public Programa getPrograma(String nombre) throws RadioException {
-        return null;
+        Programa programa = new Programa(nombre, null, null, null, null);
+        try {
+            programa = programaBO.getByNombre(programa);
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        }
+        return programa;
     }
 
     public void deletePrograma(Programa programa) throws RadioException {
@@ -427,4 +444,19 @@ public class Handler {
         return programaBO.getAll();
     }
 
+    public Vector getAuspicianteVector() throws RadioException {
+        Vector model = new Vector();
+
+        List<Auspiciante> auspiciantes = auspicianteBO.getAll();
+        for (Auspiciante a : auspiciantes) {
+            model.addElement(a);
+        }
+
+        return model;
+    }
+
+    public void createContrato(Contrato contrato) throws RadioException{
+
+        contratoBO.create(contrato);
+    }
 }

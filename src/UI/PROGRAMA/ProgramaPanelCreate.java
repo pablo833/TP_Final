@@ -14,10 +14,11 @@ public class ProgramaPanelCreate extends ProgramaPanel {
     }
 
     @Override
-    public Box generateBotonera() {
+    protected Box generateBotonera() {
         Box botonera = Box.createHorizontalBox();
         botonera.add(Box.createHorizontalGlue());
-        JButton btnOk = new JButton("Ok");
+         btnOk = new JButton("Ok");
+
         btnOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -38,4 +39,5 @@ public class ProgramaPanelCreate extends ProgramaPanel {
 
         return botonera;
     }
+
 }

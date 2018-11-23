@@ -1,7 +1,5 @@
 package DB;
 
-import sun.security.pkcs11.wrapper.CK_SSL3_RANDOM_DATA;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -82,7 +80,7 @@ public class DBManager {
         // createTable(ddlAuspicianteTable);
         //createTable(ddlConductorTable);
         //createTable(ddlPersonaTable);
-       // createTable(ddlProductorTable);
+        // createTable(ddlProductorTable);
         createTable(ddlProgramaTable);
     }
 

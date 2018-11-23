@@ -27,6 +27,8 @@ public class ProgramaPanel extends Panel {
     protected JComboBox cmbProductor;
     protected JButton btnOk;
     protected Programa programa;
+    protected JComboBox cmbAuspiciantes;
+    protected JButton btnAddAuspiciante;
 
     protected ProgramaPanel() {
 
@@ -75,6 +77,9 @@ public class ProgramaPanel extends Panel {
 
         Box boxProductor = getProductorBox();
 
+
+        Box boxAuspiciante = generateAuspicianteBox();
+
         Box botonera = generateBotonera();
 
         Box boxScroll = getjScrollPane();
@@ -91,12 +96,16 @@ public class ProgramaPanel extends Panel {
         panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(boxProductor);
         panel.add(Box.createVerticalStrut(verticalStructureSize));
+        panel.add(boxAuspiciante);
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(botonera);
 
         add(panel);
         add(boxScroll);
 
     }
+
+    protected Box generateAuspicianteBox(){ return null;}
 
     @Override
     protected Box generateBotonera() {
@@ -122,11 +131,11 @@ public class ProgramaPanel extends Panel {
                 if (programa != null) {
                     txthorario.setText(programa.getHorario());
                     txtValorSegundoAlAire.setText(programa.getValorSegundoAlAire().toString());
-                    cmbProductor = new JComboBox(getProductorVector());
-                    cmbProductor.setSelectedItem(programa.getConductor());
-                    cmbCondutor = new JComboBox(getConductorVector());
-                    cmbCondutor.setSelectedItem(programa.getConductor());
 
+                    cmbProductor.setSelectedItem(programa.getConductor());
+                    cmbCondutor.getModel().setSelectedItem(programa.getConductor());
+                    cmbCondutor.setSelectedItem(programa.getConductor());
+                    cmbProductor.getModel().setSelectedItem(programa.getProductor());
                     enableEditControls(true);
                     btnOk.setEnabled(true);
                 } else {
@@ -166,6 +175,7 @@ public class ProgramaPanel extends Panel {
         txtValorSegundoAlAire.setText(null);
         cmbProductor.setSelectedIndex(0);
         cmbCondutor.setSelectedIndex(0);
+        cmbAuspiciantes.setSelectedIndex(0);
     }
 
     protected void enableEditControls(boolean var) {
@@ -198,6 +208,12 @@ public class ProgramaPanel extends Panel {
         return crearCombo(horizontalStructureSize, "Conductor", cmbCondutor);
     }
 
+    protected Box getAuspicianteBox() {
+        cmbAuspiciantes = new JComboBox(getAuspicianteVector());
+
+        return crearCombo(horizontalStructureSize, "Auspiciante", cmbAuspiciantes, btnAddAuspiciante);
+    }
+
     private Vector getProductorVector() {
         Vector productorModel = new Vector();
 
@@ -222,6 +238,19 @@ public class ProgramaPanel extends Panel {
         }
 
         return conductorModel;
+    }
+
+    private Vector getAuspicianteVector() {
+        Vector auspicianteModel = new Vector();
+
+        try {
+            auspicianteModel = handler.getAuspicianteVector();
+
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        }
+
+        return auspicianteModel;
     }
 
     private Box getjScrollPane() {

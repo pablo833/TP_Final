@@ -30,4 +30,8 @@ public class Auspiciante {
         this.razonSocial = razonSocial;
     }
 
+    public String toString() {
+        return this.razonSocial;
+    }
+
 }

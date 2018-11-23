@@ -42,11 +42,19 @@ public class ProgramaBO {
         return getByNombre(programa) != null;
     }
 
-    private Programa getByNombre(Programa programa) throws RadioException {
+    public Programa getByNombre(Programa programa) throws RadioException {
         return (Programa) programaDAO.getByInternalID(programa);
     }
 
     public List<Programa> getAll() throws RadioException {
         return programaDAO.getAll();
+    }
+
+    public void update(Programa programa) throws RadioException {
+        if (esProgramaInValido(programa)) {
+            throw new RadioException(DATOS_OBLIGATORIOS_ERROR);
+        } else {
+            programaDAO.update(programa);
+        }
     }
 }

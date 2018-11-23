@@ -29,4 +29,10 @@ public class Contrato {
     public void setTiempoDePauta(int tiempoDePauta) {
         this.tiempoDePauta = tiempoDePauta;
     }
+
+    public Contrato(int programa, int auspiciante, int tiempoDePauta) {
+        this.programa = programa;
+        this.auspiciante = auspiciante;
+        this.tiempoDePauta = tiempoDePauta;
+    }
 }
