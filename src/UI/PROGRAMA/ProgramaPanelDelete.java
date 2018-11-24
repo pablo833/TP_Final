@@ -1,10 +1,12 @@
 package UI.PROGRAMA;
 
 import EXCEPTIONS.RadioException;
+import UI.AUSPICIANTE.AuspiciantesTable;
 import UI.CustomOptionPane;
 import UI.Handler;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

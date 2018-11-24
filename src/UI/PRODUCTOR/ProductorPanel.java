@@ -2,7 +2,6 @@ package UI.PRODUCTOR;
 
 import ENTIDADES.Productor;
 import EXCEPTIONS.RadioException;
-
 import UI.CustomOptionPane;
 import UI.Handler;
 import UI.Panel;
@@ -54,11 +53,11 @@ public class ProductorPanel extends Panel {
         boxTitle.add(lblTitle);
 
         txtNombre = new JTextField(columnSize);
-        Box boxUsername = crearCombo(horizontalStructureSize, "Nombre", txtNombre);
+        Box boxUsername = crearCombo("Nombre", txtNombre);
         txtApellido = new JTextField(columnSize);
-        Box boxApellido = crearCombo(horizontalStructureSize, "Apellido", txtApellido);
+        Box boxApellido = crearCombo("Apellido", txtApellido);
         txtDNI = new JTextField(columnSize);
-        Box boxDNI = crearCombo(horizontalStructureSize, "DNI", txtDNI);
+        Box boxDNI = crearCombo("DNI", txtDNI);
 
 
         Box botonera = generateBotonera();

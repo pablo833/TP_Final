@@ -1,10 +1,12 @@
 package UI.PROGRAMA;
 
 import EXCEPTIONS.RadioException;
+import UI.AUSPICIANTE.AuspiciantesTable;
 import UI.CustomOptionPane;
 import UI.Handler;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,7 +26,7 @@ public class ProgramaPanelUpdate extends ProgramaPanel {
                 try {
                     handler.updatePrograma(createPrograma());
                     btnOk.setEnabled(false);
-                     cleanJText();
+                    cleanJText();
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());
                 }
@@ -42,4 +44,5 @@ public class ProgramaPanelUpdate extends ProgramaPanel {
 
         return botonera;
     }
+
 }

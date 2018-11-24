@@ -78,7 +78,7 @@ public class ConductorDAOImpl extends AbstractImpl implements DAO<Conductor> {
     }
 
     @Override
-    public void delete(int codigo) throws RadioException {
+    public void delete(int codigo) {
 
     }
 

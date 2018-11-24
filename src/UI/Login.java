@@ -1,17 +1,10 @@
 package UI;
 
+import ENTIDADES.Usuario;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-
-import ENTIDADES.Usuario;
 
 public class Login extends Panel {
 
@@ -38,10 +31,10 @@ public class Login extends Panel {
         boxTitle.add(lblTitle);
 
         txtUsername = new JTextField(columnSize);
-        Box boxUsername = crearCombo(horizontalStructureSize, "Nombre de Usuario", txtUsername);
+        Box boxUsername = crearCombo("Nombre de Usuario", txtUsername);
 
         txtPassword = new JPasswordField(columnSize);
-        Box boxPassword = crearCombo(horizontalStructureSize, "Contrasenia", txtPassword);
+        Box boxPassword = crearCombo("Contrasenia", txtPassword);
 
         Box botonera = generateBotonera();
 

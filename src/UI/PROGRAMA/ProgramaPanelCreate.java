@@ -1,10 +1,12 @@
 package UI.PROGRAMA;
 
 import EXCEPTIONS.RadioException;
+import UI.AUSPICIANTE.AuspiciantesTable;
 import UI.CustomOptionPane;
 import UI.Handler;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -17,7 +19,7 @@ public class ProgramaPanelCreate extends ProgramaPanel {
     protected Box generateBotonera() {
         Box botonera = Box.createHorizontalBox();
         botonera.add(Box.createHorizontalGlue());
-         btnOk = new JButton("Ok");
+        btnOk = new JButton("Ok");
 
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -29,7 +31,7 @@ public class ProgramaPanelCreate extends ProgramaPanel {
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());
                 }
-              //  cleanJText();
+                //  cleanJText();
 
             }
         });
@@ -39,5 +41,13 @@ public class ProgramaPanelCreate extends ProgramaPanel {
 
         return botonera;
     }
+
+    @Override
+    protected Box getjScrollPane() {
+        Box box = Box.createHorizontalBox();
+        return box;
+
+    }
+
 
 }

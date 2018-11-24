@@ -42,6 +42,11 @@ public class DBManager {
             "conductor INTEGER, " +
             "productor INTEGER)";
 
+    private static String ddlContratoTable = "CREATE TABLE contratos (id INTEGER IDENTITY PRIMARY KEY," +
+            "programa INTEGER, " +
+            "auspiciante INTEGER, " +
+            "tiempoDePauta INTEGER)";
+
     public static Connection connect() {
         try {
             if (connection == null || connection.isClosed()) {
@@ -81,7 +86,8 @@ public class DBManager {
         //createTable(ddlConductorTable);
         //createTable(ddlPersonaTable);
         // createTable(ddlProductorTable);
-        createTable(ddlProgramaTable);
+        //createTable(ddlProgramaTable);
+        //createTable(ddlContratoTable);
     }
 
     private static void createTable(String query) {

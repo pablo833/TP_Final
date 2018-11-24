@@ -2,23 +2,23 @@ package ENTIDADES;
 
 public class Contrato {
 
-    private int programa;
-    private int auspiciante;
+    private Programa programa;
+    private Auspiciante auspiciante;
     private int tiempoDePauta;
 
-    public int getPrograma() {
+    public Programa getPrograma() {
         return programa;
     }
 
-    public void setPrograma(int programa) {
+    public void setPrograma(Programa programa) {
         this.programa = programa;
     }
 
-    public int getAuspiciante() {
+    public Auspiciante getAuspiciante() {
         return auspiciante;
     }
 
-    public void setAuspiciante(int auspiciante) {
+    public void setAuspiciante(Auspiciante auspiciante) {
         this.auspiciante = auspiciante;
     }
 
@@ -30,7 +30,7 @@ public class Contrato {
         this.tiempoDePauta = tiempoDePauta;
     }
 
-    public Contrato(int programa, int auspiciante, int tiempoDePauta) {
+    public Contrato(Programa programa, Auspiciante auspiciante, int tiempoDePauta) {
         this.programa = programa;
         this.auspiciante = auspiciante;
         this.tiempoDePauta = tiempoDePauta;

@@ -27,8 +27,6 @@ public class ProgramaPanel extends Panel {
     protected JComboBox cmbProductor;
     protected JButton btnOk;
     protected Programa programa;
-    protected JComboBox cmbAuspiciantes;
-    protected JButton btnAddAuspiciante;
 
     protected ProgramaPanel() {
 
@@ -58,27 +56,27 @@ public class ProgramaPanel extends Panel {
         return programaPanel;
     }
 
-    private void initUI(String title) {
+    protected void initUI(String title) {
 
         Box boxTitle = Box.createHorizontalBox();
         JLabel lblTitle = new JLabel(title);
         boxTitle.add(lblTitle);
 
         txtNombre = new JTextField(columnSize);
-        Box boxNombre = crearCombo(horizontalStructureSize, "Nombre", txtNombre);
+        Box boxNombre = crearCombo("Nombre", txtNombre);
 
         txthorario = new JTextField(columnSize);
-        Box boxHorario = crearCombo(horizontalStructureSize, "Horario", txthorario);
+        Box boxHorario = crearCombo("Horario", txthorario);
 
         txtValorSegundoAlAire = new JTextField(columnSize);
-        Box boxValorSegundoAlAire = crearCombo(horizontalStructureSize, "Valor segundo al aire", txtValorSegundoAlAire);
+        Box boxValorSegundoAlAire = crearCombo("Valor segundo al aire", txtValorSegundoAlAire);
 
         Box boxConductor = getConductorBox();
 
         Box boxProductor = getProductorBox();
 
 
-        Box boxAuspiciante = generateAuspicianteBox();
+        //Box boxAuspiciante = generateAuspicianteBox();
 
         Box botonera = generateBotonera();
 
@@ -96,16 +94,14 @@ public class ProgramaPanel extends Panel {
         panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(boxProductor);
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxAuspiciante);
+        //panel.add(boxAuspiciante);
         panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(botonera);
-
+        panel.add(boxScroll);
         add(panel);
-        add(boxScroll);
+        //   add(boxScroll);
 
     }
-
-    protected Box generateAuspicianteBox(){ return null;}
 
     @Override
     protected Box generateBotonera() {
@@ -175,7 +171,6 @@ public class ProgramaPanel extends Panel {
         txtValorSegundoAlAire.setText(null);
         cmbProductor.setSelectedIndex(0);
         cmbCondutor.setSelectedIndex(0);
-        cmbAuspiciantes.setSelectedIndex(0);
     }
 
     protected void enableEditControls(boolean var) {
@@ -185,7 +180,7 @@ public class ProgramaPanel extends Panel {
         cmbProductor.setEnabled(var);
     }
 
-    private AuspiciantesTable GetAuspiciantes() {
+    protected AuspiciantesTable GetAuspiciantes() {
         List<Auspiciante> auspiciantes = null;
         try {
             auspiciantes = handler.GetAuspiciantes();
@@ -199,19 +194,13 @@ public class ProgramaPanel extends Panel {
     private Box getProductorBox() {
         cmbProductor = new JComboBox(getProductorVector());
 
-        return crearCombo(horizontalStructureSize, "Productor", cmbProductor);
+        return crearCombo("Productor", cmbProductor);
     }
 
     private Box getConductorBox() {
         cmbCondutor = new JComboBox(getConductorVector());
 
-        return crearCombo(horizontalStructureSize, "Conductor", cmbCondutor);
-    }
-
-    protected Box getAuspicianteBox() {
-        cmbAuspiciantes = new JComboBox(getAuspicianteVector());
-
-        return crearCombo(horizontalStructureSize, "Auspiciante", cmbAuspiciantes, btnAddAuspiciante);
+        return crearCombo("Conductor", cmbCondutor);
     }
 
     private Vector getProductorVector() {
@@ -240,20 +229,7 @@ public class ProgramaPanel extends Panel {
         return conductorModel;
     }
 
-    private Vector getAuspicianteVector() {
-        Vector auspicianteModel = new Vector();
-
-        try {
-            auspicianteModel = handler.getAuspicianteVector();
-
-        } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
-        }
-
-        return auspicianteModel;
-    }
-
-    private Box getjScrollPane() {
+    protected Box getjScrollPane() {
         AuspiciantesTable auspiciantesTable = GetAuspiciantes();
         JTable tabla = new JTable(auspiciantesTable);
         JScrollPane scroll = new JScrollPane(tabla);
@@ -263,7 +239,7 @@ public class ProgramaPanel extends Panel {
         scroll.setMaximumSize(listSize);
         scroll.setPreferredSize(listSize);
 
-        return crearCombo(horizontalStructureSize, "Auspiciantes", scroll);
+        return crearCombo("Auspiciantes", scroll);
     }
 
 }

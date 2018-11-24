@@ -110,7 +110,7 @@ public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa> {
     }
 
     @Override
-    public void delete(int codigo) throws RadioException {
+    public void delete(int codigo) {
 
     }
 

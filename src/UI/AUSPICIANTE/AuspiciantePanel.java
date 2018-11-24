@@ -1,12 +1,14 @@
 package UI.AUSPICIANTE;
 
+import ENTIDADES.Auspiciante;
+import EXCEPTIONS.RadioException;
+import UI.CustomOptionPane;
+import UI.Handler;
+import UI.Panel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import UI.*;
-import ENTIDADES.Auspiciante;
-import EXCEPTIONS.RadioException;
 
 public class AuspiciantePanel extends Panel {
 
@@ -54,11 +56,11 @@ public class AuspiciantePanel extends Panel {
         boxTitle.add(lblTitle);
 
         txtRazonSocial = new JTextField(columnSize);
-        Box boxAuspiciante = crearCombo(horizontalStructureSize, "Razón Social", txtRazonSocial);
+        Box boxAuspiciante = crearCombo("Razón Social", txtRazonSocial);
 
         txtCodigoRazonSocial = new JTextField(columnSize);
         enableEditControls(false);
-        Box boxCodigoRazonSocial = crearCombo(horizontalStructureSize, "ID Razón Social", txtCodigoRazonSocial);
+        Box boxCodigoRazonSocial = crearCombo("ID Razón Social", txtCodigoRazonSocial);
 
         Box botonera = generateBotonera();
 

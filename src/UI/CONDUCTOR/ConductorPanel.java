@@ -1,12 +1,14 @@
 package UI.CONDUCTOR;
 
+import ENTIDADES.Conductor;
+import EXCEPTIONS.RadioException;
+import UI.CustomOptionPane;
+import UI.Handler;
+import UI.Panel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import UI.*;
-import ENTIDADES.Conductor;
-import EXCEPTIONS.RadioException;
 
 public class ConductorPanel extends Panel {
 
@@ -55,13 +57,13 @@ public class ConductorPanel extends Panel {
         boxTitle.add(lblTitle);
 
         txtNombre = new JTextField(columnSize);
-        Box boxUsername = crearCombo(horizontalStructureSize, "Nombre", txtNombre);
+        Box boxUsername = crearCombo("Nombre", txtNombre);
         txtApellido = new JTextField(columnSize);
-        Box boxApellido = crearCombo(horizontalStructureSize, "Apellido", txtApellido);
+        Box boxApellido = crearCombo("Apellido", txtApellido);
         txtDNI = new JTextField(columnSize);
-        Box boxDNI = crearCombo(horizontalStructureSize, "DNI", txtDNI);
+        Box boxDNI = crearCombo("DNI", txtDNI);
         txtSueldo = new JTextField(columnSize);
-        Box boxSueldo = crearCombo(horizontalStructureSize, "Sueldo", txtSueldo);
+        Box boxSueldo = crearCombo("Sueldo", txtSueldo);
 
         Box botonera = generateBotonera();
 

@@ -1,12 +1,14 @@
 package UI.USER;
 
+import ENTIDADES.Usuario;
+import EXCEPTIONS.RadioException;
+import UI.CustomOptionPane;
+import UI.Handler;
+import UI.Panel;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import UI.*;
-import ENTIDADES.Usuario;
-import EXCEPTIONS.RadioException;
 
 public abstract class UserPanel extends Panel {
 
@@ -55,16 +57,16 @@ public abstract class UserPanel extends Panel {
         boxTitle.add(lblTitle);
 
         txtUsername = new JTextField(columnSize);
-        Box boxUsername = crearCombo(horizontalStructureSize, "Nombre de Usuario", txtUsername);
+        Box boxUsername = crearCombo("Nombre de Usuario", txtUsername);
 
         txtFirstName = new JTextField(columnSize);
-        Box boxFirstName = crearCombo(horizontalStructureSize, "Nombre", txtFirstName);
+        Box boxFirstName = crearCombo("Nombre", txtFirstName);
 
         txtLastName = new JTextField(columnSize);
-        Box boxLastName = crearCombo(horizontalStructureSize, "Apellido", txtLastName);
+        Box boxLastName = crearCombo("Apellido", txtLastName);
 
         txtPassword = new JPasswordField(columnSize);
-        Box boxPassword = crearCombo(horizontalStructureSize, "Contrase�a", txtPassword);
+        Box boxPassword = crearCombo("Contrase�a", txtPassword);
 
         Box botonera = generateBotonera();
 

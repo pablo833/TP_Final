@@ -74,12 +74,17 @@ public class Programa {
         this.conductor = conductor;
         this.productor = productor;
     }
-    public Programa( String nombre, String horario, Double valorSegundoAlAire, Conductor conductor, Productor productor) {
+
+    public Programa(String nombre, String horario, Double valorSegundoAlAire, Conductor conductor, Productor productor) {
 
         this.nombre = nombre;
         this.horario = horario;
         this.valorSegundoAlAire = valorSegundoAlAire;
         this.conductor = conductor;
         this.productor = productor;
+    }
+
+    public String toString() {
+        return getNombre();
     }
 }

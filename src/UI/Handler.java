@@ -11,6 +11,7 @@ import UI.CONDUCTOR.ListConductoresPanel;
 import UI.PRODUCTOR.ListProductoresPanel;
 import UI.PRODUCTOR.ProductorPanel;
 import UI.PROGRAMA.ListProgramasPanel;
+import UI.PROGRAMA.ProgramaAuspiciantePanel;
 import UI.PROGRAMA.ProgramaPanel;
 import UI.USER.ListUserPanel;
 import UI.USER.UserPanel;
@@ -175,6 +176,10 @@ public class Handler {
         containerFrame.changePanel(new ListProgramasPanel(this));
     }
 
+    public void addProgramaAuspiciantePanel(){
+        containerFrame.changePanel(new ProgramaAuspiciantePanel(this));
+    }
+
     //USUARIOS
     public void createUser(Usuario user) throws RadioException {
 
@@ -223,7 +228,7 @@ public class Handler {
         return user;
     }
 
-    public Usuario getUser(Usuario usuario) throws RadioException {
+    public Usuario getUser(Usuario usuario) {
         Usuario userFound = null;
 
         try {
@@ -455,8 +460,20 @@ public class Handler {
         return model;
     }
 
-    public void createContrato(Contrato contrato) throws RadioException{
+    public void createContrato(Contrato contrato) throws RadioException {
 
         contratoBO.create(contrato);
+    }
+
+    public Vector getProgramasVector() throws  RadioException{
+        Vector model = new Vector();
+
+        List<Programa> programas = programaBO.getAll();
+
+        for (Programa p : programas) {
+            model.addElement(p);
+        }
+
+        return model;
     }
 }

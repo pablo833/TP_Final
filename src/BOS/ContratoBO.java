@@ -9,7 +9,7 @@ public class ContratoBO {
 
     private DAO contratoDAO;
 
-    public void setDao(ContratoDAOImpl contratoDAOImpl){
+    public void setDao(ContratoDAOImpl contratoDAOImpl) {
         this.contratoDAO = contratoDAOImpl;
     }
 

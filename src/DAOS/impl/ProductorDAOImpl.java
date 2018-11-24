@@ -72,7 +72,7 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
     }
 
     @Override
-    public void delete(int codigo) throws RadioException {
+    public void delete(int codigo) {
 
     }
 

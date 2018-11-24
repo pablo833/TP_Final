@@ -1,13 +1,8 @@
 package UI;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
 
 public class MainContianerFrame extends JFrame {
 
@@ -17,7 +12,7 @@ public class MainContianerFrame extends JFrame {
     private final String BAJA = "Baja";
     private final String MODIFICACION = "Modificación";
     private final String LISTAR = "Listar";
-
+    private final String CONTRATOS = "Contratos";
 
     public MainContianerFrame(String titulo, Handler handler) {
         super(titulo);
@@ -98,11 +93,20 @@ public class MainContianerFrame extends JFrame {
                 handler.addListProgrmasPane();
             }
         });
-        menuPrograma.add(menuItemAlta);
 
+        JMenuItem menuItemContratos = new JMenuItem(CONTRATOS);
+        menuItemContratos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+
+                handler.addProgramaAuspiciantePanel();
+            }
+        });
+        menuPrograma.add(menuItemAlta);
         menuPrograma.add(menuItemModificacion);
         menuPrograma.add(menuItemBaja);
         menuPrograma.add(menuItemListar);
+        menuPrograma.add(menuItemContratos);
 
         return menuPrograma;
     }

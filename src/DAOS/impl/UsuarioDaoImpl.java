@@ -98,7 +98,7 @@ public class UsuarioDaoImpl extends AbstractImpl implements DAO<Usuario> {
     }
 
     @Override
-    public void delete(int codigo) throws RadioException {
+    public void delete(int codigo) {
 
     }
 

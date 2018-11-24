@@ -70,7 +70,7 @@ public class AuspicianteDaoImpl extends AbstractImpl implements DAO<Auspiciante>
     }
 
     @Override
-    public void delete(int codigo) throws RadioException {
+    public void delete(int codigo) {
 
     }
 

@@ -9,32 +9,32 @@ import java.util.List;
 public class PersonaDAOImpl extends AbstractImpl implements DAO<Persona> {
 
     @Override
-    public void insert(Persona persona) throws RadioException {
+    public void insert(Persona persona) {
 
     }
 
     @Override
-    public void update(Persona persona) throws RadioException {
+    public void update(Persona persona) {
 
     }
 
     @Override
-    public Persona get(int codigo) throws RadioException {
+    public Persona get(int codigo) {
         return null;
     }
 
     @Override
-    public void delete(int codigo) throws RadioException {
+    public void delete(int codigo) {
 
     }
 
     @Override
-    public List<Persona> getAll() throws RadioException {
+    public List<Persona> getAll() {
         return null;
     }
 
     @Override
-    public Persona getByInternalID(Persona persona) throws RadioException {
+    public Persona getByInternalID(Persona persona) {
         return null;
     }
 }
