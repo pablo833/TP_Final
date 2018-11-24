@@ -27,7 +27,7 @@ public class Handler {
     private ProductorBO productorBO;
     private ProgramaBO programaBO;
     private ContratoBO contratoBO;
-    private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usuario o contrasenia invalidos";
+    private final String USUARIO_CONTRASENIA_INEXISTENTE = "Usuario o contraseña invalidos";
     private final String OPERACION_EXITOSA = "Operación exitosa";
 
     public Handler() {
@@ -51,15 +51,9 @@ public class Handler {
     }
 
     public void login(Usuario user) throws RadioException {
-        Usuario userFound = null;
-
-        containerFrame.removePanel();
-        containerFrame.setMenuBarVisible();
 
         try {
-            userFound = usuarioBO.getByUserName(user);
-
-            if (userFound == null) {
+            if (usuarioBO.getByUserName(user) == null) {
                 CustomOptionPane.showErrorMessage(USUARIO_CONTRASENIA_INEXISTENTE);
             } else {
                 containerFrame.removePanel();
@@ -81,15 +75,15 @@ public class Handler {
     //
     public void addCreateUserPane() {
 
-        containerFrame.changePanel(UserPanel.create(this, Panel.PanelMode.CREATE));
+        containerFrame.changePanel(UserPanel.create(this, AbstractPanel.PanelMode.CREATE));
     }
 
     public void addCreateUpdateUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, Panel.PanelMode.UPDATE));
+        containerFrame.changePanel(UserPanel.create(this, AbstractPanel.PanelMode.UPDATE));
     }
 
     public void addCreateDeleteUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, Panel.PanelMode.DELETE));
+        containerFrame.changePanel(UserPanel.create(this, AbstractPanel.PanelMode.DELETE));
     }
 
     public void addListUsersPane() {
@@ -101,15 +95,15 @@ public class Handler {
     //AUSPICIANTES
     //
     public void addCreateAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, Panel.PanelMode.CREATE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, AbstractPanel.PanelMode.CREATE));
     }
 
     public void addUpdateAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, Panel.PanelMode.UPDATE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, AbstractPanel.PanelMode.UPDATE));
     }
 
     public void addDeleteAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, Panel.PanelMode.DELETE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, AbstractPanel.PanelMode.DELETE));
     }
 
     public void addListAuspiciantePane() {
@@ -121,15 +115,15 @@ public class Handler {
     //CONDUCTORES
     //
     public void addCreateConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, Panel.PanelMode.CREATE));
+        containerFrame.changePanel(ConductorPanel.create(this, AbstractPanel.PanelMode.CREATE));
     }
 
     public void addUpdateConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, Panel.PanelMode.UPDATE));
+        containerFrame.changePanel(ConductorPanel.create(this, AbstractPanel.PanelMode.UPDATE));
     }
 
     public void addDeleteConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, Panel.PanelMode.DELETE));
+        containerFrame.changePanel(ConductorPanel.create(this, AbstractPanel.PanelMode.DELETE));
     }
 
     public void addListConductoresPane() {
@@ -141,15 +135,15 @@ public class Handler {
     //PRODUCTORES
     //
     public void addCreateProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, Panel.PanelMode.CREATE));
+        containerFrame.changePanel(ProductorPanel.create(this, AbstractPanel.PanelMode.CREATE));
     }
 
     public void addUpdateProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, Panel.PanelMode.UPDATE));
+        containerFrame.changePanel(ProductorPanel.create(this, AbstractPanel.PanelMode.UPDATE));
     }
 
     public void addDeleteProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, Panel.PanelMode.DELETE));
+        containerFrame.changePanel(ProductorPanel.create(this, AbstractPanel.PanelMode.DELETE));
     }
 
     public void addListProductoresPane() {
@@ -161,22 +155,22 @@ public class Handler {
     //PROGRAMAS
     //
     public void addCreateProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, Panel.PanelMode.CREATE));
+        containerFrame.changePanel(ProgramaPanel.create(this, AbstractPanel.PanelMode.CREATE));
     }
 
     public void addCreateUpdateProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, Panel.PanelMode.UPDATE));
+        containerFrame.changePanel(ProgramaPanel.create(this, AbstractPanel.PanelMode.UPDATE));
     }
 
     public void addCreateDeleteProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, Panel.PanelMode.DELETE));
+        containerFrame.changePanel(ProgramaPanel.create(this, AbstractPanel.PanelMode.DELETE));
     }
 
     public void addListProgrmasPane() {
         containerFrame.changePanel(new ListProgramasPanel(this));
     }
 
-    public void addProgramaAuspiciantePanel(){
+    public void addProgramaAuspiciantePanel() {
         containerFrame.changePanel(new ProgramaAuspiciantePanel(this));
     }
 
@@ -465,7 +459,7 @@ public class Handler {
         contratoBO.create(contrato);
     }
 
-    public Vector getProgramasVector() throws  RadioException{
+    public Vector getProgramasVector() throws RadioException {
         Vector model = new Vector();
 
         List<Programa> programas = programaBO.getAll();
@@ -475,5 +469,18 @@ public class Handler {
         }
 
         return model;
+    }
+
+    public List<Contrato> GetContratos(Programa programa) throws RadioException {
+
+        return contratoBO.getByPrograma(programa);
+    }
+
+    public void deleteContract(Contrato contrato) {
+        try {
+            contratoBO.delete(contrato);
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        }
     }
 }

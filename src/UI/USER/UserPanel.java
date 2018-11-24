@@ -4,13 +4,13 @@ import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.Panel;
+import UI.AbstractPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public abstract class UserPanel extends Panel {
+public abstract class UserPanel extends AbstractPanel {
 
     protected Handler handler;
 

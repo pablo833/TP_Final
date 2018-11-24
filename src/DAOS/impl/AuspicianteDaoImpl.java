@@ -1,17 +1,13 @@
 package DAOS.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-
 import DAOS.DAO;
 import DB.DBManager;
 import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuspicianteDaoImpl extends AbstractImpl implements DAO<Auspiciante> {
     private final String AUSPICIANTE_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de AUSPICIANTES";
@@ -51,21 +47,39 @@ public class AuspicianteDaoImpl extends AbstractImpl implements DAO<Auspiciante>
 
     @Override
     public Auspiciante get(int codigo) throws RadioException {
+        Auspiciante newAuspiciante = null;
+
         String query = "SELECT * FROM auspiciantes where id = ?";
 
         Connection connection = DBManager.connect();
 
-        PreparedStatement dml;
         try {
-            dml = connection.prepareStatement(query);
+            PreparedStatement dml = connection.prepareStatement(query);
+
             dml.setInt(1, codigo);
 
-            executeQuery(connection, dml);
-        } catch (SQLException e) {
-            throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e);
-        }
+            dml.executeQuery();
+            ResultSet rs = dml.getResultSet();
 
-        return null;
+            while (rs.next()) {
+                newAuspiciante = new Auspiciante(rs.getInt("id"), rs.getString("razonSocial"));
+
+            }
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e1);
+            }
+            throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e2) {
+                throw new RadioException(AUSPICIANTE_NOT_FOUND_ERRROR, e2);
+            }
+        }
+        return newAuspiciante;
 
     }
 

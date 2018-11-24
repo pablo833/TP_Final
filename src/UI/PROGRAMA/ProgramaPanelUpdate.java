@@ -1,12 +1,10 @@
 package UI.PROGRAMA;
 
 import EXCEPTIONS.RadioException;
-import UI.AUSPICIANTE.AuspiciantesTable;
 import UI.CustomOptionPane;
 import UI.Handler;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,9 +22,15 @@ public class ProgramaPanelUpdate extends ProgramaPanel {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    handler.updatePrograma(createPrograma());
-                    btnOk.setEnabled(false);
-                    cleanJText();
+                    if (COMMONS.Utils.isNumeric(txtValorSegundoAlAire.getText())) {
+                        handler.updatePrograma(createPrograma());
+                        btnOk.setEnabled(false);
+                        cleanJText();
+                    } else {
+                        txtValorSegundoAlAire.grabFocus();
+                        CustomOptionPane.showErrorMessage("El valor del segundo al aiere debe ser númerico");
+                    }
+
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());
                 }

@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Login extends Panel {
+public class Login extends AbstractPanel {
 
     private final int horizontalStructureSize = 10;
     JTextField txtUsername = null;

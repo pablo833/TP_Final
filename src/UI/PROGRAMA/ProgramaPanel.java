@@ -6,9 +6,9 @@ import ENTIDADES.Productor;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 import UI.AUSPICIANTE.AuspiciantesTable;
+import UI.AbstractPanel;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.Panel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import java.util.Vector;
 
-public class ProgramaPanel extends Panel {
+public class ProgramaPanel extends AbstractPanel {
     protected Handler handler;
 
     protected JTextField txtNombre;
@@ -37,7 +37,7 @@ public class ProgramaPanel extends Panel {
         initUI(title);
     }
 
-    public static ProgramaPanel create(Handler handler, Panel.PanelMode action) {
+    public static ProgramaPanel create(Handler handler, AbstractPanel.PanelMode action) {
         ProgramaPanel programaPanel = null;
         switch (action) {
             case CREATE:
@@ -75,9 +75,6 @@ public class ProgramaPanel extends Panel {
 
         Box boxProductor = getProductorBox();
 
-
-        //Box boxAuspiciante = generateAuspicianteBox();
-
         Box botonera = generateBotonera();
 
         Box boxScroll = getjScrollPane();
@@ -94,12 +91,10 @@ public class ProgramaPanel extends Panel {
         panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(boxProductor);
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        //panel.add(boxAuspiciante);
         panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(botonera);
         panel.add(boxScroll);
         add(panel);
-        //   add(boxScroll);
 
     }
 

@@ -4,13 +4,13 @@ import ENTIDADES.Productor;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.Panel;
+import UI.AbstractPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProductorPanel extends Panel {
+public class ProductorPanel extends AbstractPanel {
 
     protected Handler handler;
 
@@ -26,7 +26,7 @@ public class ProductorPanel extends Panel {
         unitUI(title);
     }
 
-    public static ProductorPanel create(Handler handler, Panel.PanelMode action) {
+    public static ProductorPanel create(Handler handler, AbstractPanel.PanelMode action) {
 
         ProductorPanel productorPanel = null;
         switch (action) {

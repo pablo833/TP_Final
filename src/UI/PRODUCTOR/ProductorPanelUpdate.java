@@ -22,9 +22,16 @@ public class ProductorPanelUpdate extends ProductorPanel {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 try {
-                    handler.updateProductor(createProductor());
-                    btnOk.setEnabled(false);
-                    cleanJText();
+
+                    if (COMMONS.Utils.isNumeric(txtDNI.getText())) {
+                        handler.updateProductor(createProductor());
+                        btnOk.setEnabled(false);
+                        cleanJText();
+
+                    } else {
+                        txtDNI.grabFocus();
+                        CustomOptionPane.showErrorMessage("El DNI debe ser númerico");
+                    }
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());
                 }

@@ -4,13 +4,13 @@ import ENTIDADES.Conductor;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.Panel;
+import UI.AbstractPanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConductorPanel extends Panel {
+public class ConductorPanel extends AbstractPanel {
 
     protected Handler handler;
 
@@ -30,7 +30,7 @@ public class ConductorPanel extends Panel {
         unitUI(title);
     }
 
-    public static ConductorPanel create(Handler handler, Panel.PanelMode action) {
+    public static ConductorPanel create(Handler handler, AbstractPanel.PanelMode action) {
 
         ConductorPanel conductorPanel = null;
         switch (action) {

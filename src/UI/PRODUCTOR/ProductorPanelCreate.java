@@ -14,7 +14,7 @@ public class ProductorPanelCreate extends ProductorPanel {
     }
 
     @Override
-    protected Box generateBotonera(){
+    protected Box generateBotonera() {
         Box botonera = Box.createHorizontalBox();
         botonera.add(Box.createHorizontalGlue());
         JButton btnOk = new JButton("Ok");
@@ -23,7 +23,14 @@ public class ProductorPanelCreate extends ProductorPanel {
             public void actionPerformed(ActionEvent arg0) {
 
                 try {
-                    handler.createProductor(createProductor());
+                    if (COMMONS.Utils.isNumeric(txtDNI.getText())) {
+                        handler.createProductor(createProductor());
+                        cleanJText();
+                    } else {
+                        txtDNI.grabFocus();
+                        CustomOptionPane.showErrorMessage("El DNI debe ser númerico");
+                    }
+
 
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());
