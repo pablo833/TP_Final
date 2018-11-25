@@ -1,18 +1,13 @@
 package DAOS.impl;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
 import DAOS.DAO;
 import DB.DBManager;
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsuarioDaoImpl extends AbstractImpl implements DAO<Usuario> {
 

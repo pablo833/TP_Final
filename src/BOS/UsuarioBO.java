@@ -1,11 +1,11 @@
 package BOS;
 
-import java.util.List;
-
 import DAOS.DAO;
 import DAOS.impl.UsuarioDaoImpl;
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
+
+import java.util.List;
 
 public class UsuarioBO {
 
