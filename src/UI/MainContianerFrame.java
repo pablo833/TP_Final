@@ -35,7 +35,6 @@ public class MainContianerFrame extends JFrame {
     }
 
     private void showLogin() {
-        // handler.showLogin();
         Login li = new Login(handler);
         changePanel(li);
     }

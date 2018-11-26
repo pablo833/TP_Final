@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Login extends AbstractPanel {
+public class Login extends basePanel {
 
     private final int horizontalStructureSize = 10;
     JTextField txtUsername = null;
@@ -22,10 +22,6 @@ public class Login extends AbstractPanel {
 
     private void initUI() {
 
-        final int columnSize = 30;
-        final int verticalStructureSize = 20;
-        final int horizontalStructureSize = 10;
-
         Box boxTitle = Box.createHorizontalBox();
         JLabel lblTitle = new JLabel("Login");
         boxTitle.add(lblTitle);
@@ -34,7 +30,7 @@ public class Login extends AbstractPanel {
         Box boxUsername = crearCombo("Nombre de Usuario", txtUsername);
 
         txtPassword = new JPasswordField(columnSize);
-        Box boxPassword = crearCombo("Contrasenia", txtPassword);
+        Box boxPassword = crearCombo("Contraseña", txtPassword);
 
         Box botonera = generateBotonera();
 
@@ -65,14 +61,16 @@ public class Login extends AbstractPanel {
 
                     handler.login(createUser());
 
-                } catch (Exception e) {// (RadioException e) {
+                } catch (Exception e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());
                 }
 
             }
 
             private Usuario createUser() {
-                Usuario user = new Usuario(txtUsername.getText(), String.valueOf(txtPassword.getPassword()), null,
+                Usuario user = new Usuario(txtUsername.getText(),
+                        String.valueOf(txtPassword.getPassword()),
+                        null,
                         null);
                 return user;
             }

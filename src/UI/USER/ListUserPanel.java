@@ -33,8 +33,8 @@ public class ListUserPanel extends JPanel {
     }
 
     private UsersTable GetUsuarios() throws RadioException {
+
         List<Usuario> users = handler.GetUsuarios();
-        // Usuario.getAll();
         return new UsersTable(users);
     }
 }

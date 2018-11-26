@@ -9,16 +9,17 @@ import java.util.List;
 
 public class ProductorBO {
 
-    private DAO productorDAO;
-    private final String CONDUCTOR_EXISTENTE_ERROR = "Ya hay un usuario con ese nombre de usuario";
+    private final String CONDUCTOR_EXISTENTE_ERROR = "Ya hay un PRODUCTOR con ese nombre.";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del productor";
+
+    private DAO productorDAO;
 
     public void setDao(ProductorDAOImpl productorDaoImpl) {
         this.productorDAO = productorDaoImpl;
     }
 
     public Productor getByDNI(Productor productor) throws RadioException {
-        return (Productor)productorDAO.getByInternalID(productor);
+        return (Productor) productorDAO.getByInternalID(productor);
 
     }
 

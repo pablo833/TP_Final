@@ -9,19 +9,19 @@ import java.util.List;
 
 public class AuspicianteBO {
 
-    private final String AUSPICIANTE_EXISTENTE_ERROR = "Ya hay un AUSPICIANTE con ese nombre ";
+    private final String AUSPICIANTE_EXISTENTE_ERROR = "Ya hay un AUSPICIANTE con ese nombre.";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del AUSPICIANTE";
 
     private DAO auspicianteDAO;
 
-    public Auspiciante getByRazonSocial(Auspiciante auspiciante) throws RadioException {
-
-        return (Auspiciante) auspicianteDAO.getByInternalID(auspiciante);
-    }
-
     public void setDao(AuspicianteDaoImpl auspicianteDaoImp) {
 
         this.auspicianteDAO = auspicianteDaoImp;
+    }
+
+    public Auspiciante getByRazonSocial(Auspiciante auspiciante) throws RadioException {
+
+        return (Auspiciante) auspicianteDAO.getByInternalID(auspiciante);
     }
 
     public void create(Auspiciante auspiciante) throws RadioException {

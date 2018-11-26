@@ -8,13 +8,19 @@ import EXCEPTIONS.RadioException;
 import java.util.List;
 
 public class ProgramaBO {
+
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del PROGRAMA";
 
-    private final String PROGRAMA_EXISTENTE_ERROR = "Ya hay un PROGRAMA con ese nombre ";
+    private final String PROGRAMA_EXISTENTE_ERROR = "Ya hay un PROGRAMA con ese nombre.";
+
     private DAO programaDAO;
 
     public void setDao(ProgramaDAOImpl programaDaoImp) {
         this.programaDAO = programaDaoImp;
+    }
+
+    public Programa getByNombre(Programa programa) throws RadioException {
+        return (Programa) programaDAO.getByInternalID(programa);
     }
 
     public void create(Programa programa) throws RadioException {
@@ -40,10 +46,6 @@ public class ProgramaBO {
 
     private boolean doesExistsPrograma(Programa programa) throws RadioException {
         return getByNombre(programa) != null;
-    }
-
-    public Programa getByNombre(Programa programa) throws RadioException {
-        return (Programa) programaDAO.getByInternalID(programa);
     }
 
     public List<Programa> getAll() throws RadioException {

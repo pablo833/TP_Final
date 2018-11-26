@@ -35,7 +35,7 @@ public class ContratoBO {
         return contrato.getTiempoDePauta() > 0;
     }
 
-    public void delete(Contrato contrato) throws RadioException{
+    public void delete(Contrato contrato) throws RadioException {
         contratoDAO.delete(contrato.getCodigo());
     }
 }

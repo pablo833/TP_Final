@@ -4,13 +4,8 @@ import javax.swing.JOptionPane;
 
 public class CustomOptionPane extends JOptionPane {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-
 	public static void showInformationMessage(String msg) {
-		JOptionPane.showMessageDialog(null, msg, "Atención", JOptionPane.INFORMATION_MESSAGE);
+		JOptionPane.showMessageDialog(null, msg, "AtenciÃ³n", JOptionPane.INFORMATION_MESSAGE);
 	}
 
 	public static void showErrorMessage(String msg) {

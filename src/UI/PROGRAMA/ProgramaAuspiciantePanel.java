@@ -4,9 +4,9 @@ import ENTIDADES.Auspiciante;
 import ENTIDADES.Contrato;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
-import UI.AbstractPanel;
 import UI.CustomOptionPane;
 import UI.Handler;
+import UI.basePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class ProgramaAuspiciantePanel extends AbstractPanel {
+public class ProgramaAuspiciantePanel extends basePanel {
     private Handler handler;
     private JComboBox cmbPrograma;
-    protected JComboBox cmbAuspiciantes;
-    protected JButton btnAddAuspiciante;
-    protected JButton btnRemoveAuspiciante;
+    private JComboBox cmbAuspiciantes;
+    private JButton btnAddAuspiciante;
+    private JButton btnRemoveAuspiciante;
     private JTextField txtNombre;
     private JTextField txtConductor;
     private JTextField txtProductor;

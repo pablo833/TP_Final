@@ -9,16 +9,17 @@ import java.util.List;
 
 public class ConductorBO {
 
-    private DAO conductorDAO;
-    private final String CONDUCTOR_EXISTENTE_ERROR = "Ya hay un usuario con ese nombre de usuario";
+    private final String CONDUCTOR_EXISTENTE_ERROR = "Ya hay un CONDUCTOR con ese nombre de usuario";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del conductor";
+
+    private DAO conductorDAO;
 
     public void setDao(ConductorDAOImpl conductorDaoImpl) {
         this.conductorDAO = conductorDaoImpl;
     }
 
     public Conductor getByDNI(Conductor conductor) throws RadioException {
-        return (Conductor)conductorDAO.getByInternalID(conductor);
+        return (Conductor) conductorDAO.getByInternalID(conductor);
 
     }
 

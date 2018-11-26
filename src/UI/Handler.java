@@ -75,15 +75,15 @@ public class Handler {
     //
     public void addCreateUserPane() {
 
-        containerFrame.changePanel(UserPanel.create(this, AbstractPanel.PanelMode.CREATE));
+        containerFrame.changePanel(UserPanel.create(this, basePanel.PanelMode.CREATE));
     }
 
     public void addCreateUpdateUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, AbstractPanel.PanelMode.UPDATE));
+        containerFrame.changePanel(UserPanel.create(this, basePanel.PanelMode.UPDATE));
     }
 
     public void addCreateDeleteUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, AbstractPanel.PanelMode.DELETE));
+        containerFrame.changePanel(UserPanel.create(this, basePanel.PanelMode.DELETE));
     }
 
     public void addListUsersPane() {
@@ -95,15 +95,15 @@ public class Handler {
     //AUSPICIANTES
     //
     public void addCreateAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, AbstractPanel.PanelMode.CREATE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, basePanel.PanelMode.CREATE));
     }
 
     public void addUpdateAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, AbstractPanel.PanelMode.UPDATE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, basePanel.PanelMode.UPDATE));
     }
 
     public void addDeleteAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, AbstractPanel.PanelMode.DELETE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, basePanel.PanelMode.DELETE));
     }
 
     public void addListAuspiciantePane() {
@@ -115,15 +115,15 @@ public class Handler {
     //CONDUCTORES
     //
     public void addCreateConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, AbstractPanel.PanelMode.CREATE));
+        containerFrame.changePanel(ConductorPanel.create(this, basePanel.PanelMode.CREATE));
     }
 
     public void addUpdateConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, AbstractPanel.PanelMode.UPDATE));
+        containerFrame.changePanel(ConductorPanel.create(this, basePanel.PanelMode.UPDATE));
     }
 
     public void addDeleteConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, AbstractPanel.PanelMode.DELETE));
+        containerFrame.changePanel(ConductorPanel.create(this, basePanel.PanelMode.DELETE));
     }
 
     public void addListConductoresPane() {
@@ -135,15 +135,15 @@ public class Handler {
     //PRODUCTORES
     //
     public void addCreateProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, AbstractPanel.PanelMode.CREATE));
+        containerFrame.changePanel(ProductorPanel.create(this, basePanel.PanelMode.CREATE));
     }
 
     public void addUpdateProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, AbstractPanel.PanelMode.UPDATE));
+        containerFrame.changePanel(ProductorPanel.create(this, basePanel.PanelMode.UPDATE));
     }
 
     public void addDeleteProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, AbstractPanel.PanelMode.DELETE));
+        containerFrame.changePanel(ProductorPanel.create(this, basePanel.PanelMode.DELETE));
     }
 
     public void addListProductoresPane() {
@@ -155,15 +155,15 @@ public class Handler {
     //PROGRAMAS
     //
     public void addCreateProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, AbstractPanel.PanelMode.CREATE));
+        containerFrame.changePanel(ProgramaPanel.create(this, basePanel.PanelMode.CREATE));
     }
 
     public void addCreateUpdateProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, AbstractPanel.PanelMode.UPDATE));
+        containerFrame.changePanel(ProgramaPanel.create(this, basePanel.PanelMode.UPDATE));
     }
 
     public void addCreateDeleteProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, AbstractPanel.PanelMode.DELETE));
+        containerFrame.changePanel(ProgramaPanel.create(this, basePanel.PanelMode.DELETE));
     }
 
     public void addListProgrmasPane() {
@@ -182,8 +182,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -195,8 +193,6 @@ public class Handler {
 
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -207,8 +203,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -248,9 +242,7 @@ public class Handler {
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
         }
-
         return auspicianteFound;
-
     }
 
     public void createAuspiciante(Auspiciante auspiciante) throws RadioException {
@@ -260,8 +252,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -273,13 +263,17 @@ public class Handler {
 
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
-    public List<Auspiciante> GetAuspiciantes() throws RadioException {
-        return auspicianteBO.getAll();
+    public List<Auspiciante> GetAuspiciantes() {
+        List<Auspiciante> auspiciantes = null;
+        try {
+            auspiciantes = auspicianteBO.getAll();
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
+        }
+        return auspiciantes;
     }
 
     //CONDUCTORES
@@ -299,8 +293,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -311,8 +303,6 @@ public class Handler {
 
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -322,8 +312,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -331,19 +319,21 @@ public class Handler {
         return conductorBO.getAll();
     }
 
-    public Vector getConductoresVector() throws RadioException {
+    public Vector getConductoresVector() {
         Vector model = new Vector();
-
-        List<Conductor> conductores = conductorBO.getAll();
-        for (Conductor c : conductores) {
-            model.addElement(c);
+        try {
+            List<Conductor> conductores = conductorBO.getAll();
+            for (Conductor c : conductores) {
+                model.addElement(c);
+            }
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
         }
-
         return model;
     }
 
     //PRODUCTORES
-    public Productor getProductor(Integer dni) throws RadioException {
+    public Productor getProductor(Integer dni) {
         Productor productor = new Productor(null, null, dni);
         try {
             productor = productorBO.getByDNI(productor);
@@ -351,7 +341,6 @@ public class Handler {
             CustomOptionPane.showErrorMessage(e.getMessage());
         }
         return productor;
-
     }
 
     public void createProductor(Productor productor) throws RadioException {
@@ -360,8 +349,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -371,8 +358,6 @@ public class Handler {
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -383,8 +368,6 @@ public class Handler {
 
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -392,25 +375,27 @@ public class Handler {
         return productorBO.getAll();
     }
 
-    public Vector getProductoresVector() throws RadioException {
+    public Vector getProductoresVector() {
         Vector model = new Vector();
+        try {
+            List<Productor> productores = productorBO.getAll();
+            for (Productor p : productores) {
+                model.addElement(p);
+            }
 
-        List<Productor> productores = productorBO.getAll();
-        for (Productor p : productores) {
-            model.addElement(p);
+        } catch (RadioException e) {
+            CustomOptionPane.showErrorMessage(e.getMessage());
         }
-
         return model;
     }
 
+    //PROGRAMAS
     public void createPrograma(Programa programa) throws RadioException {
         try {
             programaBO.create(programa);
             CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -421,8 +406,6 @@ public class Handler {
 
         } catch (RadioException e) {
             CustomOptionPane.showErrorMessage(e.getMessage());
-        } catch (Exception e1) {
-            CustomOptionPane.showErrorMessage(e1.getMessage());
         }
     }
 
@@ -454,6 +437,7 @@ public class Handler {
         return model;
     }
 
+    //CONTRATOS
     public void createContrato(Contrato contrato) throws RadioException {
 
         contratoBO.create(contrato);

@@ -1,16 +1,15 @@
 package UI.PRODUCTOR;
 
 import ENTIDADES.Productor;
-import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.AbstractPanel;
+import UI.basePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProductorPanel extends AbstractPanel {
+public class ProductorPanel extends basePanel {
 
     protected Handler handler;
 
@@ -26,7 +25,7 @@ public class ProductorPanel extends AbstractPanel {
         unitUI(title);
     }
 
-    public static ProductorPanel create(Handler handler, AbstractPanel.PanelMode action) {
+    public static ProductorPanel create(Handler handler, basePanel.PanelMode action) {
 
         ProductorPanel productorPanel = null;
         switch (action) {
@@ -90,12 +89,7 @@ public class ProductorPanel extends AbstractPanel {
             public void actionPerformed(ActionEvent arg0) {
 
                 productor = null;
-                try {
-                    productor = handler.getProductor(Integer.valueOf(txtDNI.getText()));
-
-                } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
-                }
+                productor = handler.getProductor(Integer.valueOf(txtDNI.getText()));
 
                 if (productor != null) {
                     txtNombre.setText(productor.getNombre());

@@ -102,11 +102,11 @@ public class UsuarioDaoImpl extends AbstractImpl implements DAO<Usuario> {
 
         List<Usuario> users = new ArrayList<>();
 
-        String sql = "SELECT * FROM users";
-        Connection c = DBManager.connect();
+        String query = "SELECT * FROM users";
+        Connection connection = DBManager.connect();
         try {
-            Statement s = c.createStatement();
-            ResultSet rs = s.executeQuery(sql);
+            Statement s = connection.createStatement();
+            ResultSet rs = s.executeQuery(query);
 
             while (rs.next()) {
                 Usuario user = new Usuario(rs.getInt("id"),
@@ -116,14 +116,14 @@ public class UsuarioDaoImpl extends AbstractImpl implements DAO<Usuario> {
             }
         } catch (SQLException e) {
             try {
-                c.rollback();
+                connection.rollback();
             } catch (SQLException e1) {
                 // no hago nada
             }
             throw new RadioException(USER_NOT_FOUND_ERRROR, e);
         } finally {
             try {
-                c.close();
+                connection.close();
 
             } catch (SQLException e1) {
                 throw new RadioException(USER_NOT_FOUND_ERRROR, e1);

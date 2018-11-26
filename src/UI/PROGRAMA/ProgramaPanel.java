@@ -1,23 +1,20 @@
 package UI.PROGRAMA;
 
-import ENTIDADES.Auspiciante;
 import ENTIDADES.Conductor;
 import ENTIDADES.Productor;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 import UI.AUSPICIANTE.AuspiciantesTable;
-import UI.AbstractPanel;
 import UI.CustomOptionPane;
 import UI.Handler;
+import UI.basePanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
-import java.util.Vector;
 
-public class ProgramaPanel extends AbstractPanel {
+public class ProgramaPanel extends basePanel {
     protected Handler handler;
 
     protected JTextField txtNombre;
@@ -37,7 +34,7 @@ public class ProgramaPanel extends AbstractPanel {
         initUI(title);
     }
 
-    public static ProgramaPanel create(Handler handler, AbstractPanel.PanelMode action) {
+    public static ProgramaPanel create(Handler handler, basePanel.PanelMode action) {
         ProgramaPanel programaPanel = null;
         switch (action) {
             case CREATE:
@@ -175,57 +172,20 @@ public class ProgramaPanel extends AbstractPanel {
         cmbProductor.setEnabled(var);
     }
 
-    protected AuspiciantesTable GetAuspiciantes() {
-        List<Auspiciante> auspiciantes = null;
-        try {
-            auspiciantes = handler.GetAuspiciantes();
-        } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
-        }
-
-        return new AuspiciantesTable(auspiciantes);
-    }
-
     private Box getProductorBox() {
-        cmbProductor = new JComboBox(getProductorVector());
+        cmbProductor = new JComboBox(handler.getProductoresVector());
 
         return crearCombo("Productor", cmbProductor);
     }
 
     private Box getConductorBox() {
-        cmbCondutor = new JComboBox(getConductorVector());
+        cmbCondutor = new JComboBox(handler.getConductoresVector());
 
         return crearCombo("Conductor", cmbCondutor);
     }
 
-    private Vector getProductorVector() {
-        Vector productorModel = new Vector();
-
-        try {
-            productorModel = handler.getProductoresVector();
-
-        } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
-        }
-
-        return productorModel;
-    }
-
-    private Vector getConductorVector() {
-        Vector conductorModel = new Vector();
-
-        try {
-            conductorModel = handler.getConductoresVector();
-
-        } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
-        }
-
-        return conductorModel;
-    }
-
     protected Box getjScrollPane() {
-        AuspiciantesTable auspiciantesTable = GetAuspiciantes();
+        AuspiciantesTable auspiciantesTable = new AuspiciantesTable(handler.GetAuspiciantes());
         JTable tabla = new JTable(auspiciantesTable);
         JScrollPane scroll = new JScrollPane(tabla);
 

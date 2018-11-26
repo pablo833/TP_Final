@@ -4,13 +4,13 @@ import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.AbstractPanel;
+import UI.basePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public abstract class UserPanel extends AbstractPanel {
+public abstract class UserPanel extends basePanel {
 
     protected Handler handler;
 
@@ -66,7 +66,7 @@ public abstract class UserPanel extends AbstractPanel {
         Box boxLastName = crearCombo("Apellido", txtLastName);
 
         txtPassword = new JPasswordField(columnSize);
-        Box boxPassword = crearCombo("Contrase�a", txtPassword);
+        Box boxPassword = crearCombo("Contraseña", txtPassword);
 
         Box botonera = generateBotonera();
 

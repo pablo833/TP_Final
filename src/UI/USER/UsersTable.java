@@ -1,11 +1,10 @@
 package UI.USER;
 
-import java.util.ArrayList;
-import java.util.List;
+import ENTIDADES.Usuario;
 
 import javax.swing.table.AbstractTableModel;
-
-import ENTIDADES.Usuario;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UsersTable extends AbstractTableModel {
 

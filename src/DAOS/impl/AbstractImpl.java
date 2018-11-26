@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 public class AbstractImpl {
 
-    protected final String BD_ERROR = "Hubo un error en la ejecucion a la BD";
+    protected final String BD_ERROR = "Hubo un error en la ejecución a la BD";
 
     protected void executeQuery(Connection connection, PreparedStatement dml) throws RadioException {
         try {
@@ -19,9 +19,8 @@ public class AbstractImpl {
                 connection.rollback();
 
             } catch (SQLException e1) {
-                // e1.printStackTrace();
+                throw new RadioException(BD_ERROR, e);
             }
-            throw new RadioException(BD_ERROR, e);
         } finally {
             try {
                 connection.close();
@@ -43,9 +42,8 @@ public class AbstractImpl {
                 connection.rollback();
 
             } catch (SQLException e1) {
-                // e1.printStackTrace();
+                throw new RadioException(BD_ERROR, e);
             }
-            throw new RadioException(BD_ERROR, e);
         } finally {
             try {
                 connection.close();
@@ -54,5 +52,4 @@ public class AbstractImpl {
             }
         }
     }
-
 }

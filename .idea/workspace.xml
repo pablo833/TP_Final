@@ -2,76 +2,94 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a959b8d-d37f-4ac6-886b-ea92146a0ccb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/COMMONS/Utils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAOS/ContratoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/PROGRAMA/ContratoTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/BOS/ContratoBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BOS/ContratoBO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/DAOS/impl/AuspicianteDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DAOS/impl/AuspicianteDaoImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BOS/AuspicianteBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BOS/AuspicianteBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BOS/ConductorBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BOS/ConductorBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BOS/ProductorBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BOS/ProductorBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BOS/ProgramaBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BOS/ProgramaBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/BOS/UsuarioBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/BOS/UsuarioBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/DAOS/impl/AbstractImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DAOS/impl/AbstractImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/DAOS/impl/ContratoDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DAOS/impl/ContratoDAOImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/ENTIDADES/Contrato.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/ENTIDADES/Contrato.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/DAOS/impl/UsuarioDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/DAOS/impl/UsuarioDaoImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/AUSPICIANTE/AuspiciantePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/AUSPICIANTE/AuspiciantePanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/AUSPICIANTE/AuspiciantePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/AUSPICIANTE/AuspiciantePanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/AbstractPanel$PanelMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/AbstractPanel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelCreate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelCreate$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelCreate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelDelete.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelUpdate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelUpdate$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CONDUCTOR/ConductorPanelUpdate.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/CustomOptionPane.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/CustomOptionPane.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/Login$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$10.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$11.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$12.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$14.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$14.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$15.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$15.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$16.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$16.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$17.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$18.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$19.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$20.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$21.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$7.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$8.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/MainContianerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/MainContianerFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelCreate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelCreate$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelCreate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelDelete.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelUpdate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelUpdate$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PRODUCTOR/ProductorPanelUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaAuspiciantePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanel$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelCreate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelCreate$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelCreate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelDelete.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelUpdate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelUpdate$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/PROGRAMA/ProgramaPanelUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/Panel$PanelMode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/UI/Panel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/USER/ListUserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/ListUserPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/USER/UserPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/UserPanel$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/USER/UserPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/UserPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/USER/UserPanelCreate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/UserPanelCreate.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/USER/UserPanelDelete.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/UserPanelDelete.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/UI/USER/UserPanelUpdate.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/UserPanelUpdate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/radioDB.backup" beforeDir="false" afterPath="$PROJECT_DIR$/sql/radioDB.backup" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/radioDB.data" beforeDir="false" afterPath="$PROJECT_DIR$/sql/radioDB.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/radioDB.properties" beforeDir="false" afterPath="$PROJECT_DIR$/sql/radioDB.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sql/radioDB.script" beforeDir="false" afterPath="$PROJECT_DIR$/sql/radioDB.script" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/UI/USER/UsersTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/UI/USER/UsersTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BOS/AuspicianteBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BOS/AuspicianteBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BOS/ConductorBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BOS/ConductorBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BOS/ContratoBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BOS/ContratoBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BOS/ProductorBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BOS/ProductorBO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BOS/ProgramaBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BOS/ProgramaBO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BOS/UsuarioBO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BOS/UsuarioBO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOS/impl/AuspicianteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOS/impl/AuspicianteDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAOS/impl/ContratoDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOS/impl/ContratoDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAOS/impl/AbstractImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOS/impl/AbstractImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAOS/impl/UsuarioDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAOS/impl/UsuarioDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ENTIDADES/Contrato.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ENTIDADES/Contrato.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/AUSPICIANTE/AuspiciantePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/AUSPICIANTE/AuspiciantePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/AbstractPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/basePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanelCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanelCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanelUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanelUpdate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/CustomOptionPane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/CustomOptionPane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Handler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/MainContianerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MainContianerFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanelCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanelCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanelUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanelUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaAuspiciantePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaAuspiciantePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanelCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanelCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanelUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanelUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/AbstractPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/USER/ListUserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/USER/ListUserPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/USER/UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/USER/UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/USER/UsersTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/USER/UsersTable.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/bin/" />
@@ -85,36 +103,36 @@
     <session id="-1502718073">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="10" />
-          <entry key="java" value="833" />
+          <entry key="java" value="872" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="10" />
-          <entry key="JAVA" value="833" />
+          <entry key="JAVA" value="872" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="16" />
           <entry key="dummy" value="9" />
-          <entry key="java" value="14915" />
+          <entry key="java" value="15115" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="16" />
-          <entry key="JAVA" value="14892" />
+          <entry key="JAVA" value="15092" />
           <entry key="PLAIN_TEXT" value="9" />
           <entry key="SQL" value="23" />
         </counts>
@@ -134,8 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>UsersTable</find>
-      <find>&quot;Hubo un error en la ejecucion a la BD&quot;</find>
       <find>&quot;Hubo un error en la busqueda de conductor&quot;</find>
       <find>&quot;Modificación&quot;</find>
       <find>&quot;Alta&quot;</find>
@@ -152,10 +168,8 @@
       <find>JButton</find>
       <find>btnFind</find>
       <find>getAuspicianteVector</find>
-      <find>getProductorVector</find>
       <find>getProductorBox</find>
       <find>getjScrollPane</find>
-      <find>GetAuspiciantes</find>
       <find>generateFindButton</find>
       <find>generateAuspicianteBox</find>
       <find>columnSize</find>
@@ -164,6 +178,10 @@
       <find>custom</find>
       <find>pauta</find>
       <find>updatejScrollPane</find>
+      <find>CustomOptionPane</find>
+      <find>getProductorVector</find>
+      <find>getConductorVector</find>
+      <find>GetAuspiciantes</find>
     </findStrings>
     <replaceStrings>
       <replace>BD_ERROR</replace>
@@ -180,33 +198,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/DAOS/impl/AbstractImpl.java" />
-        <option value="$PROJECT_DIR$/src/ENTIDADES/Usuario.java" />
-        <option value="$PROJECT_DIR$/src/BOS/ConductorBO.java" />
-        <option value="$PROJECT_DIR$/src/BOS/ProductorBO.java" />
-        <option value="$PROJECT_DIR$/src/DAOS/impl/PersonaDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/ENTIDADES/Productor.java" />
-        <option value="$PROJECT_DIR$/src/ENTIDADES/Conductor.java" />
         <option value="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanelDelete.java" />
         <option value="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanelDelete.java" />
         <option value="$PROJECT_DIR$/src/DAOS/impl/ProgramaDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/BOS/AuspicianteBO.java" />
         <option value="$PROJECT_DIR$/src/DAOS/impl/ConductorDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/DAOS/impl/ProductorDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/DAOS/DAO.java" />
         <option value="$PROJECT_DIR$/src/ENTIDADES/Persona.java" />
         <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ListProgramasPanel.java" />
-        <option value="$PROJECT_DIR$/src/BOS/ProgramaBO.java" />
         <option value="$PROJECT_DIR$/src/UI/USER/UserPanelDelete.java" />
         <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanelDelete.java" />
         <option value="$PROJECT_DIR$/src/UI/AUSPICIANTE/AuspiciantePanel.java" />
         <option value="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanel.java" />
-        <option value="$PROJECT_DIR$/src/UI/USER/UserPanel.java" />
-        <option value="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanel.java" />
         <option value="$PROJECT_DIR$/src/ENTIDADES/Programa.java" />
-        <option value="$PROJECT_DIR$/src/UI/Login.java" />
         <option value="$PROJECT_DIR$/src/UI/Panel.java" />
-        <option value="$PROJECT_DIR$/src/UI/AbstractPanel.java" />
         <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaTable.java" />
         <option value="$PROJECT_DIR$/src/DAOS/contratoDAO.java" />
         <option value="$PROJECT_DIR$/src/DAOS/ContratoDAO.java" />
@@ -221,16 +226,29 @@
         <option value="$PROJECT_DIR$/src/UI/CONDUCTOR/ConductorPanelCreate.java" />
         <option value="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanelCreate.java" />
         <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanelUpdate.java" />
-        <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java" />
         <option value="$PROJECT_DIR$/src/MAIN/Main.java" />
-        <option value="$PROJECT_DIR$/src/UI/MainContianerFrame.java" />
         <option value="$PROJECT_DIR$/src/ENTIDADES/Contrato.java" />
-        <option value="$PROJECT_DIR$/src/BOS/ContratoBO.java" />
         <option value="$PROJECT_DIR$/src/DAOS/impl/ContratoDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaAuspiciantePanel.java" />
-        <option value="$PROJECT_DIR$/src/UI/Handler.java" />
+        <option value="$PROJECT_DIR$/src/BOS/AuspicianteBO.java" />
+        <option value="$PROJECT_DIR$/src/BOS/ConductorBO.java" />
+        <option value="$PROJECT_DIR$/src/BOS/ContratoBO.java" />
+        <option value="$PROJECT_DIR$/src/BOS/ProductorBO.java" />
         <option value="$PROJECT_DIR$/src/BOS/UsuarioBO.java" />
+        <option value="$PROJECT_DIR$/src/BOS/ProgramaBO.java" />
+        <option value="$PROJECT_DIR$/src/DAOS/impl/AbstractImpl.java" />
         <option value="$PROJECT_DIR$/src/DAOS/impl/UsuarioDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/UI/AbstractPanel.java" />
+        <option value="$PROJECT_DIR$/src/UI/basePanel.java" />
+        <option value="$PROJECT_DIR$/src/UI/Login.java" />
+        <option value="$PROJECT_DIR$/src/UI/MainContianerFrame.java" />
+        <option value="$PROJECT_DIR$/src/UI/CustomOptionPane.java" />
+        <option value="$PROJECT_DIR$/src/UI/USER/ListUserPanel.java" />
+        <option value="$PROJECT_DIR$/src/UI/USER/UserPanel.java" />
+        <option value="$PROJECT_DIR$/src/UI/USER/UsersTable.java" />
+        <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaAuspiciantePanel.java" />
+        <option value="$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanel.java" />
+        <option value="$PROJECT_DIR$/src/UI/Handler.java" />
+        <option value="$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java" />
       </list>
     </option>
   </component>
@@ -257,42 +275,6 @@
               <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
             </path>
-            <path>
-              <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="DAOS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="DAOS" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="impl" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="DB" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="MAIN" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="TP_Final" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="TP_Final" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="UI" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -313,7 +295,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543087148784" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543228842022" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -372,11 +354,12 @@
       <workItem from="1542570676951" duration="49269000" />
       <workItem from="1542753173405" duration="18225000" />
       <workItem from="1542959969266" duration="30394000" />
+      <workItem from="1543225725192" duration="3131000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97888000" />
+    <option name="totallyTimeSpent" value="101019000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,7 +373,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23263328" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2358643" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -457,21 +440,9 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/UI/Handler.java</url>
-          <line>257</line>
+          <line>249</line>
           <properties />
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java</url>
-          <line>141</line>
-          <properties />
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/UI/Handler.java</url>
-          <line>480</line>
-          <properties />
-          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -511,101 +482,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ENTIDADES/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ENTIDADES/Conductor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" column="89" selection-start-line="24" selection-start-column="89" selection-end-line="24" selection-end-column="89" />
-          <folding>
-            <element signature="method#Conductor#0;class#Conductor#0" />
-            <element signature="method#Conductor#1;class#Conductor#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/AUSPICIANTE/AuspiciantePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="62" column="46" lean-forward="true" selection-start-line="62" selection-start-column="46" selection-end-line="62" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="59" column="32" lean-forward="true" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#ProductorPanel#0;class#ProductorPanel#0" />
-            <element signature="method#create#0;class#ProductorPanel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaComboBoxUI.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="584" selection-start-line="584" selection-end-line="584" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ENTIDADES/Persona.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="28" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
-          <folding>
-            <element signature="method#Persona#0;class#Persona#0" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#780#781#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/awt/Panel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/AUSPICIANTE/ListAuspiciantePane.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" column="2" selection-start-line="33" selection-start-column="2" selection-end-line="37" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#277#287#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/USER/UsersTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/USER/ListUserPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/sql/Statement.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -613,74 +489,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BOS/ProductorBO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="99" />
-          <folding>
-            <element signature="method#getByDNI#0;class#ProductorBO#0" />
-            <element signature="method#doesExistsDNI#0;class#ProductorBO#0" />
-            <element signature="method#update#0;class#ProductorBO#0" />
-            <element signature="method#delete#0;class#ProductorBO#0" />
-            <element signature="method#getAll#0;class#ProductorBO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ConductorDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-          <folding>
-            <element signature="method#insert#0;class#ConductorDAOImpl#0" />
-            <element signature="method#update#0;class#ConductorDAOImpl#0" />
-            <element signature="method#delete#0;class#ConductorDAOImpl#0" />
-            <element signature="method#getAll#0;class#ConductorDAOImpl#0" />
-            <element signature="method#getByInternalID#0;class#ConductorDAOImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ProgramaDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="108" selection-start-line="108" selection-end-line="108" />
-          <folding>
-            <element signature="method#insert#0;class#ProgramaDAOImpl#0" />
-            <element signature="method#update#0;class#ProgramaDAOImpl#0" />
-            <element signature="method#delete#0;class#ProgramaDAOImpl#0" />
-            <element signature="method#getByInternalID#0;class#ProgramaDAOImpl#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/AuspicianteDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
-          <folding>
-            <element signature="method#insert#0;class#AuspicianteDaoImpl#0" />
-            <element signature="e#0#49#1" />
-            <element signature="method#update#0;class#AuspicianteDaoImpl#0" />
-            <element signature="e#0#52#1" />
-            <element signature="method#get#0;class#AuspicianteDaoImpl#0" />
-            <element signature="e#0#39#1" />
-            <element signature="method#delete#0;class#AuspicianteDaoImpl#0" />
-            <element signature="method#getAll#0;class#AuspicianteDaoImpl#0" />
-            <element signature="e#0#26#1" />
-            <element signature="method#getByInternalID#0;class#AuspicianteDaoImpl#0" />
-            <element signature="e#0#48#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar!/com/apple/laf/AquaLabelUI.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#925#926#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -688,11 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="method#configurePopup#0;class#AquaComboBoxPopup#0" />
-            <element signature="method#updateContents#0;class#AquaComboBoxPopup#0" />
-            <element signature="method#getBestPopupSizeForRowCount#0;class#AquaComboBoxPopup#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,9 +507,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="482" selection-start-line="482" selection-end-line="482" />
-          <folding>
-            <element signature="e#17982#17983#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,9 +514,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,15 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#322#323#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#841#842#0" expanded="true" />
-            <element signature="e#2160#2161#0" expanded="true" />
-            <element signature="e#2194#2195#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,9 +535,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
-          <folding>
-            <element signature="method#Auspiciante#0;class#Auspiciante#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,55 +631,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="140" column="40" selection-start-line="140" selection-start-column="40" selection-end-line="140" selection-end-column="40" />
-          <folding>
-            <element signature="method#ProgramaPanel#0;class#ProgramaPanel#0" />
-            <element signature="method#ProgramaPanel#1;class#ProgramaPanel#0" />
-            <element signature="method#create#0;class#ProgramaPanel#0" />
-            <element signature="method#initUI#0;class#ProgramaPanel#0" />
-            <element signature="method#generateFindButton#0;class#ProgramaPanel#0" />
-            <element signature="class#3338:4468" />
-            <element signature="method#actionPerformed#0;class#3338:4468" />
-            <element signature="method#createPrograma#0;class#ProgramaPanel#0" />
-            <element signature="method#cleanJText#0;class#ProgramaPanel#0" />
-            <element signature="method#enableEditControls#0;class#ProgramaPanel#0" />
-            <element signature="method#GetAuspiciantes#0;class#ProgramaPanel#0" />
-            <element signature="method#getProductorBox#0;class#ProgramaPanel#0" />
-            <element signature="method#getConductorBox#0;class#ProgramaPanel#0" />
-            <element signature="method#getProductorVector#0;class#ProgramaPanel#0" />
-            <element signature="method#getConductorVector#0;class#ProgramaPanel#0" />
-            <element signature="method#getjScrollPane#0;class#ProgramaPanel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/USER/UserPanelCreate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/USER/UserPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="88" column="34" selection-start-line="88" selection-start-column="18" selection-end-line="88" selection-end-column="34" />
-          <folding>
-            <element signature="method#UserPanel#0;class#UserPanel#0" />
-            <element signature="method#UserPanel#1;class#UserPanel#0" />
-            <element signature="method#create#0;class#UserPanel#0" />
-            <element signature="e#2603#2604#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="method#cleanJText#0;class#UserPanel#0" />
-            <element signature="method#createUser#0;class#UserPanel#0" />
-            <element signature="method#enableEditControls#0;class#UserPanel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/EXCEPTIONS/RadioException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -905,19 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/AbstractPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding>
-            <element signature="class#PanelMode#0;class#AbstractPanel#0" />
-            <element signature="method#crearCombo#0;class#AbstractPanel#0" />
-            <element signature="method#crearCombo#1;class#AbstractPanel#0" />
-            <element signature="method#crearCombo#2;class#AbstractPanel#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MAIN/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -925,21 +652,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/MainContianerFrame.java">
+    <entry file="file://$PROJECT_DIR$/src/DAOS/DAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="210">
+          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ENTIDADES/Contrato.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="method#Contrato#0;class#Contrato#0" />
+            <element signature="method#Contrato#1;class#Contrato#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BOS/ConductorBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="11" column="73" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
+          <folding>
+            <element signature="method#getByDNI#0;class#ConductorBO#0" />
+            <element signature="method#create#0;class#ConductorBO#0" />
+            <element signature="method#doesExistsDNI#0;class#ConductorBO#0" />
+            <element signature="method#esConductorValido#0;class#ConductorBO#0" />
+            <element signature="method#update#0;class#ConductorBO#0" />
+            <element signature="method#delete#0;class#ConductorBO#0" />
+            <element signature="method#getAll#0;class#ConductorBO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BOS/ContratoBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setDao#0;class#ContratoBO#0" />
+            <element signature="method#create#0;class#ContratoBO#0" />
+            <element signature="method#getByPrograma#0;class#ContratoBO#0" />
+            <element signature="method#delete#0;class#ContratoBO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BOS/ProgramaBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="method#getByNombre#0;class#ProgramaBO#0" />
+            <element signature="method#create#0;class#ProgramaBO#0" />
+            <element signature="method#esProgramaInValido#0;class#ProgramaBO#0" />
+            <element signature="method#doesExistsPrograma#0;class#ProgramaBO#0" />
+            <element signature="method#getAll#0;class#ProgramaBO#0" />
+            <element signature="method#update#0;class#ProgramaBO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BOS/UsuarioBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="47" column="4" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
+          <folding>
+            <element signature="method#getByUserName#0;class#UsuarioBO#0" />
+            <element signature="method#create#0;class#UsuarioBO#0" />
+            <element signature="method#doesExistsUserName#0;class#UsuarioBO#0" />
+            <element signature="method#esUsuarioInValido#0;class#UsuarioBO#0" />
+            <element signature="method#update#0;class#UsuarioBO#0" />
+            <element signature="method#delete#0;class#UsuarioBO#0" />
+            <element signature="method#getAll#0;class#UsuarioBO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BOS/ProductorBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="method#getByDNI#0;class#ProductorBO#0" />
+            <element signature="method#create#0;class#ProductorBO#0" />
+            <element signature="method#doesExistsDNI#0;class#ProductorBO#0" />
+            <element signature="method#esProductorValido#0;class#ProductorBO#0" />
+            <element signature="method#update#0;class#ProductorBO#0" />
+            <element signature="method#delete#0;class#ProductorBO#0" />
+            <element signature="method#getAll#0;class#ProductorBO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BOS/AuspicianteBO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="method#setDao#0;class#AuspicianteBO#0" />
+            <element signature="method#getByRazonSocial#0;class#AuspicianteBO#0" />
+            <element signature="method#create#0;class#AuspicianteBO#0" />
+            <element signature="method#doesExistsAuspiciante#0;class#AuspicianteBO#0" />
+            <element signature="method#esAuspicianteInValido#0;class#AuspicianteBO#0" />
+            <element signature="method#update#0;class#AuspicianteBO#0" />
+            <element signature="method#getAll#0;class#AuspicianteBO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/UsuarioDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="100" column="56" selection-start-line="100" selection-start-column="56" selection-end-line="100" selection-end-column="56" />
+          <folding>
+            <element signature="method#insert#0;class#UsuarioDaoImpl#0" />
+            <element signature="method#update#0;class#UsuarioDaoImpl#0" />
+            <element signature="method#get#0;class#UsuarioDaoImpl#0" />
+            <element signature="method#delete#0;class#UsuarioDaoImpl#0" />
+            <element signature="method#getAll#0;class#UsuarioDaoImpl#0" />
+            <element signature="method#getByInternalID#0;class#UsuarioDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ProgramaDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="37" column="64" selection-start-line="37" selection-start-column="64" selection-end-line="37" selection-end-column="64" />
+          <folding>
+            <element signature="method#insert#0;class#ProgramaDAOImpl#0" />
+            <element signature="e#0#105#1" />
+            <element signature="method#update#0;class#ProgramaDAOImpl#0" />
+            <element signature="e#0#111#1" />
+            <element signature="method#get#0;class#ProgramaDAOImpl#0" />
+            <element signature="e#0#162#0" />
+            <element signature="method#delete#0;class#ProgramaDAOImpl#0" />
+            <element signature="method#getAll#0;class#ProgramaDAOImpl#0" />
+            <element signature="e#0#149#0" />
+            <element signature="method#getByInternalID#0;class#ProgramaDAOImpl#0" />
+            <element signature="e#0#166#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ProductorDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="55" column="19" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+        <state relative-caret-position="315">
+          <caret line="79" column="58" selection-start-line="79" selection-start-column="58" selection-end-line="79" selection-end-column="58" />
           <folding>
             <element signature="method#insert#0;class#ProductorDAOImpl#0" />
             <element signature="e#0#47#1" />
             <element signature="e#0#61#1" />
+            <element signature="method#update#0;class#ProductorDAOImpl#0" />
             <element signature="e#0#67#1" />
             <element signature="method#get#0;class#ProductorDAOImpl#0" />
             <element signature="method#delete#0;class#ProductorDAOImpl#0" />
@@ -947,6 +815,71 @@
             <element signature="e#0#86#0" />
             <element signature="method#getByInternalID#0;class#ProductorDAOImpl#0" />
             <element signature="method#executeQuery#0;class#ProductorDAOImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/AbstractImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="12" column="100" selection-start-line="12" selection-start-column="100" selection-end-line="12" selection-end-column="100" />
+          <folding>
+            <element signature="method#executeQuery#0;class#AbstractImpl#0" />
+            <element signature="method#executeQuery#1;class#AbstractImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ContratoDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+          <folding>
+            <element signature="method#insert#0;class#ContratoDAOImpl#0" />
+            <element signature="e#0#76#1" />
+            <element signature="method#update#0;class#ContratoDAOImpl#0" />
+            <element signature="method#delete#0;class#ContratoDAOImpl#0" />
+            <element signature="e#0#34#1" />
+            <element signature="method#getByPrograma#0;class#ContratoDAOImpl#0" />
+            <element signature="e#0#171#1" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/PersonaDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/AuspicianteDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="48" column="61" selection-start-line="48" selection-start-column="61" selection-end-line="48" selection-end-column="61" />
+          <folding>
+            <element signature="method#insert#0;class#AuspicianteDaoImpl#0" />
+            <element signature="method#update#0;class#AuspicianteDaoImpl#0" />
+            <element signature="method#get#0;class#AuspicianteDaoImpl#0" />
+            <element signature="method#delete#0;class#AuspicianteDaoImpl#0" />
+            <element signature="method#getAll#0;class#AuspicianteDaoImpl#0" />
+            <element signature="method#getByInternalID#0;class#AuspicianteDaoImpl#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ConductorDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+          <folding>
+            <element signature="method#insert#0;class#ConductorDAOImpl#0" />
+            <element signature="method#update#0;class#ConductorDAOImpl#0" />
+            <element signature="method#get#0;class#ConductorDAOImpl#0" />
+            <element signature="method#delete#0;class#ConductorDAOImpl#0" />
+            <element signature="method#getAll#0;class#ConductorDAOImpl#0" />
+            <element signature="method#getByInternalID#0;class#ConductorDAOImpl#0" />
+            <element signature="method#executeQuery#0;class#ConductorDAOImpl#0" />
           </folding>
         </state>
       </provider>
@@ -963,80 +896,192 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ContratoTable.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/basePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="60">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/Login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="20" />
           <folding>
-            <element signature="e#479#480#0" expanded="true" />
-            <element signature="e#521#522#0" expanded="true" />
-            <element signature="e#655#656#0" expanded="true" />
-            <element signature="e#696#697#0" expanded="true" />
-            <element signature="method#getValueAt#0;class#ContratoTable#0" />
+            <element signature="method#Login#0;class#Login#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/AbstractImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/MainContianerFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/ContratoDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="55" column="36" selection-start-line="55" selection-start-column="36" selection-end-line="55" selection-end-column="36" />
+        <state relative-caret-position="360">
+          <caret line="59" column="41" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding>
-            <element signature="method#update#0;class#ContratoDAOImpl#0" />
+            <element signature="method#MainContianerFrame#0;class#MainContianerFrame#0" />
+            <element signature="method#initUI#0;class#MainContianerFrame#0" />
+            <element signature="method#setMenuBarVisible#0;class#MainContianerFrame#0" />
+            <element signature="method#showLogin#0;class#MainContianerFrame#0" />
+            <element signature="method#addMenubar#0;class#MainContianerFrame#0" />
+            <element signature="method#generateProgramaMenu#0;class#MainContianerFrame#0" />
+            <element signature="class#1783:1956" />
+            <element signature="class#2081:2260" />
+            <element signature="class#2361:2540" />
+            <element signature="class#2647:2819" />
+            <element signature="method#actionPerformed#0;class#2647:2819" />
+            <element signature="class#2935:3115" />
+            <element signature="method#actionPerformed#0;class#2935:3115" />
+            <element signature="method#generateUserMenu#0;class#MainContianerFrame#0" />
+            <element signature="class#3559:3728" />
+            <element signature="class#3853:4028" />
+            <element signature="class#4129:4304" />
+            <element signature="class#4411:4580" />
+            <element signature="method#actionPerformed#0;class#4411:4580" />
+            <element signature="method#generateAuspicianteMenu#0;class#MainContianerFrame#0" />
+            <element signature="class#4985:5161" />
+            <element signature="class#5286:5462" />
+            <element signature="class#5563:5739" />
+            <element signature="class#5846:6020" />
+            <element signature="method#generateConductorMenu#0;class#MainContianerFrame#0" />
+            <element signature="class#6426:6600" />
+            <element signature="class#6725:6899" />
+            <element signature="class#7000:7174" />
+            <element signature="class#7281:7455" />
+            <element signature="method#generateProductorMenu#0;class#MainContianerFrame#0" />
+            <element signature="class#7881:8055" />
+            <element signature="class#8180:8354" />
+            <element signature="class#8455:8629" />
+            <element signature="class#8736:8910" />
+            <element signature="method#changePanel#0;class#MainContianerFrame#0" />
+            <element signature="method#removePanel#0;class#MainContianerFrame#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/DAO.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/CustomOptionPane.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/USER/UserPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#UserPanel#0;class#UserPanel#0" />
+            <element signature="method#UserPanel#1;class#UserPanel#0" />
+            <element signature="method#create#0;class#UserPanel#0" />
+            <element signature="method#initUI#0;class#UserPanel#0" />
+            <element signature="method#generateFindButton#0;class#UserPanel#0" />
+            <element signature="class#2793:3613" />
+            <element signature="method#actionPerformed#0;class#2793:3613" />
+            <element signature="method#cleanJText#0;class#UserPanel#0" />
+            <element signature="method#createUser#0;class#UserPanel#0" />
+            <element signature="method#enableEditControls#0;class#UserPanel#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ENTIDADES/Contrato.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/USER/ListUserPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="180">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
           <folding>
-            <element signature="e#225#226#0" expanded="true" />
-            <element signature="method#Contrato#0;class#Contrato#0" />
-            <element signature="method#Contrato#1;class#Contrato#0" />
+            <element signature="method#ListUserPanel#0;class#ListUserPanel#0" />
+            <element signature="method#initUI#0;class#ListUserPanel#0" />
+            <element signature="method#GetUsuarios#0;class#ListUserPanel#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BOS/ContratoBO.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/USER/UserPanelCreate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="60">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+          <folding>
+            <element signature="method#UserPanelCreate#0;class#UserPanelCreate#0" />
+            <element signature="method#generateBotonera#0;class#UserPanelCreate#0" />
+            <element signature="class#578:945" />
+            <element signature="method#actionPerformed#0;class#578:945" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/USER/UserPanelDelete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="method#generateBotonera#0;class#UserPanelDelete#0" />
+            <element signature="class#604:973" />
+            <element signature="method#actionPerformed#0;class#604:973" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/USER/UserPanelUpdate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="method#UserPanelUpdate#0;class#UserPanelUpdate#0" />
+            <element signature="method#generateBotonera#0;class#UserPanelUpdate#0" />
+            <element signature="class#600:1013" />
+            <element signature="method#actionPerformed#0;class#600:1013" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/USER/UsersTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="53" column="5" lean-forward="true" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
+          <folding>
+            <element signature="method#getValueAt#0;class#UsersTable#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ContratoTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+          <folding>
+            <element signature="method#getValueAt#0;class#ContratoTable#0" />
+            <element signature="method#getSelectedElement#0;class#ContratoTable#0" />
+            <element signature="method#getColumnName#0;class#ContratoTable#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ListProgramasPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding>
+            <element signature="method#ListProgramasPanel#0;class#ListProgramasPanel#0" />
+            <element signature="method#initUI#0;class#ListProgramasPanel#0" />
+            <element signature="method#GetProgramas#0;class#ListProgramasPanel#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaAuspiciantePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="223" column="37" selection-start-line="223" selection-start-column="37" selection-end-line="223" selection-end-column="37" />
+        <state relative-caret-position="135">
+          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
           <folding>
             <element signature="method#ProgramaAuspiciantePanel#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#initUI#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#getProgramaBox#0;class#ProgramaAuspiciantePanel#0" />
-            <element signature="class#3148:3829" />
-            <element signature="method#setData#0;class#3148:3829" />
+            <element signature="class#3406:4211" />
+            <element signature="method#setData#0;class#3406:4211" />
             <element signature="method#getProgramaVector#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#generateAuspicianteBox#0;class#ProgramaAuspiciantePanel#0" />
-            <element signature="class#4539:5594" />
-            <element signature="method#actionPerformed#0;class#4539:5594" />
+            <element signature="class#4722:5780" />
+            <element signature="method#actionPerformed#0;class#4722:5780" />
             <element signature="method#getAuspicianteBox#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#getAuspicianteVector#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#updatejScrollPane#0;class#ProgramaAuspiciantePanel#0" />
@@ -1044,124 +1089,55 @@
             <element signature="method#GetContratos#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#enableAddAuspicianete#0;class#ProgramaAuspiciantePanel#0" />
             <element signature="method#generateBotonera#0;class#ProgramaAuspiciantePanel#0" />
-            <element signature="class#7892:8623" />
-            <element signature="method#actionPerformed#0;class#7892:8623" />
+            <element signature="class#7884:8443" />
+            <element signature="method#actionPerformed#0;class#7884:8443" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/PRODUCTOR/ProductorPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="54" column="34" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-          <folding>
-            <element signature="method#Login#0;class#Login#0" />
-            <element signature="method#initUI#0;class#Login#0" />
-            <element signature="method#generateBotonera#0;class#Login#0" />
-            <element signature="class#1622:2206" />
-            <element signature="method#actionPerformed#0;class#1622:2206" />
-            <element signature="method#createUser#0;class#1622:2206" />
-          </folding>
+        <state relative-caret-position="-37">
+          <caret line="90" column="33" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="52" column="58" selection-start-line="52" selection-start-column="58" selection-end-line="52" selection-end-column="58" />
+        <state relative-caret-position="178">
+          <caret line="275" column="28" selection-start-line="275" selection-start-column="28" selection-end-line="275" selection-end-column="28" />
           <folding>
             <element signature="e#1016#1650#0" />
             <element signature="e#1656#1794#0" />
-            <element signature="e#1800#2414#0" />
-            <element signature="e#2420#2505#0" />
-            <element signature="e#2511#2672#0" />
-            <element signature="e#2678#2815#0" />
-            <element signature="e#2821#2958#0" />
-            <element signature="e#2964#3064#0" />
-            <element signature="e#3070#3248#0" />
-            <element signature="e#3254#3399#0" />
-            <element signature="e#3405#3550#0" />
-            <element signature="e#3556#3668#0" />
-            <element signature="e#3674#3847#0" />
-            <element signature="e#3853#3994#0" />
-            <element signature="e#4000#4141#0" />
-            <element signature="e#4147#4260#0" />
-            <element signature="e#4266#4439#0" />
-            <element signature="e#4445#4586#0" />
-            <element signature="e#4592#4733#0" />
-            <element signature="e#4739#4852#0" />
-            <element signature="e#4858#5027#0" />
-            <element signature="e#5033#5178#0" />
-            <element signature="e#5184#5329#0" />
-            <element signature="e#5575#5986#0" />
-            <element signature="e#5992#6389#0" />
-            <element signature="e#6395#6791#0" />
-            <element signature="e#6797#7125#0" />
-            <element signature="e#7131#7423#0" />
-            <element signature="e#7429#7528#0" />
-            <element signature="e#7534#7922#0" />
-            <element signature="e#7928#8353#0" />
-            <element signature="e#8359#8785#0" />
-            <element signature="e#8791#8902#0" />
-            <element signature="e#8908#9266#0" />
-            <element signature="e#9272#9685#0" />
-            <element signature="e#9691#10106#0" />
-            <element signature="e#10112#10526#0" />
-            <element signature="e#10532#10638#0" />
-            <element signature="e#10644#10916#0" />
-            <element signature="e#10922#11282#0" />
-            <element signature="e#11288#11702#0" />
-            <element signature="e#11708#12122#0" />
-            <element signature="e#12128#12543#0" />
-            <element signature="e#12549#12655#0" />
-            <element signature="e#12661#12933#0" />
-            <element signature="e#12939#13348#0" />
-            <element signature="e#13354#13764#0" />
-            <element signature="e#13770#14122#0" />
-            <element signature="e#14128#14203#0" />
-            <element signature="e#14209#14311#0" />
-            <element signature="e#14317#14597#0" />
-            <element signature="e#14603#14716#0" />
-            <element signature="e#14722#14986#0" />
-            <element signature="e#14992#15127#0" />
-            <element signature="e#15133#15351#0" />
+            <element signature="e#1800#2261#0" />
+            <element signature="e#2267#2352#0" />
+            <element signature="e#2358#2515#0" />
+            <element signature="e#2521#2654#0" />
+            <element signature="e#2660#2793#0" />
+            <element signature="e#2799#2899#0" />
+            <element signature="e#2905#3079#0" />
+            <element signature="e#3085#3226#0" />
+            <element signature="e#3232#3373#0" />
+            <element signature="e#3379#3491#0" />
+            <element signature="e#3497#3666#0" />
+            <element signature="e#3672#3809#0" />
+            <element signature="e#3815#3952#0" />
+            <element signature="e#3958#4071#0" />
+            <element signature="e#4077#4246#0" />
+            <element signature="e#4252#4389#0" />
+            <element signature="e#4395#4532#0" />
+            <element signature="e#4538#4651#0" />
+            <element signature="e#4657#4822#0" />
+            <element signature="e#4828#4969#0" />
+            <element signature="e#4975#5116#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BOS/UsuarioBO.java">
+    <entry file="file://$PROJECT_DIR$/src/UI/PROGRAMA/ProgramaPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
-          <folding>
-            <element signature="method#create#0;class#UsuarioBO#0" />
-            <element signature="method#doesExistsUserName#0;class#UsuarioBO#0" />
-            <element signature="method#update#0;class#UsuarioBO#0" />
-            <element signature="method#delete#0;class#UsuarioBO#0" />
-            <element signature="method#getByUserName#0;class#UsuarioBO#0" />
-            <element signature="method#getAll#0;class#UsuarioBO#0" />
-            <element signature="method#esUsuarioInValido#0;class#UsuarioBO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAOS/impl/UsuarioDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="135" column="74" selection-start-line="135" selection-start-column="74" selection-end-line="135" selection-end-column="74" />
-          <folding>
-            <element signature="method#insert#0;class#UsuarioDaoImpl#0" />
-            <element signature="e#0#80#1" />
-            <element signature="method#update#0;class#UsuarioDaoImpl#0" />
-            <element signature="e#0#71#1" />
-            <element signature="method#get#0;class#UsuarioDaoImpl#0" />
-            <element signature="e#0#32#0" />
-            <element signature="method#delete#0;class#UsuarioDaoImpl#0" />
-            <element signature="method#getAll#0;class#UsuarioDaoImpl#0" />
-            <element signature="e#0#19#1" />
-            <element signature="method#getByInternalID#0;class#UsuarioDaoImpl#0" />
-            <element signature="e#0#38#0" />
-          </folding>
+        <state relative-caret-position="2625">
+          <caret line="189" column="52" selection-start-line="189" selection-start-column="52" selection-end-line="189" selection-end-column="52" />
         </state>
       </provider>
     </entry>

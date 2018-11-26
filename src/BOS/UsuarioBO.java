@@ -9,12 +9,18 @@ import java.util.List;
 
 public class UsuarioBO {
 
-    private DAO usuarioDAO;
     private final String USUARIO_EXISTENTE_ERROR = "Ya hay un usuario con ese nombre de usuario";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del usuario";
 
+    private DAO usuarioDAO;
+
     public void setDao(UsuarioDaoImpl usuarioDaoImpl) {
         this.usuarioDAO = usuarioDaoImpl;
+    }
+
+    public Usuario getByUserName(Usuario user) throws RadioException {
+
+        return (Usuario) usuarioDAO.getByInternalID(user);
     }
 
     public void create(Usuario user) throws RadioException {
@@ -36,6 +42,10 @@ public class UsuarioBO {
         return getByUserName(user) != null;
     }
 
+    private Boolean esUsuarioInValido(Usuario user) {
+        return user.getPassword().isEmpty() || user.getFirstName().isEmpty() || user.getLastName().isEmpty();
+    }
+
     public void update(Usuario user) throws RadioException {
 
         if (esUsuarioInValido(user)) {
@@ -50,17 +60,10 @@ public class UsuarioBO {
         usuarioDAO.delete(user.getCode());
     }
 
-    public Usuario getByUserName(Usuario user) throws RadioException {
-
-        return (Usuario) usuarioDAO.getByInternalID(user);
-    }
-
     public List<Usuario> getAll() throws RadioException {
 
         return usuarioDAO.getAll();
     }
 
-    private Boolean esUsuarioInValido(Usuario user) {
-        return user.getPassword().isEmpty() || user.getFirstName().isEmpty() || user.getLastName().isEmpty();
-    }
+
 }

@@ -4,13 +4,13 @@ import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import UI.AbstractPanel;
+import UI.basePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AuspiciantePanel extends AbstractPanel {
+public class AuspiciantePanel extends basePanel {
 
     protected Handler handler;
 
@@ -29,7 +29,7 @@ public class AuspiciantePanel extends AbstractPanel {
         initUI(title);
     }
 
-    public static AuspiciantePanel create(Handler handler, AbstractPanel.PanelMode action) {
+    public static AuspiciantePanel create(Handler handler, basePanel.PanelMode action) {
 
         AuspiciantePanel auspiciantePanel = null;
         switch (action) {
