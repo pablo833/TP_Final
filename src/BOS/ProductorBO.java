@@ -2,7 +2,9 @@ package BOS;
 
 import DAOS.DAO;
 import DAOS.impl.ProductorDAOImpl;
+import DAOS.impl.ProgramaDAOImpl;
 import ENTIDADES.Productor;
+import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 
 import java.util.List;
@@ -11,7 +13,7 @@ public class ProductorBO {
 
     private final String CONDUCTOR_EXISTENTE_ERROR = "Ya hay un PRODUCTOR con ese nombre.";
     private final String DATOS_OBLIGATORIOS_ERROR = "Debe completar todos los datos del productor";
-
+    private final String CONDUCTOR_ASOCIADO_A_UN_PROGRAMA = "El conductor está asociado a un programa. No se puede borrar.";
     private DAO productorDAO;
 
     public void setDao(ProductorDAOImpl productorDaoImpl) {
@@ -54,7 +56,19 @@ public class ProductorBO {
     }
 
     public void delete(Productor productor) throws RadioException {
-        productorDAO.delete(productor.getCodigo());
+        if (canDeleteProductor(productor.getCodigo())) {
+            productorDAO.delete(productor.getCodigo());
+        } else {
+            throw new RadioException(CONDUCTOR_ASOCIADO_A_UN_PROGRAMA);
+        }
+
+    }
+
+    private boolean canDeleteProductor(int code) throws RadioException {
+        DAO programaDAO = new ProgramaDAOImpl();
+        Programa programa = ((ProgramaDAOImpl) programaDAO).getByProductor(code);
+
+        return programa == null;
     }
 
     public List<Productor> getAll() throws RadioException {

@@ -40,7 +40,7 @@ public class AbstractImpl {
         } catch (SQLException e) {
             try {
                 connection.rollback();
-
+                throw new RadioException(BD_ERROR, e);
             } catch (SQLException e1) {
                 throw new RadioException(BD_ERROR, e);
             }

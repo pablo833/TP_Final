@@ -1,14 +1,12 @@
 package UI.USER;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.Box;
-import javax.swing.JButton;
-
+import EXCEPTIONS.RadioException;
 import UI.CustomOptionPane;
 import UI.Handler;
-import EXCEPTIONS.RadioException;
+
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class UserPanelDelete extends UserPanel {
 
@@ -20,13 +18,14 @@ public class UserPanelDelete extends UserPanel {
     public Box generateBotonera() {
         Box botonera = Box.createHorizontalBox();
         botonera.add(Box.createHorizontalGlue());
-        JButton btnOk = new JButton("Ok");
+        btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
 
                 try {
                     handler.deleteUser(createUser());
+                    btnOk.setEnabled(false);
                     cleanJText();
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());

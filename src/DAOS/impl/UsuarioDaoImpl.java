@@ -93,8 +93,20 @@ public class UsuarioDaoImpl extends AbstractImpl implements DAO<Usuario> {
     }
 
     @Override
-    public void delete(int codigo) {
+    public void delete(int codigo) throws RadioException {
+        String query = "DELETE FROM users " +
+                "WHERE id = ?";
 
+        Connection connection = DBManager.connect();
+
+        try {
+            PreparedStatement dml = connection.prepareStatement(query);
+
+            dml.setInt(1, codigo);
+            executeQuery(connection, dml);
+        } catch (SQLException e) {
+            throw new RadioException(USER_NOT_FOUND_ERRROR, e);
+        }
     }
 
     @Override

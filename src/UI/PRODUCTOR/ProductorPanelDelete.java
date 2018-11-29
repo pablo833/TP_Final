@@ -17,13 +17,14 @@ public class ProductorPanelDelete extends ProductorPanel {
     public Box generateBotonera() {
         Box botonera = Box.createHorizontalBox();
         botonera.add(Box.createHorizontalGlue());
-        JButton btnOk = new JButton("Ok");
+        btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
 
                 try {
                     handler.deleteProductor(createProductor());
+                    btnOk.setEnabled(false);
                     cleanJText();
                 } catch (RadioException e) {
                     CustomOptionPane.showErrorMessage(e.getMessage());

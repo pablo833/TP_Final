@@ -1,6 +1,7 @@
 package DAOS.impl;
 
 import DAOS.DAO;
+import DAOS.ProgramaDAO;
 import DB.DBManager;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
@@ -9,7 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa> {
+public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa>, ProgramaDAO {
 
     private final String PROGRAMA_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de PROGRAMAS";
 
@@ -63,7 +64,6 @@ public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa> {
 
     @Override
     public Programa get(int codigo) throws RadioException {
-        Programa programa = null;
 
         String query = "SELECT * " +
                 "FROM programas " +
@@ -73,39 +73,7 @@ public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa> {
                 "productores.id = programas.productor " +
                 "where id = ? ";
 
-        Connection connection = DBManager.connect();
-
-        try {
-            PreparedStatement dml = connection.prepareStatement(query);
-
-            dml.setInt(1, codigo);
-
-            dml.executeQuery();
-            ResultSet rs = dml.getResultSet();
-
-            while (rs.next()) {
-                programa = new Programa(rs.getInt("id"),
-                        rs.getString("nombre"),
-                        rs.getString("horario"),
-                        rs.getDouble("valorSegundoAlAire"),
-                        new ConductorDAOImpl().get(rs.getInt("conductor")),
-                        new ProductorDAOImpl().get(rs.getInt("productor"))
-                );
-            }
-        } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException e1) {
-                throw new RadioException(PROGRAMA_NOT_FOUND_ERRROR, e1);
-            }
-            throw new RadioException(PROGRAMA_NOT_FOUND_ERRROR, e);
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e2) {
-                throw new RadioException(PROGRAMA_NOT_FOUND_ERRROR, e2);
-            }
-        }
+        Programa programa = get(query, codigo);
         return programa;
     }
 
@@ -210,4 +178,71 @@ public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa> {
         return p;
     }
 
+    @Override
+    public Programa getByProductor(int codigo) throws RadioException {
+
+        String query = "SELECT * " +
+                "FROM programas " +
+                "INNER JOIN conductores ON " +
+                "conductores.id = programas.conductor " +
+                "inner join productores ON " +
+                "productores.id = programas.productor " +
+                "where conductor = ? ";
+
+        Programa programa = get(query, codigo);
+        return programa;
+    }
+
+    @Override
+    public Programa getByConductor(int codigo) throws RadioException {
+
+        String query = "SELECT * " +
+                "FROM programas " +
+                "INNER JOIN conductores ON " +
+                "conductores.id = programas.conductor " +
+                "inner join productores ON " +
+                "productores.id = programas.productor " +
+                "where conductor = ? ";
+
+        Programa programa = get(query, codigo);
+        return programa;
+    }
+
+    private Programa get(String query, int codigo) throws RadioException {
+        Programa programa = null;
+        Connection connection = DBManager.connect();
+
+        try {
+            PreparedStatement dml = connection.prepareStatement(query);
+
+            dml.setInt(1, codigo);
+
+            dml.executeQuery();
+            ResultSet rs = dml.getResultSet();
+
+            while (rs.next()) {
+                programa = new Programa(rs.getInt("id"),
+                        rs.getString("nombre"),
+                        rs.getString("horario"),
+                        rs.getDouble("valorSegundoAlAire"),
+                        new ConductorDAOImpl().get(rs.getInt("conductor")),
+                        new ProductorDAOImpl().get(rs.getInt("productor"))
+                );
+            }
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                throw new RadioException(PROGRAMA_NOT_FOUND_ERRROR, e1);
+            }
+            throw new RadioException(PROGRAMA_NOT_FOUND_ERRROR, e);
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e2) {
+                throw new RadioException(PROGRAMA_NOT_FOUND_ERRROR, e2);
+            }
+        }
+        return programa;
+    }
 }

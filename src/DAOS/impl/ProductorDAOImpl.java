@@ -72,8 +72,20 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
     }
 
     @Override
-    public void delete(int codigo) {
+    public void delete(int codigo) throws RadioException {
+        String query = "DELETE FROM productores " +
+                "WHERE id = ?";
 
+        Connection connection = DBManager.connect();
+
+        try {
+            PreparedStatement dml = connection.prepareStatement(query);
+
+            dml.setInt(1, codigo);
+            executeQuery(connection, dml);
+        } catch (SQLException e) {
+            throw new RadioException(PRODUCTOR_NOT_FOUND_ERRROR, e);
+        }
     }
 
     @Override
@@ -143,7 +155,7 @@ public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
                 productor = new Productor(rs.getInt("id"),
                         rs.getString("nombre"),
                         rs.getString("apellido"),
-                        rs.getInt("id"));
+                        rs.getInt("dni"));
             }
         } catch (SQLException e) {
             try {

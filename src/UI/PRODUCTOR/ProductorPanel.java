@@ -89,17 +89,21 @@ public class ProductorPanel extends basePanel {
             public void actionPerformed(ActionEvent arg0) {
 
                 productor = null;
-                productor = handler.getProductor(Integer.valueOf(txtDNI.getText()));
+                if (COMMONS.Utils.isNumeric(txtDNI.getText())) {
+                    productor = handler.getProductor(Integer.valueOf(txtDNI.getText()));
+                    if (productor != null) {
+                        txtNombre.setText(productor.getNombre());
+                        txtApellido.setText(productor.getApellido());
+                        txtDNI.setText(String.valueOf(productor.getDni()));
 
-                if (productor != null) {
-                    txtNombre.setText(productor.getNombre());
-                    txtApellido.setText(productor.getApellido());
-                    txtDNI.setText(String.valueOf(productor.getDni()));
-
-                    enableEditControls(true);
-                    btnOk.setEnabled(true);
+                        enableEditControls(true);
+                        btnOk.setEnabled(true);
+                    } else {
+                        CustomOptionPane.showInformationMessage("Productor no encontrado.");
+                    }
                 } else {
-                    CustomOptionPane.showInformationMessage("Productor no encontrado.");
+                    txtDNI.grabFocus();
+                    CustomOptionPane.showErrorMessage("El DNI debe ser númerico");
                 }
             }
         });
