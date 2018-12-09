@@ -1,7 +1,7 @@
 package UI.CONDUCTOR;
 
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 
 import javax.swing.*;
@@ -29,11 +29,11 @@ public class ConductorPanelUpdate extends ConductorPanel {
 
                     } else {
                         txtDNI.grabFocus();
-                        CustomOptionPane.showErrorMessage("El DNI debe ser númerico");
+                        CustomOptionPanel.showErrorMessage("El DNI debe ser númerico");
                     }
 
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
             }
         });

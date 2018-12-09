@@ -2,15 +2,15 @@ package UI.AUSPICIANTE;
 
 import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.basePanel;
+import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AuspiciantePanel extends basePanel {
+public class AuspiciantePanel extends BasePanel {
 
     protected Handler handler;
 
@@ -29,7 +29,7 @@ public class AuspiciantePanel extends basePanel {
         initUI(title);
     }
 
-    public static AuspiciantePanel create(Handler handler, basePanel.PanelMode action) {
+    public static AuspiciantePanel create(Handler handler, BasePanel.PanelMode action) {
 
         AuspiciantePanel auspiciantePanel = null;
         switch (action) {
@@ -95,7 +95,7 @@ public class AuspiciantePanel extends basePanel {
                     auspiciante = handler.getAuspiciante(auspiciante);
 
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
 
                 if (auspiciante != null) {
@@ -103,7 +103,7 @@ public class AuspiciantePanel extends basePanel {
                     txtCodigoRazonSocial.setText(String.valueOf(auspiciante.getCode()));
                     btnOk.setEnabled(true);
                 } else {
-                    CustomOptionPane.showInformationMessage("Auspiciante no encontrado.");
+                    CustomOptionPanel.showInformationMessage("Auspiciante no encontrado.");
                 }
             }
         });

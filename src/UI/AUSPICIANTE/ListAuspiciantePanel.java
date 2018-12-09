@@ -1,6 +1,6 @@
 package UI.AUSPICIANTE;
 
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 
 import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
@@ -10,16 +10,16 @@ import UI.Handler;
 import javax.swing.*;
 import java.util.List;
 
-public class ListAuspiciantePane extends JPanel {
+public class ListAuspiciantePanel extends JPanel {
 
     Handler handler;
 
-    public ListAuspiciantePane(Handler handler) {
+    public ListAuspiciantePanel(Handler handler) {
         this.handler = handler;
         try {
             initUI();
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 

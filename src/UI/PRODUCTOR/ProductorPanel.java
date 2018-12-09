@@ -1,15 +1,15 @@
 package UI.PRODUCTOR;
 
 import ENTIDADES.Productor;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.basePanel;
+import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProductorPanel extends basePanel {
+public class ProductorPanel extends BasePanel {
 
     protected Handler handler;
 
@@ -25,7 +25,7 @@ public class ProductorPanel extends basePanel {
         unitUI(title);
     }
 
-    public static ProductorPanel create(Handler handler, basePanel.PanelMode action) {
+    public static ProductorPanel create(Handler handler, BasePanel.PanelMode action) {
 
         ProductorPanel productorPanel = null;
         switch (action) {
@@ -99,11 +99,11 @@ public class ProductorPanel extends basePanel {
                         enableEditControls(true);
                         btnOk.setEnabled(true);
                     } else {
-                        CustomOptionPane.showInformationMessage("Productor no encontrado.");
+                        CustomOptionPanel.showInformationMessage("Productor no encontrado.");
                     }
                 } else {
                     txtDNI.grabFocus();
-                    CustomOptionPane.showErrorMessage("El DNI debe ser númerico");
+                    CustomOptionPanel.showErrorMessage("El DNI debe ser númerico");
                 }
             }
         });

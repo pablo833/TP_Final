@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
@@ -20,7 +20,7 @@ public class ListUserPanel extends JPanel {
         try {
             initUI();
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 

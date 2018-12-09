@@ -10,7 +10,7 @@ public interface DAO<T> {
 
     void update(T t) throws RadioException;
 
-    T get(int codigo) throws RadioException;
+    T get(int codigo) throws RadioException, UnsupportedOperationException;
 
     void delete(int codigo) throws RadioException;
 

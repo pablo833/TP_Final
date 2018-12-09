@@ -6,9 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class AbstractImpl {
+public class AbstractDAOImpl {
 
-    protected final String BD_ERROR = "Hubo un error en la ejecución a la BD";
+    protected static final String BD_ERROR = "Hubo un error en la ejecución a la BD";
 
     protected void executeQuery(Connection connection, PreparedStatement dml) throws RadioException {
         try {

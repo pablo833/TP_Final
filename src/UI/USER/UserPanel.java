@@ -2,15 +2,15 @@ package UI.USER;
 
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.basePanel;
+import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public abstract class UserPanel extends basePanel {
+public abstract class UserPanel extends BasePanel {
 
     protected Handler handler;
 
@@ -103,7 +103,7 @@ public abstract class UserPanel extends basePanel {
                     user = handler.getUser(txtUsername.getText());
 
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
 
                 if (user != null) {
@@ -113,7 +113,7 @@ public abstract class UserPanel extends basePanel {
                     enableEditControls(true);
                     btnOk.setEnabled(true);
                 } else {
-                    CustomOptionPane.showInformationMessage("Usuario no encontrado.");
+                    CustomOptionPanel.showInformationMessage("Usuario no encontrado.");
                 }
             }
         });

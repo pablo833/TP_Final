@@ -1,7 +1,7 @@
 package UI.AUSPICIANTE;
 
 import javax.swing.*;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,7 +28,7 @@ public class AuspiciantePanelCreate extends AuspiciantePanel {
                     handler.createAuspiciante(createAuspiciante());
 
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
                 cleanJText();
 

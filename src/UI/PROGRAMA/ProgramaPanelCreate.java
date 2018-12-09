@@ -1,7 +1,7 @@
 package UI.PROGRAMA;
 
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 
 import javax.swing.*;
@@ -29,10 +29,10 @@ public class ProgramaPanelCreate extends ProgramaPanel {
                         cleanJText();
                     } else {
                         txtValorSegundoAlAire.grabFocus();
-                        CustomOptionPane.showErrorMessage("El valor del segundo al aire debe ser númerico");
+                        CustomOptionPanel.showErrorMessage("El valor del segundo al aire debe ser númerico");
                     }
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
             }
         });

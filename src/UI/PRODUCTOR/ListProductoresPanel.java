@@ -3,10 +3,9 @@ package UI.PRODUCTOR;
 import javax.swing.*;
 import java.util.List;
 
-import ENTIDADES.Conductor;
 import ENTIDADES.Productor;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 
 
@@ -18,7 +17,7 @@ public class ListProductoresPanel extends JPanel {
         try {
             initUI();
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 

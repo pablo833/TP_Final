@@ -2,15 +2,15 @@ package UI.CONDUCTOR;
 
 import ENTIDADES.Conductor;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.basePanel;
+import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConductorPanel extends basePanel {
+public class ConductorPanel extends BasePanel {
 
     protected Handler handler;
 
@@ -30,7 +30,7 @@ public class ConductorPanel extends basePanel {
         unitUI(title);
     }
 
-    public static ConductorPanel create(Handler handler, basePanel.PanelMode action) {
+    public static ConductorPanel create(Handler handler, BasePanel.PanelMode action) {
 
         ConductorPanel conductorPanel = null;
         switch (action) {
@@ -101,7 +101,7 @@ public class ConductorPanel extends basePanel {
                     conductor = handler.getConductor(Integer.valueOf(txtDNI.getText()));
 
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
 
                 if (conductor != null) {
@@ -112,7 +112,7 @@ public class ConductorPanel extends basePanel {
                     enableEditControls(true);
                     btnOk.setEnabled(true);
                 } else {
-                    CustomOptionPane.showInformationMessage("Conductor no encontrado.");
+                    CustomOptionPanel.showInformationMessage("Conductor no encontrado.");
                 }
             }
         });

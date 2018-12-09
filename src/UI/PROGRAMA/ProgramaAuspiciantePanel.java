@@ -4,9 +4,9 @@ import ENTIDADES.Auspiciante;
 import ENTIDADES.Contrato;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.basePanel;
+import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class ProgramaAuspiciantePanel extends basePanel {
+public class ProgramaAuspiciantePanel extends BasePanel {
     private Handler handler;
     private JComboBox cmbPrograma;
     private JComboBox cmbAuspiciantes;
@@ -127,7 +127,7 @@ public class ProgramaAuspiciantePanel extends basePanel {
             programaModel = handler.getProgramasVector();
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
 
         return programaModel;
@@ -148,14 +148,14 @@ public class ProgramaAuspiciantePanel extends basePanel {
                                 Integer.valueOf(txtTiempoDePauta.getText()));
 
                         handler.createContrato(contrato);
-                        CustomOptionPane.showInformationMessage("Operación exitosa!");
+                        CustomOptionPanel.showInformationMessage("Operación exitosa!");
                         updatejScrollPane((Programa) cmbPrograma.getSelectedItem());
                     } else {
                         txtTiempoDePauta.grabFocus();
-                        CustomOptionPane.showErrorMessage("El tiempo de la pauta debe ser un número.");
+                        CustomOptionPanel.showErrorMessage("El tiempo de la pauta debe ser un número.");
                     }
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
             }
         });
@@ -174,7 +174,7 @@ public class ProgramaAuspiciantePanel extends basePanel {
             auspicianteModel = handler.getAuspicianteVector();
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
 
         return auspicianteModel;
@@ -191,7 +191,7 @@ public class ProgramaAuspiciantePanel extends basePanel {
 
 
             } catch (RadioException e) {
-                CustomOptionPane.showErrorMessage("Hubo un problema en la carga de Auspiciantes.");
+                CustomOptionPanel.showErrorMessage("Hubo un problema en la carga de Auspiciantes.");
             }
         }
     }
@@ -236,7 +236,7 @@ public class ProgramaAuspiciantePanel extends basePanel {
                     handler.deleteContract(contrato);
                     updatejScrollPane((Programa) cmbPrograma.getSelectedItem());
                 } else {
-                    CustomOptionPane.showInformationMessage("Debe seleccionar un contrato de la lista.");
+                    CustomOptionPanel.showInformationMessage("Debe seleccionar un contrato de la lista.");
                 }
             }
         });

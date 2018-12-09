@@ -35,7 +35,7 @@ public class MainContianerFrame extends JFrame {
     }
 
     private void showLogin() {
-        Login li = new Login(handler);
+        LoginPanel li = new LoginPanel(handler);
         changePanel(li);
     }
 

@@ -1,6 +1,6 @@
 package UI.AUSPICIANTE;
 
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 import EXCEPTIONS.RadioException;
 
@@ -29,7 +29,7 @@ public class AuspiciantePanelUpdate extends AuspiciantePanel {
                     btnOk.setEnabled(false);
                     cleanJText();
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
             }
         });

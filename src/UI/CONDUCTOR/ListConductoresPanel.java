@@ -5,7 +5,7 @@ import java.util.List;
 
 import ENTIDADES.Conductor;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 
 
@@ -18,7 +18,7 @@ public class ListConductoresPanel extends JPanel {
         try {
             initUI();
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 

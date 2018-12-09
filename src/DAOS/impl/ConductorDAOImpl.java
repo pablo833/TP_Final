@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConductorDAOImpl extends AbstractImpl implements DAO<Conductor> {
+public class ConductorDAOImpl extends AbstractDAOImpl implements DAO<Conductor> {
     private final String CONDUCTORES_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de CONDUCTORES";
 
     @Override

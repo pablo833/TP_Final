@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductorDAOImpl extends AbstractImpl implements DAO<Productor> {
+public class ProductorDAOImpl extends AbstractDAOImpl implements DAO<Productor> {
 
     private final String PRODUCTOR_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de productores";
 

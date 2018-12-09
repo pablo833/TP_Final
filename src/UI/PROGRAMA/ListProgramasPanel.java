@@ -2,7 +2,7 @@ package UI.PROGRAMA;
 
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 
 import javax.swing.*;
@@ -16,7 +16,7 @@ public class ListProgramasPanel extends JPanel {
         try {
             initUI();
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 

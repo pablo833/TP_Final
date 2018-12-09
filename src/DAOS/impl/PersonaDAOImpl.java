@@ -2,11 +2,10 @@ package DAOS.impl;
 
 import DAOS.DAO;
 import ENTIDADES.Persona;
-import EXCEPTIONS.RadioException;
 
 import java.util.List;
 
-public class PersonaDAOImpl extends AbstractImpl implements DAO<Persona> {
+public class PersonaDAOImpl extends AbstractDAOImpl implements DAO<Persona> {
 
     @Override
     public void insert(Persona persona) {

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ContratoDAOImpl extends AbstractImpl implements DAO<Contrato>, ContratoDAO {
+public class ContratoDAOImpl extends AbstractDAOImpl implements DAO<Contrato>, ContratoDAO {
 
     private final String CONTRATO_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de CONTRATOS";
 
@@ -42,13 +42,15 @@ public class ContratoDAOImpl extends AbstractImpl implements DAO<Contrato>, Cont
     }
 
     @Override
-    public void update(Contrato contrato) {
+    public void update(Contrato contrato) throws UnsupportedOperationException {
 
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public Contrato get(int codigo) {
-        return null;
+    public Contrato get(int codigo) throws UnsupportedOperationException {
+
+        throw new UnsupportedOperationException();
     }
 
     @Override
@@ -70,13 +72,15 @@ public class ContratoDAOImpl extends AbstractImpl implements DAO<Contrato>, Cont
     }
 
     @Override
-    public List<Contrato> getAll() {
-        return null;
+    public List<Contrato> getAll() throws UnsupportedOperationException {
+
+        throw new UnsupportedOperationException();
     }
 
     @Override
-    public Contrato getByInternalID(Contrato contrato) {
-        return null;
+    public Contrato getByInternalID(Contrato contrato) throws UnsupportedOperationException {
+
+        throw new UnsupportedOperationException();
     }
 
     @Override

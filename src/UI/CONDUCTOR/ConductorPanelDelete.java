@@ -1,7 +1,7 @@
 package UI.CONDUCTOR;
 
 import EXCEPTIONS.RadioException;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 
 import javax.swing.*;
@@ -26,7 +26,7 @@ public class ConductorPanelDelete extends ConductorPanel {
                     handler.deleteConductor(createConductor());
                     cleanJText();
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
             }
         });

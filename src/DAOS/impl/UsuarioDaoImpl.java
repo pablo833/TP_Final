@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsuarioDaoImpl extends AbstractImpl implements DAO<Usuario> {
+public class UsuarioDaoImpl extends AbstractDAOImpl implements DAO<Usuario> {
 
     private final String USER_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de usuarios";
 

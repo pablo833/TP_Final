@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Login extends basePanel {
+public class LoginPanel extends BasePanel {
 
     private final int horizontalStructureSize = 10;
     JTextField txtUsername = null;
@@ -14,7 +14,7 @@ public class Login extends basePanel {
 
     private Handler handler;
 
-    public Login(Handler handler) {
+    public LoginPanel(Handler handler) {
         this.handler = handler;
         initUI();
 
@@ -23,7 +23,7 @@ public class Login extends basePanel {
     private void initUI() {
 
         Box boxTitle = Box.createHorizontalBox();
-        JLabel lblTitle = new JLabel("Login");
+        JLabel lblTitle = new JLabel("LoginPanel");
         boxTitle.add(lblTitle);
 
         txtUsername = new JTextField(columnSize);
@@ -62,7 +62,7 @@ public class Login extends basePanel {
                     handler.login(createUser());
 
                 } catch (Exception e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
 
             }

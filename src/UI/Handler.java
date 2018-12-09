@@ -5,7 +5,7 @@ import DAOS.impl.*;
 import ENTIDADES.*;
 import EXCEPTIONS.RadioException;
 import UI.AUSPICIANTE.AuspiciantePanel;
-import UI.AUSPICIANTE.ListAuspiciantePane;
+import UI.AUSPICIANTE.ListAuspiciantePanel;
 import UI.CONDUCTOR.ConductorPanel;
 import UI.CONDUCTOR.ListConductoresPanel;
 import UI.PRODUCTOR.ListProductoresPanel;
@@ -54,20 +54,20 @@ public class Handler {
 
         try {
             if (usuarioBO.getByUserName(user) == null) {
-                CustomOptionPane.showErrorMessage(USUARIO_CONTRASENIA_INEXISTENTE);
+                CustomOptionPanel.showErrorMessage(USUARIO_CONTRASENIA_INEXISTENTE);
             } else {
                 containerFrame.removePanel();
                 containerFrame.setMenuBarVisible();
             }
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
     public void showLogin() {
 
-        containerFrame.changePanel(new Login(this));
+        containerFrame.changePanel(new LoginPanel(this));
     }
 
     //
@@ -75,15 +75,15 @@ public class Handler {
     //
     public void addCreateUserPane() {
 
-        containerFrame.changePanel(UserPanel.create(this, basePanel.PanelMode.CREATE));
+        containerFrame.changePanel(UserPanel.create(this, BasePanel.PanelMode.CREATE));
     }
 
     public void addCreateUpdateUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, basePanel.PanelMode.UPDATE));
+        containerFrame.changePanel(UserPanel.create(this, BasePanel.PanelMode.UPDATE));
     }
 
     public void addCreateDeleteUserPane() {
-        containerFrame.changePanel(UserPanel.create(this, basePanel.PanelMode.DELETE));
+        containerFrame.changePanel(UserPanel.create(this, BasePanel.PanelMode.DELETE));
     }
 
     public void addListUsersPane() {
@@ -95,35 +95,35 @@ public class Handler {
     //AUSPICIANTES
     //
     public void addCreateAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, basePanel.PanelMode.CREATE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, BasePanel.PanelMode.CREATE));
     }
 
     public void addUpdateAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, basePanel.PanelMode.UPDATE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, BasePanel.PanelMode.UPDATE));
     }
 
     public void addDeleteAuspiciantePane() {
-        containerFrame.changePanel(AuspiciantePanel.create(this, basePanel.PanelMode.DELETE));
+        containerFrame.changePanel(AuspiciantePanel.create(this, BasePanel.PanelMode.DELETE));
     }
 
     public void addListAuspiciantePane() {
 
-        containerFrame.changePanel(new ListAuspiciantePane(this));
+        containerFrame.changePanel(new ListAuspiciantePanel(this));
     }
 
     //
     //CONDUCTORES
     //
     public void addCreateConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, basePanel.PanelMode.CREATE));
+        containerFrame.changePanel(ConductorPanel.create(this, BasePanel.PanelMode.CREATE));
     }
 
     public void addUpdateConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, basePanel.PanelMode.UPDATE));
+        containerFrame.changePanel(ConductorPanel.create(this, BasePanel.PanelMode.UPDATE));
     }
 
     public void addDeleteConductorPane() {
-        containerFrame.changePanel(ConductorPanel.create(this, basePanel.PanelMode.DELETE));
+        containerFrame.changePanel(ConductorPanel.create(this, BasePanel.PanelMode.DELETE));
     }
 
     public void addListConductoresPane() {
@@ -135,15 +135,15 @@ public class Handler {
     //PRODUCTORES
     //
     public void addCreateProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, basePanel.PanelMode.CREATE));
+        containerFrame.changePanel(ProductorPanel.create(this, BasePanel.PanelMode.CREATE));
     }
 
     public void addUpdateProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, basePanel.PanelMode.UPDATE));
+        containerFrame.changePanel(ProductorPanel.create(this, BasePanel.PanelMode.UPDATE));
     }
 
     public void addDeleteProductorPane() {
-        containerFrame.changePanel(ProductorPanel.create(this, basePanel.PanelMode.DELETE));
+        containerFrame.changePanel(ProductorPanel.create(this, BasePanel.PanelMode.DELETE));
     }
 
     public void addListProductoresPane() {
@@ -155,15 +155,15 @@ public class Handler {
     //PROGRAMAS
     //
     public void addCreateProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, basePanel.PanelMode.CREATE));
+        containerFrame.changePanel(ProgramaPanel.create(this, BasePanel.PanelMode.CREATE));
     }
 
     public void addCreateUpdateProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, basePanel.PanelMode.UPDATE));
+        containerFrame.changePanel(ProgramaPanel.create(this, BasePanel.PanelMode.UPDATE));
     }
 
     public void addCreateDeleteProgramaPane() {
-        containerFrame.changePanel(ProgramaPanel.create(this, basePanel.PanelMode.DELETE));
+        containerFrame.changePanel(ProgramaPanel.create(this, BasePanel.PanelMode.DELETE));
     }
 
     public void addListProgrmasPane() {
@@ -179,9 +179,9 @@ public class Handler {
 
         try {
             usuarioBO.create(user);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -189,10 +189,10 @@ public class Handler {
 
         try {
             usuarioBO.update(user);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -200,9 +200,9 @@ public class Handler {
 
         try {
             usuarioBO.delete(user);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -211,7 +211,7 @@ public class Handler {
         try {
             user = usuarioBO.getByUserName(user);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return user;
     }
@@ -222,7 +222,7 @@ public class Handler {
         try {
             userFound = usuarioBO.getByUserName(usuario);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
 
         return userFound;
@@ -240,7 +240,7 @@ public class Handler {
         try {
             auspicianteFound = auspicianteBO.getByRazonSocial(auspiciante);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return auspicianteFound;
     }
@@ -249,9 +249,9 @@ public class Handler {
 
         try {
             auspicianteBO.create(auspiciante);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -259,10 +259,10 @@ public class Handler {
 
         try {
             auspicianteBO.update(auspiciante);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -271,7 +271,7 @@ public class Handler {
         try {
             auspiciantes = auspicianteBO.getAll();
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return auspiciantes;
     }
@@ -282,7 +282,7 @@ public class Handler {
         try {
             conductor = conductorBO.getByDNI(conductor);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return conductor;
     }
@@ -290,28 +290,28 @@ public class Handler {
     public void createCondutor(Conductor conductor) throws RadioException {
         try {
             conductorBO.create(conductor);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
     public void updateConductor(Conductor conductor) throws RadioException {
         try {
             conductorBO.update(conductor);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
     public void deleteConductor(Conductor conductor) throws RadioException {
         try {
             conductorBO.delete(conductor);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -327,7 +327,7 @@ public class Handler {
                 model.addElement(c);
             }
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return model;
     }
@@ -338,7 +338,7 @@ public class Handler {
         try {
             productor = productorBO.getByDNI(productor);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return productor;
     }
@@ -346,28 +346,28 @@ public class Handler {
     public void createProductor(Productor productor) throws RadioException {
         try {
             productorBO.create(productor);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
     public void deleteProductor(Productor productor) throws RadioException {
         try {
             productorBO.delete(productor);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
     public void updateProductor(Productor productor) throws RadioException {
         try {
             productorBO.update(productor);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -384,7 +384,7 @@ public class Handler {
             }
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return model;
     }
@@ -393,19 +393,19 @@ public class Handler {
     public void createPrograma(Programa programa) throws RadioException {
         try {
             programaBO.create(programa);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
     public void updatePrograma(Programa programa) throws RadioException {
         try {
             programaBO.update(programa);
-            CustomOptionPane.showInformationMessage(OPERACION_EXITOSA);
+            CustomOptionPanel.showInformationMessage(OPERACION_EXITOSA);
 
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 
@@ -414,7 +414,7 @@ public class Handler {
         try {
             programa = programaBO.getByNombre(programa);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
         return programa;
     }
@@ -464,7 +464,7 @@ public class Handler {
         try {
             contratoBO.delete(contrato);
         } catch (RadioException e) {
-            CustomOptionPane.showErrorMessage(e.getMessage());
+            CustomOptionPanel.showErrorMessage(e.getMessage());
         }
     }
 }

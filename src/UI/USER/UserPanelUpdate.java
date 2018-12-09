@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.Box;
 import javax.swing.JButton;
 
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
 import EXCEPTIONS.RadioException;
 
@@ -30,7 +30,7 @@ public class UserPanelUpdate extends UserPanel {
                     btnOk.setEnabled(false);
                     cleanJText();
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
             }
         });

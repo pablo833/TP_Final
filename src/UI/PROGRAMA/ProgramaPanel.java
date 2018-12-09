@@ -5,16 +5,16 @@ import ENTIDADES.Productor;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 import UI.AUSPICIANTE.AuspiciantesTable;
-import UI.CustomOptionPane;
+import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.basePanel;
+import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProgramaPanel extends basePanel {
+public class ProgramaPanel extends BasePanel {
     protected Handler handler;
 
     protected JTextField txtNombre;
@@ -34,7 +34,7 @@ public class ProgramaPanel extends basePanel {
         initUI(title);
     }
 
-    public static ProgramaPanel create(Handler handler, basePanel.PanelMode action) {
+    public static ProgramaPanel create(Handler handler, BasePanel.PanelMode action) {
         ProgramaPanel programaPanel = null;
         switch (action) {
             case CREATE:
@@ -113,7 +113,7 @@ public class ProgramaPanel extends basePanel {
                     programa = handler.getPrograma(txtNombre.getText());
 
                 } catch (RadioException e) {
-                    CustomOptionPane.showErrorMessage(e.getMessage());
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
                 }
 
                 if (programa != null) {
@@ -127,7 +127,7 @@ public class ProgramaPanel extends basePanel {
                     enableEditControls(true);
                     btnOk.setEnabled(true);
                 } else {
-                    CustomOptionPane.showInformationMessage("Programa no encontrado.");
+                    CustomOptionPanel.showInformationMessage("Programa no encontrado.");
                 }
             }
         });

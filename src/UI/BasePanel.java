@@ -2,7 +2,7 @@ package UI;
 
 import javax.swing.*;
 
-public abstract class basePanel extends JPanel {
+public abstract class BasePanel extends JPanel {
 
     protected final int columnSize = 30;
     protected final int verticalStructureSize = 20;

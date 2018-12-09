@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProgramaDAOImpl extends AbstractImpl implements DAO<Programa>, ProgramaDAO {
+public class ProgramaDAOImpl extends AbstractDAOImpl implements DAO<Programa>, ProgramaDAO {
 
     private final String PROGRAMA_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de PROGRAMAS";
 

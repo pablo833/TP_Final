@@ -9,7 +9,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AuspicianteDaoImpl extends AbstractImpl implements DAO<Auspiciante> {
+public class AuspicianteDaoImpl extends AbstractDAOImpl implements DAO<Auspiciante> {
     private final String AUSPICIANTE_NOT_FOUND_ERRROR = "Hubo un error en la búsqueda de AUSPICIANTES";
 
     @Override
