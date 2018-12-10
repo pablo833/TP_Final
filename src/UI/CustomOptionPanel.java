@@ -1,6 +1,6 @@
 package UI;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class CustomOptionPanel extends JOptionPane {
 

@@ -1,8 +1,8 @@
 package UI.AUSPICIANTE;
 
+import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
-import EXCEPTIONS.RadioException;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,8 +18,6 @@ public class AuspiciantePanelUpdate extends AuspiciantePanel {
     @Override
     public Box generateBotonera() {
 
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
         btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -35,10 +33,11 @@ public class AuspiciantePanelUpdate extends AuspiciantePanel {
         });
         btnOk.setEnabled(false);
 
+        Box botonera = crearOkBotonera(btnOk);
+
         botonera.add(btnOk);
 
         JButton btnFind = generateFindButton();
-
 
         botonera.add(btnFind);
 

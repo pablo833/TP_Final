@@ -2,17 +2,19 @@ package UI.AUSPICIANTE;
 
 import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
+import UI.BasePanel;
 import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AuspiciantePanel extends BasePanel {
+public abstract class AuspiciantePanel extends BasePanel {
 
     protected Handler handler;
+
+    private static final String name = "Auspiciantes ";
 
     protected final int horizontalStructureSize = 10;
     protected JTextField txtRazonSocial;
@@ -34,13 +36,13 @@ public class AuspiciantePanel extends BasePanel {
         AuspiciantePanel auspiciantePanel = null;
         switch (action) {
             case CREATE:
-                auspiciantePanel = new AuspiciantePanelCreate(handler, PanelMode.CREATE.toString());
+                auspiciantePanel = new AuspiciantePanelCreate(handler, name + PanelMode.CREATE.toString());
                 break;
             case UPDATE:
-                auspiciantePanel = new AuspiciantePanelUpdate(handler, PanelMode.UPDATE.toString());
+                auspiciantePanel = new AuspiciantePanelUpdate(handler, name + PanelMode.UPDATE.toString());
                 break;
             case DELETE:
-                auspiciantePanel = new AuspiciantePanelDelete(handler, PanelMode.DELETE.toString());
+                auspiciantePanel = new AuspiciantePanelDelete(handler, name + PanelMode.DELETE.toString());
                 break;
             default:
                 break;
@@ -51,32 +53,27 @@ public class AuspiciantePanel extends BasePanel {
 
     private void initUI(String title) {
 
-        Box boxTitle = Box.createHorizontalBox();
-        JLabel lblTitle = new JLabel(title);
-        boxTitle.add(lblTitle);
-
-        txtRazonSocial = new JTextField(columnSize);
-        Box boxAuspiciante = crearCombo("Razón Social", txtRazonSocial);
-
-        txtCodigoRazonSocial = new JTextField(columnSize);
-        enableEditControls(false);
-        Box boxCodigoRazonSocial = crearCombo("ID Razón Social", txtCodigoRazonSocial);
-
-        Box botonera = generateBotonera();
-
         Box panel = Box.createVerticalBox();
-        panel.add(boxTitle);
-        panel.add(boxAuspiciante);
-        panel.add(boxCodigoRazonSocial);
-        panel.add(botonera);
-
+        panel.add(getTitleBox(title));
+        panel.add(getAuspicianteBox());
+        panel.add(getRazonSocialBox());
+        panel.add(generateBotonera());
+        enableEditControls(false);
         add(panel);
     }
 
-    @Override
-    protected Box generateBotonera() {
-        return null;
+    private Box getRazonSocialBox() {
+        txtCodigoRazonSocial = new JTextField(columnSize);
+
+        return crearCombo("ID Razón Social", txtCodigoRazonSocial);
     }
+
+    private Box getAuspicianteBox() {
+        txtRazonSocial = new JTextField(columnSize);
+        return crearCombo("Razón Social", txtRazonSocial);
+    }
+
+    protected abstract Box generateBotonera();
 
     protected void cleanJText() {
         txtRazonSocial.setText(null);
@@ -123,7 +120,7 @@ public class AuspiciantePanel extends BasePanel {
         return newAuspiciante;
     }
 
-    private void enableEditControls(boolean var) {
+    protected void enableEditControls(boolean var) {
         txtCodigoRazonSocial.setEnabled(var);
     }
 }

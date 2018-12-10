@@ -1,35 +1,37 @@
 package UI.USER;
 
-import java.util.List;
-
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-
-import UI.CustomOptionPanel;
-import UI.Handler;
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
+import UI.CustomOptionPanel;
+import UI.Handler;
+import UI.ListEntitiesPanel;
 
-public class ListUserPanel extends JPanel {
+import javax.swing.*;
+import java.util.List;
 
-    Handler handler;
+public class ListUserPanel extends ListEntitiesPanel {
+
+    private static final String name = "Usuarios ";
 
     public ListUserPanel(Handler handler) {
-        this.handler = handler;
+        super(handler);
+
+        initUI();
+    }
+
+    protected void initUI() {
+
+        UsersTable usrTable = null;
+
+        add(getTitleBox(name));
         try {
-            initUI();
+            usrTable = GetUsuarios();
+            JTable tabla = new JTable(usrTable);
+            JScrollPane scroll = new JScrollPane(tabla);
+            add(scroll);
         } catch (RadioException e) {
             CustomOptionPanel.showErrorMessage(e.getMessage());
         }
-    }
-
-    private void initUI() throws RadioException {
-
-        UsersTable usrTable = GetUsuarios();
-        JTable tabla = new JTable(usrTable);
-        JScrollPane scroll = new JScrollPane(tabla);
-        add(scroll);
     }
 
     private UsersTable GetUsuarios() throws RadioException {

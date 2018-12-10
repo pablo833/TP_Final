@@ -1,12 +1,12 @@
 package UI.AUSPICIANTE;
 
-import javax.swing.*;
+import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
+import UI.Handler;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import UI.Handler;
-import EXCEPTIONS.RadioException;
 
 public class AuspiciantePanelCreate extends AuspiciantePanel {
 
@@ -17,8 +17,7 @@ public class AuspiciantePanelCreate extends AuspiciantePanel {
 
     @Override
     public Box generateBotonera() {
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
+
         JButton btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -34,6 +33,8 @@ public class AuspiciantePanelCreate extends AuspiciantePanel {
 
             }
         });
+        Box botonera = crearOkBotonera(btnOk);
+
         botonera.add(btnOk);
 
         botonera.add(Box.createHorizontalStrut(horizontalStructureSize));

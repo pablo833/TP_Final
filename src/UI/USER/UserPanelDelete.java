@@ -16,8 +16,7 @@ public class UserPanelDelete extends UserPanel {
 
     @Override
     public Box generateBotonera() {
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
+
         btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -32,7 +31,11 @@ public class UserPanelDelete extends UserPanel {
                 }
             }
         });
+
         btnOk.setEnabled(false);
+
+        Box botonera = crearOkBotonera(btnOk);
+
         botonera.add(btnOk);
 
         JButton btnFind = generateFindButton();

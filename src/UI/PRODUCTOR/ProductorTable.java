@@ -1,6 +1,5 @@
 package UI.PRODUCTOR;
 
-import ENTIDADES.Conductor;
 import ENTIDADES.Productor;
 
 import javax.swing.table.AbstractTableModel;

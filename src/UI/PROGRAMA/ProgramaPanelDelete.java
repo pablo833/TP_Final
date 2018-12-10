@@ -15,8 +15,7 @@ public class ProgramaPanelDelete extends ProgramaPanel {
 
     @Override
     public Box generateBotonera() {
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
+
         JButton btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -31,6 +30,9 @@ public class ProgramaPanelDelete extends ProgramaPanel {
             }
         });
         btnOk.setEnabled(false);
+
+        Box botonera = crearOkBotonera(btnOk);
+
         botonera.add(btnOk);
 
         JButton btnFind = generateFindButton();

@@ -5,17 +5,20 @@ import ENTIDADES.Productor;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 import UI.AUSPICIANTE.AuspiciantesTable;
+import UI.BasePanel;
 import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProgramaPanel extends BasePanel {
+public abstract class ProgramaPanel extends BasePanel {
+
     protected Handler handler;
+
+    private static final String name = "Programas ";
 
     protected JTextField txtNombre;
     protected JTextField txthorario;
@@ -38,13 +41,13 @@ public class ProgramaPanel extends BasePanel {
         ProgramaPanel programaPanel = null;
         switch (action) {
             case CREATE:
-                programaPanel = new ProgramaPanelCreate(handler, PanelMode.CREATE.toString());
+                programaPanel = new ProgramaPanelCreate(handler, name + PanelMode.CREATE.toString());
                 break;
             case UPDATE:
-                programaPanel = new ProgramaPanelUpdate(handler, PanelMode.UPDATE.toString());
+                programaPanel = new ProgramaPanelUpdate(handler, name + PanelMode.UPDATE.toString());
                 break;
             case DELETE:
-                programaPanel = new ProgramaPanelDelete(handler, PanelMode.DELETE.toString());
+                programaPanel = new ProgramaPanelDelete(handler, name + PanelMode.DELETE.toString());
                 break;
             default:
                 break;
@@ -55,50 +58,41 @@ public class ProgramaPanel extends BasePanel {
 
     protected void initUI(String title) {
 
-        Box boxTitle = Box.createHorizontalBox();
-        JLabel lblTitle = new JLabel(title);
-        boxTitle.add(lblTitle);
-
-        txtNombre = new JTextField(columnSize);
-        Box boxNombre = crearCombo("Nombre", txtNombre);
-
-        txthorario = new JTextField(columnSize);
-        Box boxHorario = crearCombo("Horario", txthorario);
-
-        txtValorSegundoAlAire = new JTextField(columnSize);
-        Box boxValorSegundoAlAire = crearCombo("Valor segundo al aire", txtValorSegundoAlAire);
-
-        Box boxConductor = getConductorBox();
-
-        Box boxProductor = getProductorBox();
-
-        Box botonera = generateBotonera();
-
-        Box boxScroll = getjScrollPane();
-
         Box panel = Box.createVerticalBox();
-        panel.add(boxTitle);
-        panel.add(boxNombre);
+        panel.add(getTitleBox(title));
+        panel.add(getNombreBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxHorario);
+        panel.add(getHorarioBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxValorSegundoAlAire);
+        panel.add(getValorSegundoAlAireBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxConductor);
+        panel.add(getConductorBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxProductor);
+        panel.add(getProductorBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(botonera);
-        panel.add(boxScroll);
+        panel.add(generateBotonera());
+        panel.add(getjScrollPane());
         add(panel);
 
     }
 
-    @Override
-    protected Box generateBotonera() {
-        return null;
+    private Box getValorSegundoAlAireBox() {
+        txtValorSegundoAlAire = new JTextField(columnSize);
+        return crearCombo("Valor segundo al aire", txtValorSegundoAlAire);
     }
+
+    private Box getHorarioBox() {
+        txthorario = new JTextField(columnSize);
+        return crearCombo("Horario", txthorario);
+    }
+
+    private Box getNombreBox() {
+        txtNombre = new JTextField(columnSize);
+        return crearCombo("Nombre", txtNombre);
+    }
+
+    protected abstract Box generateBotonera();
 
     protected JButton generateFindButton() {
 

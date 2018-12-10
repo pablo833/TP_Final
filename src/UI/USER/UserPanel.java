@@ -2,9 +2,9 @@ package UI.USER;
 
 import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
+import UI.BasePanel;
 import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -13,6 +13,8 @@ import java.awt.event.ActionListener;
 public abstract class UserPanel extends BasePanel {
 
     protected Handler handler;
+
+    private static final String name = "Usuarios ";
 
     protected JTextField txtUsername = null;
     protected JTextField txtFirstName = null;
@@ -35,13 +37,13 @@ public abstract class UserPanel extends BasePanel {
         UserPanel userPanel = null;
         switch (action) {
             case CREATE:
-                userPanel = new UserPanelCreate(handler, action.toString());
+                userPanel = new UserPanelCreate(handler, name + action.toString());
                 break;
             case UPDATE:
-                userPanel = new UserPanelUpdate(handler, action.toString());
+                userPanel = new UserPanelUpdate(handler, name + action.toString());
                 break;
             case DELETE:
-                userPanel = new UserPanelDelete(handler, action.toString());
+                userPanel = new UserPanelDelete(handler, name + action.toString());
                 break;
             default:
                 break;
@@ -52,43 +54,42 @@ public abstract class UserPanel extends BasePanel {
 
     private void initUI(String title) {
 
-        Box boxTitle = Box.createHorizontalBox();
-        JLabel lblTitle = new JLabel(title);
-        boxTitle.add(lblTitle);
-
-        txtUsername = new JTextField(columnSize);
-        Box boxUsername = crearCombo("Nombre de Usuario", txtUsername);
-
-        txtFirstName = new JTextField(columnSize);
-        Box boxFirstName = crearCombo("Nombre", txtFirstName);
-
-        txtLastName = new JTextField(columnSize);
-        Box boxLastName = crearCombo("Apellido", txtLastName);
-
-        txtPassword = new JPasswordField(columnSize);
-        Box boxPassword = crearCombo("Contraseña", txtPassword);
-
-        Box botonera = generateBotonera();
-
         Box panel = Box.createVerticalBox();
-        panel.add(boxTitle);
-        panel.add(boxUsername);
+        panel.add(getTitleBox(title));
+        panel.add(getUsernameBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxPassword);
+        panel.add(getPasswordBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxFirstName);
+        panel.add(getFirstNameBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxLastName);
+        panel.add(getLastNameBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(botonera);
+        panel.add(generateBotonera());
 
         add(panel);
     }
 
-    @Override
-    protected Box generateBotonera() {
-        return null;
+    private Box getPasswordBox() {
+        txtPassword = new JPasswordField(columnSize);
+        return crearCombo("Contraseña", txtPassword);
     }
+
+    private Box getLastNameBox() {
+        txtLastName = new JTextField(columnSize);
+        return crearCombo("Apellido", txtLastName);
+    }
+
+    private Box getFirstNameBox() {
+        txtFirstName = new JTextField(columnSize);
+        return crearCombo("Nombre", txtFirstName);
+    }
+
+    private Box getUsernameBox() {
+        txtUsername = new JTextField(columnSize);
+        return crearCombo("Nombre de Usuario", txtUsername);
+    }
+
+    protected abstract Box generateBotonera();
 
     protected JButton generateFindButton() {
 

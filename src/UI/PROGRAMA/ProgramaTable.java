@@ -1,6 +1,5 @@
 package UI.PROGRAMA;
 
-import ENTIDADES.Productor;
 import ENTIDADES.Programa;
 
 import javax.swing.table.AbstractTableModel;

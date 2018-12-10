@@ -1,33 +1,35 @@
 package UI.CONDUCTOR;
 
-import javax.swing.*;
-import java.util.List;
-
 import ENTIDADES.Conductor;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
+import UI.ListEntitiesPanel;
 
+import javax.swing.*;
+import java.util.List;
 
+public class ListConductoresPanel extends ListEntitiesPanel {
 
-public class ListConductoresPanel extends JPanel {
-    Handler handler;
+    private static final String name = "Conductores";
 
     public ListConductoresPanel(Handler handler) {
-        this.handler = handler;
+        super(handler);
+        initUI();
+    }
+
+    protected void initUI() {
+
+        ConductorTable conductoresTable = null;
+        add(getTitleBox(name));
         try {
-            initUI();
+            conductoresTable = GetConductores();
+            JTable tabla = new JTable(conductoresTable);
+            JScrollPane scroll = new JScrollPane(tabla);
+            add(scroll);
         } catch (RadioException e) {
             CustomOptionPanel.showErrorMessage(e.getMessage());
         }
-    }
-
-    private void initUI() throws RadioException {
-
-        ConductorTable conductoresTable = GetConductores();
-        JTable tabla = new JTable(conductoresTable);
-        JScrollPane scroll = new JScrollPane(tabla);
-        add(scroll);
     }
 
     private ConductorTable GetConductores() throws RadioException {

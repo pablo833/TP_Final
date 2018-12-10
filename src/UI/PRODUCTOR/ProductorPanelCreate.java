@@ -15,8 +15,7 @@ public class ProductorPanelCreate extends ProductorPanel {
 
     @Override
     protected Box generateBotonera() {
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
+
         JButton btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -39,6 +38,7 @@ public class ProductorPanelCreate extends ProductorPanel {
 
             }
         });
+        Box botonera = crearOkBotonera(btnOk);
         botonera.add(btnOk);
 
         botonera.add(Box.createHorizontalStrut(horizontalStructureSize));

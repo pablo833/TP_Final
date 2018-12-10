@@ -15,8 +15,7 @@ public class ProgramaPanelUpdate extends ProgramaPanel {
 
     @Override
     protected Box generateBotonera() {
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
+
         btnOk = new JButton("Ok");
         btnOk.addActionListener(new ActionListener() {
             @Override
@@ -37,6 +36,8 @@ public class ProgramaPanelUpdate extends ProgramaPanel {
             }
         });
         btnOk.setEnabled(false);
+
+        Box botonera = crearOkBotonera(btnOk);
 
         botonera.add(btnOk);
 

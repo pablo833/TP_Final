@@ -1,17 +1,19 @@
 package UI.PRODUCTOR;
 
 import ENTIDADES.Productor;
+import UI.BasePanel;
 import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ProductorPanel extends BasePanel {
+public abstract class ProductorPanel extends BasePanel {
 
     protected Handler handler;
+
+    private static final String name = "Productores ";
 
     protected JTextField txtNombre;
     protected JTextField txtApellido;
@@ -30,13 +32,13 @@ public class ProductorPanel extends BasePanel {
         ProductorPanel productorPanel = null;
         switch (action) {
             case CREATE:
-                productorPanel = new ProductorPanelCreate(handler, action.toString());
+                productorPanel = new ProductorPanelCreate(handler, name + action.toString());
                 break;
             case UPDATE:
-                productorPanel = new ProductorPanelUpdate(handler, action.toString());
+                productorPanel = new ProductorPanelUpdate(handler, name + action.toString());
                 break;
             case DELETE:
-                productorPanel = new ProductorPanelDelete(handler, action.toString());
+                productorPanel = new ProductorPanelDelete(handler, name + action.toString());
                 break;
             default:
                 break;
@@ -47,38 +49,36 @@ public class ProductorPanel extends BasePanel {
 
     private void unitUI(String title) {
 
-        Box boxTitle = Box.createHorizontalBox();
-        JLabel lblTitle = new JLabel(title);
-        boxTitle.add(lblTitle);
-
-        txtNombre = new JTextField(columnSize);
-        Box boxUsername = crearCombo("Nombre", txtNombre);
-        txtApellido = new JTextField(columnSize);
-        Box boxApellido = crearCombo("Apellido", txtApellido);
-        txtDNI = new JTextField(columnSize);
-        Box boxDNI = crearCombo("DNI", txtDNI);
-
-
-        Box botonera = generateBotonera();
-
         Box panel = Box.createVerticalBox();
-        panel.add(boxTitle);
-        panel.add(boxUsername);
+        panel.add(getTitleBox(title));
+        panel.add(getNombreBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxApellido);
+        panel.add(getApellidoBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxDNI);
+        panel.add(getDNIBox());
         panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(botonera);
+        panel.add(generateBotonera());
 
         add(panel);
 
     }
 
-    @Override
-    protected Box generateBotonera() {
-        return null;
+    private Box getDNIBox() {
+        txtDNI = new JTextField(columnSize);
+        return crearCombo("DNI", txtDNI);
     }
+
+    private Box getApellidoBox() {
+        txtApellido = new JTextField(columnSize);
+        return crearCombo("Apellido", txtApellido);
+    }
+
+    private Box getNombreBox() {
+        txtNombre = new JTextField(columnSize);
+        return crearCombo("Nombre", txtNombre);
+    }
+
+    protected abstract Box generateBotonera();
 
     protected JButton generateFindButton() {
 

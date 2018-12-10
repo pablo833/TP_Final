@@ -4,9 +4,9 @@ import ENTIDADES.Auspiciante;
 import ENTIDADES.Contrato;
 import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
+import UI.BasePanel;
 import UI.CustomOptionPanel;
 import UI.Handler;
-import UI.BasePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,61 +39,60 @@ public class ProgramaAuspiciantePanel extends BasePanel {
 
     protected void initUI(String title) {
 
-        Box boxTitle = Box.createHorizontalBox();
-        JLabel lblTitle = new JLabel(title);
-        boxTitle.add(lblTitle);
+        Box panel = Box.createVerticalBox();
+        panel.add(panel.add(getTitleBox(title)));
+        panel.add(getProgramaBox());
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
+        panel.add(getNombreBox());
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
+        panel.add(getConductorProductorBox());
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
+        panel.add(getHorarioValorSegundoAlaireBox());
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
+        panel.add(getTiempoDePautaBox());
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
+        panel.add(generateAuspicianteBox());
+        panel.add(Box.createVerticalStrut(verticalStructureSize));
+        enableAddAuspicianete(false);
 
-        Box boxPrograma = getProgramaBox();
+        panel.add(initaliceScrollPane());
+        panel.add(generateBotonera());
+        add(panel);
 
+    }
+
+    private Box getNombreBox() {
         txtNombre = new JTextField(columnSize);
         Box boxNombre = crearCombo("Nombre", txtNombre);
         txtNombre.setEnabled(false);
+        return boxNombre;
+    }
 
-        txtConductor = new JTextField(columnSize / 2);
-        txtConductor.setEnabled(false);
+    private Box getTiempoDePautaBox() {
+        txtTiempoDePauta = new JTextField(columnSize);
+        Box botonera = Box.createHorizontalBox();
+        botonera.add(Box.createHorizontalGlue());
+        return crearCombo("Tiempo de pauta", txtTiempoDePauta);
+    }
 
-        txtProductor = new JTextField(columnSize / 2);
-        Box boxProductor = crearCombo("Conductor", txtConductor, "Productor", txtProductor);
-        txtProductor.setEnabled(false);
-
+    private Box getHorarioValorSegundoAlaireBox() {
         txthorario = new JTextField(columnSize / 2);
         txthorario.setEnabled(false);
 
         txtValorSegundoAlAire = new JTextField(columnSize / 2);
         Box boxValorSegundoAlAire = crearCombo("Horario", txthorario, "Valor segundo al aire", txtValorSegundoAlAire);
         txtValorSegundoAlAire.setEnabled(false);
+        return boxValorSegundoAlAire;
+    }
 
-        txtTiempoDePauta = new JTextField(columnSize);
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
-        Box boxTiempDePauta = crearCombo("Tiempo de pauta", txtTiempoDePauta);
+    private Box getConductorProductorBox() {
+        txtConductor = new JTextField(columnSize / 2);
+        txtConductor.setEnabled(false);
 
-        Box boxAuspiciante = generateAuspicianteBox();
-
-        Box boxBotonera = generateBotonera();
-
-        enableAddAuspicianete(false);
-        Box boxScroll = initaliceScrollPane();
-
-        Box panel = Box.createVerticalBox();
-        panel.add(boxTitle);
-        panel.add(boxPrograma);
-        panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxNombre);
-        panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxProductor);
-        panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxValorSegundoAlAire);
-        panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxTiempDePauta);
-        panel.add(Box.createVerticalStrut(verticalStructureSize));
-        panel.add(boxAuspiciante);
-        panel.add(Box.createVerticalStrut(verticalStructureSize));
-
-        panel.add(boxScroll);
-        panel.add(boxBotonera);
-        add(panel);
-
+        txtProductor = new JTextField(columnSize / 2);
+        Box boxProductor = crearCombo("Conductor", txtConductor, "Productor", txtProductor);
+        txtProductor.setEnabled(false);
+        return boxProductor;
     }
 
     private Box getProgramaBox() {
@@ -220,7 +219,6 @@ public class ProgramaAuspiciantePanel extends BasePanel {
         btnAddAuspiciante.setEnabled(var);
     }
 
-    @Override
     protected Box generateBotonera() {
 
         Box botonera = Box.createHorizontalBox();

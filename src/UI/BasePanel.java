@@ -12,7 +12,23 @@ public abstract class BasePanel extends JPanel {
         CREATE, UPDATE, DELETE
     }
 
-    protected abstract Box generateBotonera();
+    protected Box crearOkBotonera(JButton btnOk) {
+        Box botonera = Box.createHorizontalBox();
+        botonera.add(Box.createHorizontalGlue());
+
+        botonera.add(btnOk);
+
+        botonera.add(Box.createHorizontalStrut(horizontalStructureSize));
+
+        return botonera;
+    }
+
+    protected Box getTitleBox(String title) {
+        Box boxTitle = Box.createHorizontalBox();
+        JLabel lblTitle = new JLabel(title);
+        boxTitle.add(lblTitle);
+        return boxTitle;
+    }
 
     protected Box crearCombo(String labelText, JComponent component) {
         Box box = Box.createHorizontalBox();

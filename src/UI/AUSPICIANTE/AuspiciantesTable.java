@@ -1,11 +1,10 @@
 package UI.AUSPICIANTE;
 
-import java.util.ArrayList;
-import java.util.List;
+import ENTIDADES.Auspiciante;
 
 import javax.swing.table.AbstractTableModel;
-
-import ENTIDADES.Auspiciante;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AuspiciantesTable extends AbstractTableModel {
 

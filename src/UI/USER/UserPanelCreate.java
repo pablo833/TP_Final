@@ -1,12 +1,12 @@
 package UI.USER;
 
-import javax.swing.*;
+import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
+import UI.Handler;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import UI.Handler;
-import EXCEPTIONS.RadioException;
 
 public class UserPanelCreate extends UserPanel {
 
@@ -18,9 +18,9 @@ public class UserPanelCreate extends UserPanel {
     @Override
     protected Box generateBotonera() {
 
-        Box botonera = Box.createHorizontalBox();
-        botonera.add(Box.createHorizontalGlue());
+
         JButton btnOk = new JButton("Ok");
+
         btnOk.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -35,11 +35,8 @@ public class UserPanelCreate extends UserPanel {
 
             }
         });
-        botonera.add(btnOk);
 
-        botonera.add(Box.createHorizontalStrut(horizontalStructureSize));
-
-        return botonera;
+        return crearOkBotonera(btnOk);
     }
 
 }
