@@ -1,5 +1,8 @@
 package UI.PROGRAMA;
 
+import ENTIDADES.Conductor;
+import ENTIDADES.Productor;
+import ENTIDADES.Programa;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -41,6 +44,20 @@ public class ProgramaPanelCreate extends ProgramaPanel {
         botonera.add(Box.createHorizontalStrut(horizontalStructureSize));
 
         return botonera;
+    }
+
+    private Programa createPrograma() {
+        Programa newPrograma = null;
+
+
+        newPrograma = new Programa(txtNombre.getText(),
+                txthorario.getText(),
+                Double.valueOf(txtValorSegundoAlAire.getText()),
+                (Conductor) cmbCondutor.getSelectedItem(),
+                (Productor) cmbProductor.getSelectedItem());
+
+
+        return newPrograma;
     }
 
     @Override

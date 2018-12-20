@@ -1,5 +1,6 @@
 package UI.PRODUCTOR;
 
+import ENTIDADES.Productor;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -44,5 +45,15 @@ public class ProductorPanelCreate extends ProductorPanel {
         botonera.add(Box.createHorizontalStrut(horizontalStructureSize));
 
         return botonera;
+    }
+
+
+    private Productor createProductor() {
+        Productor newProdutor = null;
+
+        newProdutor = new Productor(txtNombre.getText(), txtApellido.getText(), Integer.valueOf(txtDNI.getText()));
+
+
+        return newProdutor;
     }
 }

@@ -20,7 +20,6 @@ public abstract class AuspiciantePanel extends BasePanel {
     protected JTextField txtRazonSocial;
     protected JTextField txtCodigoRazonSocial;
     protected JButton btnOk;
-    protected Auspiciante auspiciante = null;
 
     protected AuspiciantePanel() {
 
@@ -78,46 +77,6 @@ public abstract class AuspiciantePanel extends BasePanel {
     protected void cleanJText() {
         txtRazonSocial.setText(null);
         txtCodigoRazonSocial.setText(null);
-    }
-
-    protected JButton generateFindButton() {
-
-        JButton btnFind = new JButton("Buscar");
-        btnFind.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-
-                auspiciante = new Auspiciante(txtRazonSocial.getText());
-                try {
-                    auspiciante = handler.getAuspiciante(auspiciante);
-
-                } catch (RadioException e) {
-                    CustomOptionPanel.showErrorMessage(e.getMessage());
-                }
-
-                if (auspiciante != null) {
-                    txtRazonSocial.setText(auspiciante.getRazonSocial());
-                    txtCodigoRazonSocial.setText(String.valueOf(auspiciante.getCode()));
-                    btnOk.setEnabled(true);
-                } else {
-                    CustomOptionPanel.showInformationMessage("Auspiciante no encontrado.");
-                }
-            }
-        });
-
-        return btnFind;
-    }
-
-    protected Auspiciante createAuspiciante() {
-        Auspiciante newAuspiciante = null;
-
-        if (auspiciante != null) {
-            newAuspiciante = new Auspiciante(auspiciante.getCode(), txtRazonSocial.getText());
-        } else {
-            newAuspiciante = new Auspiciante(txtRazonSocial.getText());
-
-        }
-        return newAuspiciante;
     }
 
     protected void enableEditControls(boolean var) {

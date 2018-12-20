@@ -1,5 +1,6 @@
 package UI.USER;
 
+import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -9,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class UserPanelUpdate extends UserPanel {
+
+    private Usuario userFound = null;
 
     public UserPanelUpdate(Handler handler, String title) {
 
@@ -46,4 +49,48 @@ public class UserPanelUpdate extends UserPanel {
         return botonera;
     }
 
+    private JButton generateFindButton() {
+
+        JButton btnFind = new JButton("Buscar");
+        enableEditControls(false);
+        btnFind.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+
+                userFound = null;
+                try {
+                    userFound = handler.getUser(txtUsername.getText());
+
+                } catch (RadioException e) {
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
+                }
+
+                if (userFound != null) {
+                    txtUsername.setText(userFound.getUserName());
+                    txtFirstName.setText(userFound.getFirstName());
+                    txtLastName.setText(userFound.getLastName());
+                    enableEditControls(true);
+                    btnOk.setEnabled(true);
+                } else {
+                    CustomOptionPanel.showInformationMessage("Usuario no encontrado.");
+                }
+            }
+        });
+
+        return btnFind;
+    }
+
+    protected Usuario createUser() {
+        Usuario newUser = null;
+        if (userFound != null) {
+            newUser = new Usuario(userFound.getCode(), txtUsername.getText(), String.valueOf(txtPassword.getPassword()),
+                    txtFirstName.getText(), txtLastName.getText());
+        } else {
+            newUser = new Usuario(txtUsername.getText(), String.valueOf(txtPassword.getPassword()),
+                    txtFirstName.getText(), txtLastName.getText());
+
+        }
+
+        return newUser;
+    }
 }

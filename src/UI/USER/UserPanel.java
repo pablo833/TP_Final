@@ -1,14 +1,9 @@
 package UI.USER;
 
-import ENTIDADES.Usuario;
-import EXCEPTIONS.RadioException;
 import UI.BasePanel;
-import UI.CustomOptionPanel;
 import UI.Handler;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public abstract class UserPanel extends BasePanel {
 
@@ -21,7 +16,6 @@ public abstract class UserPanel extends BasePanel {
     protected JTextField txtLastName = null;
     protected JPasswordField txtPassword = null;
     protected JButton btnOk;
-    protected Usuario user = null;
 
     protected UserPanel() {
 
@@ -91,56 +85,11 @@ public abstract class UserPanel extends BasePanel {
 
     protected abstract Box generateBotonera();
 
-    protected JButton generateFindButton() {
-
-        JButton btnFind = new JButton("Buscar");
-        enableEditControls(false);
-        btnFind.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-
-                user = null;
-                try {
-                    user = handler.getUser(txtUsername.getText());
-
-                } catch (RadioException e) {
-                    CustomOptionPanel.showErrorMessage(e.getMessage());
-                }
-
-                if (user != null) {
-                    txtUsername.setText(user.getUserName());
-                    txtFirstName.setText(user.getFirstName());
-                    txtLastName.setText(user.getLastName());
-                    enableEditControls(true);
-                    btnOk.setEnabled(true);
-                } else {
-                    CustomOptionPanel.showInformationMessage("Usuario no encontrado.");
-                }
-            }
-        });
-
-        return btnFind;
-    }
-
     protected void cleanJText() {
         txtUsername.setText(null);
         txtPassword.setText(null);
         txtFirstName.setText(null);
         txtLastName.setText(null);
-    }
-
-    protected Usuario createUser() {
-        Usuario newUser = null;
-        if (user != null) {
-            newUser = new Usuario(user.getCode(), txtUsername.getText(), String.valueOf(txtPassword.getPassword()),
-                    txtFirstName.getText(), txtLastName.getText());
-        } else {
-            newUser = new Usuario(txtUsername.getText(), String.valueOf(txtPassword.getPassword()),
-                    txtFirstName.getText(), txtLastName.getText());
-
-        }
-
-        return newUser;
     }
 
     protected void enableEditControls(boolean var) {

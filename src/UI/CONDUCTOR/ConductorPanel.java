@@ -21,7 +21,6 @@ public abstract class ConductorPanel extends BasePanel {
     protected JTextField txtDNI;
     protected JTextField txtSueldo;
     protected JButton btnOk;
-    protected Conductor conductor = null;
 
     protected ConductorPanel() {
     }
@@ -92,38 +91,6 @@ public abstract class ConductorPanel extends BasePanel {
 
     protected abstract Box generateBotonera();
 
-    protected JButton generateFindButton() {
-
-        JButton btnFind = new JButton("Buscar");
-        enableEditControls(false);
-        btnFind.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-
-                conductor = null;
-                try {
-                    conductor = handler.getConductor(Integer.valueOf(txtDNI.getText()));
-
-                } catch (RadioException e) {
-                    CustomOptionPanel.showErrorMessage(e.getMessage());
-                }
-
-                if (conductor != null) {
-                    txtNombre.setText(conductor.getNombre());
-                    txtApellido.setText(conductor.getApellido());
-                    txtDNI.setText(String.valueOf(conductor.getDni()));
-                    txtSueldo.setText(String.valueOf(conductor.getSueldo()));
-                    enableEditControls(true);
-                    btnOk.setEnabled(true);
-                } else {
-                    CustomOptionPanel.showInformationMessage("Conductor no encontrado.");
-                }
-            }
-        });
-
-        return btnFind;
-    }
-
     protected void cleanJText() {
         txtNombre.setText(null);
         txtApellido.setText(null);
@@ -137,14 +104,4 @@ public abstract class ConductorPanel extends BasePanel {
         txtSueldo.setEnabled(var);
     }
 
-    protected Conductor createConductor() {
-        Conductor newConductor = null;
-        if (conductor != null) {
-            newConductor = new Conductor(conductor.getCodigo(), conductor.getNombre(), conductor.getApellido(), conductor.getDni(), conductor.getSueldo());
-        } else {
-            newConductor = new Conductor(txtNombre.getText(), txtApellido.getText(), Integer.valueOf(txtDNI.getText()), Double.valueOf(txtSueldo.getText()));
-
-        }
-        return newConductor;
-    }
 }

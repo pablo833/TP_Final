@@ -1,5 +1,6 @@
 package UI.CONDUCTOR;
 
+import ENTIDADES.Conductor;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -9,6 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ConductorPanelUpdate extends ConductorPanel {
+
+    protected Conductor conductor = null;
+
     public ConductorPanelUpdate(Handler handler, String title) {
         super(handler, title);
     }
@@ -51,4 +55,47 @@ public class ConductorPanelUpdate extends ConductorPanel {
         return botonera;
     }
 
+
+    private JButton generateFindButton() {
+
+        JButton btnFind = new JButton("Buscar");
+        enableEditControls(false);
+        btnFind.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+
+                conductor = null;
+                try {
+                    conductor = handler.getConductor(Integer.valueOf(txtDNI.getText()));
+
+                } catch (RadioException e) {
+                    CustomOptionPanel.showErrorMessage(e.getMessage());
+                }
+
+                if (conductor != null) {
+                    txtNombre.setText(conductor.getNombre());
+                    txtApellido.setText(conductor.getApellido());
+                    txtDNI.setText(String.valueOf(conductor.getDni()));
+                    txtSueldo.setText(String.valueOf(conductor.getSueldo()));
+                    enableEditControls(true);
+                    btnOk.setEnabled(true);
+                } else {
+                    CustomOptionPanel.showInformationMessage("Conductor no encontrado.");
+                }
+            }
+        });
+
+        return btnFind;
+    }
+
+    private Conductor createConductor() {
+        Conductor newConductor = null;
+        if (conductor != null) {
+            newConductor = new Conductor(conductor.getCodigo(), conductor.getNombre(), conductor.getApellido(), conductor.getDni(), conductor.getSueldo());
+        } else {
+            newConductor = new Conductor(txtNombre.getText(), txtApellido.getText(), Integer.valueOf(txtDNI.getText()), Double.valueOf(txtSueldo.getText()));
+
+        }
+        return newConductor;
+    }
 }

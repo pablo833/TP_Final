@@ -1,5 +1,6 @@
 package UI.CONDUCTOR;
 
+import ENTIDADES.Conductor;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -49,5 +50,12 @@ public class ConductorPanelCreate extends ConductorPanel {
         return botonera;
     }
 
+    private Conductor createConductor() {
+        Conductor newConductor = null;
+
+        newConductor = new Conductor(txtNombre.getText(), txtApellido.getText(), Integer.valueOf(txtDNI.getText()), Double.valueOf(txtSueldo.getText()));
+
+        return newConductor;
+    }
 
 }

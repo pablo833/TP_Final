@@ -1,5 +1,6 @@
 package UI.USER;
 
+import ENTIDADES.Usuario;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -9,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class UserPanelCreate extends UserPanel {
+
+    private Usuario userFound = null;
 
     public UserPanelCreate(Handler handler, String title) {
 
@@ -37,6 +40,16 @@ public class UserPanelCreate extends UserPanel {
         });
 
         return crearOkBotonera(btnOk);
+    }
+
+    protected Usuario createUser() {
+        Usuario newUser = null;
+
+        newUser = new Usuario(txtUsername.getText(), String.valueOf(txtPassword.getPassword()),
+                txtFirstName.getText(), txtLastName.getText());
+
+
+        return newUser;
     }
 
 }

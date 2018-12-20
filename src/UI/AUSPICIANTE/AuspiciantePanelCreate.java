@@ -1,5 +1,6 @@
 package UI.AUSPICIANTE;
 
+import ENTIDADES.Auspiciante;
 import EXCEPTIONS.RadioException;
 import UI.CustomOptionPanel;
 import UI.Handler;
@@ -41,4 +42,14 @@ public class AuspiciantePanelCreate extends AuspiciantePanel {
 
         return botonera;
     }
+
+    private Auspiciante createAuspiciante() {
+
+        Auspiciante newAuspiciante = null;
+
+        newAuspiciante = new Auspiciante(txtRazonSocial.getText());
+
+        return newAuspiciante;
+    }
+
 }
